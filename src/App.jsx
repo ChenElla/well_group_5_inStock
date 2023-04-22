@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { ChakraProvider } from '@chakra-ui/react'
+import Footer from './components/footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +28,7 @@ function App() {
             Edit <code>src/App.jsx</code> and save to test HMR
           </p>
         </div>
+        <Footer />
         <p className="read-the-docs">
           Click on the Vite and React logos to learn more
         </p>
