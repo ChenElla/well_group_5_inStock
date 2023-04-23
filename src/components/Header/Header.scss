@@ -87,25 +87,48 @@
     //###
   }
 
-  &__btn {
-    //###
+  @mixin buttonTemplate {
+    @include label_link_button;
     display: inline-block;
     border: none;
     text-decoration: none;
     cursor: pointer;
     text-align: center;
-    //###
-    width: 164px;
-    height: 36px;
-    border-radius: 0.25rem;
     border-radius: 20px;
-    @include label_link_button;
+    height: 36px;
+    @include tablet {
+      height: 38px;
+      padding: 0 16px 0;
+    }
+  }
+
+  &__flexset {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__btn {
+    @include buttonTemplate;
+    //###
+    // display: inline-block;
+    // border: none;
+    // text-decoration: none;
+    // cursor: pointer;
+    // text-align: center;
+    // //###
+    // width: 164px;
+    // height: 36px;
+    // border-radius: 20px;
+    // @include label_link_button;
     &--warehouse {
       background-color: $Instock-Black;
       color: $White;
+      flex-grow: 1;
     }
     &--inventory {
       background-color: $Graphite;
+      color: $Cloud;
+      flex-grow: 1;
     }
   }
 }

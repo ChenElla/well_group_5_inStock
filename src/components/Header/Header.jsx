@@ -24,12 +24,12 @@ function Header() {
           </Link>
         </div>
         <div className="header__btn-contain">
-          <Link to="/warehouse">
+          <Link className="header__flexset" to="/warehouse">
             <button className="header__btn header__btn--warehouse">
               Warehouse
             </button>
           </Link>
-          <Link to="/inventory">
+          <Link className="header__flexset" to="/inventory">
             <button className="header__btn header__btn--inventory">
               Inventory
             </button>
