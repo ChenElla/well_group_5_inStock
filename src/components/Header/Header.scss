@@ -2,25 +2,110 @@
 @import "../../../partials/_fonts";
 @import "../../../partials/_media";
 
+// ### = anything that needs a mixin
+
+//mixins
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexSpBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexSpAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
 .header {
-  background-color: aqua;
+  background-color: $Graphite;
+  height: 200px;
+  min-width: 100%;
+  @include tablet {
+    height: 186px;
+  }
+  &__outer {
+    padding: 24px 0 0 0;
+    @include tablet {
+      padding: 24px 32px 0;
+    }
+    //###
+    @include flexColumn;
+    //###
+    gap: 24px;
+    @include tablet {
+      @include flexSpBetween;
+      flex-direction: row;
+    }
+  }
   &__logo-contain {
+    //###
+    display: flex;
+    justify-content: center;
+    //###
+    // padding: 24px 0 0 0; // shorten up
   }
 
   &__logo {
-    &--med {
+    &--sml {
+      @include tablet {
+        display: none;
+      }
     }
-    &--lrg {
+    &--med {
+      @media (max-width: 766px) {
+        display: none;
+      }
     }
   }
 
   &__btn-contain {
+    //###
+    display: flex;
+    justify-content: center;
+    //###
   }
 
   &__btn {
+    //###
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    //###
+    width: 164px;
+    height: 36px;
+    border-radius: 0.25rem;
+    border-radius: 20px;
+    @include label_link_button;
     &--warehouse {
+      background-color: $Instock-Black;
+      color: $White;
     }
     &--inventory {
+      background-color: $Graphite;
     }
   }
 }
