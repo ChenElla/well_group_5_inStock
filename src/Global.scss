@@ -2,3 +2,68 @@ body {
   margin: 0;
   padding: 0;
 }
+
+// MIXINS
+
+//Flex
+@mixin flexCtrAll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexCtrX {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexSpBtwn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexSpArd {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexCtrY {
+  display: flex;
+  align-items: center;
+}
+
+// Button
+@mixin buttonTemplate {
+  @include label_link_button;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+  height: 36px;
+  font-weight: 600;
+  @include tablet {
+    height: 38px;
+    padding: 0 16px 0;
+  }
+}
+
+//Page Width
+@mixin desktopWidths {
+  width: 63.75rem;
+  margin: 0 auto;
+  padding: 0;
+}
