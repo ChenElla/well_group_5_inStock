@@ -1,35 +1,35 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Footer from "./components/Footer/footer";
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	return (
-		<div className="App">
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</div>
+	const Placeholder = ({ text }) => (
+	  <div style={{ padding: "2rem", textAlign: "center" }}>{text}</div>
 	);
-}
-
+  
+	return (
+	  <div className="root">
+		<BrowserRouter>
+		  <div className="App">
+			<Routes>
+			  <Route exact path="/" element={<Placeholder text="Home" />} />
+			  <Route path="/warehouses" element={<Placeholder text="Warehouses" />} />
+			  <Route path="/inventories" element={<Placeholder text="Inventories" />} />
+			  <Route path="/warehouses/:id" element={<Placeholder text="Warehouse Details" />} />
+			  <Route path="/inventories/:id" element={<Placeholder text="Inventory Details" />} />
+			  <Route path="/warehouses/:id/edit" element={<Placeholder text="Edit Warehouse" />} />
+			  <Route path="/warehouses/add" element={<Placeholder text="Add Warehouse" />} />
+			  <Route path="/inventories/:id/edit" element={<Placeholder text="Edit Inventory" />} />
+			  <Route path="/inventories/add" element={<Placeholder text="Add Inventory" />} />
+			</Routes>
+			<Footer />
+		  </div>
+		</BrowserRouter>
+	  </div>
+	);
+  }
+  
 export default App;
