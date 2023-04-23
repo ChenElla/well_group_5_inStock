@@ -1,0 +1,26 @@
+@import "../../../partials/_colors";
+@import "../../../partials/_fonts";
+@import "../../../partials/_media";
+
+.header {
+  background-color: aqua;
+  &__logo-contain {
+  }
+
+  &__logo {
+    &--med {
+    }
+    &--lrg {
+    }
+  }
+
+  &__btn-contain {
+  }
+
+  &__btn {
+    &--warehouse {
+    }
+    &--inventory {
+    }
+  }
+}
