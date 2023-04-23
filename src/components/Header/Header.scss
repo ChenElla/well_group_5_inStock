@@ -30,19 +30,6 @@
     @include flexCtrX;
   }
 
-  &__logo {
-    &--sml {
-      @include tablet {
-        display: none;
-      }
-    }
-    &--med {
-      @media (max-width: 766px) {
-        display: none;
-      }
-    }
-  }
-
   &__btn-contain {
     @include flexCtrX;
     gap: 16px;
@@ -54,7 +41,7 @@
   }
 
   &__btn {
-    @include buttonTemplate;
+    @include textBtn;
     &:hover {
       text-decoration-line: underline;
     }

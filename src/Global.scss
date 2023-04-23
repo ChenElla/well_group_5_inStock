@@ -45,7 +45,9 @@ body {
 }
 
 // Button
-@mixin buttonTemplate {
+
+//change buton name to reflect that it is a text button
+@mixin textBtn {
   @include label_link_button;
   display: inline-block;
   border: none;

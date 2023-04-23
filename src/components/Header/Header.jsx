@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import instockLogoSmall from "../../assets/Logo/InStock-Logo_1x.png";
-import instockLogoMedium from "../../assets/Logo/InStock-Logo_1x.png";
 import "./Header.scss";
 
 function Header() {
@@ -9,16 +8,10 @@ function Header() {
     <div className="header">
       <div className="header__outer">
         <div className="header__logo-contain">
-          {/* can I wrap two seperate items in a link tag? Especially given only 1 will show at any time? Seems I can with initial testing */}
           <Link to="/">
             <img
-              className="header__logo header__logo--sml"
+              className="header__logo"
               src={instockLogoSmall}
-              alt="Instock Logo"
-            />
-            <img
-              className="header__logo header__logo--med"
-              src={instockLogoMedium}
               alt="Instock Logo"
             />
           </Link>
