@@ -81,10 +81,9 @@
   }
 
   &__btn-contain {
-    //###
     display: flex;
     justify-content: center;
-    //###
+    gap: 16px;
   }
 
   @mixin buttonTemplate {
@@ -109,17 +108,6 @@
 
   &__btn {
     @include buttonTemplate;
-    //###
-    // display: inline-block;
-    // border: none;
-    // text-decoration: none;
-    // cursor: pointer;
-    // text-align: center;
-    // //###
-    // width: 164px;
-    // height: 36px;
-    // border-radius: 20px;
-    // @include label_link_button;
     &--warehouse {
       background-color: $Instock-Black;
       color: $White;
