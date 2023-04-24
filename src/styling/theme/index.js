@@ -16,6 +16,6 @@ const overrides = {
         Button,
         //Other components go here
     },
-}
+};
 
-export default extendTheme(overrides)
+export default extendTheme(overrides);
