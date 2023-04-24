@@ -1,0 +1,28 @@
+@import "../../../partials/_colors";
+@import "../../../partials/_fonts";
+@import "../../../partials/_media";
+@import "../../Global.scss";
+
+.pageHeader {
+  background-color: $White;
+  &__outer {
+    padding: 32px 28px 0;
+    @include tablet {
+      padding: 32px 32px 0;
+      @include desktop {
+        @include desktopWidths;
+        padding-top: 24px;
+      }
+    }
+  }
+  &__inner-container {
+    @include flexCtrAll;
+    align-items: baseline;
+  }
+  &__return {
+  }
+  &__title-text {
+    @include page_header;
+    padding-left: 4px;
+  }
+}
