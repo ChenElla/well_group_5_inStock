@@ -6,6 +6,12 @@ body {
 // MIXINS
 
 //Flex
+@mixin flexDisp($align-items,$justify-content){
+  display:flex;
+  align-items:$align-items;
+  justify-content:$justify-content;
+}
+
 @mixin flexCtrAll {
   display: flex;
   align-items: center;
