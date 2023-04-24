@@ -14,6 +14,7 @@
       @include desktop {
         @include desktopWidths;
         padding: 32px 32px 21px;
+        //this padding for the^ bottom may need to be changes. It is only 21 to reflect mockup, though the positioning seems to be reletive to the Header component behind it
       }
     }
   }
@@ -24,8 +25,11 @@
       justify-content: flex-start;
     }
   }
-  &__return {
-  }
+  //making arrow 16px does not match mockup. Standard size looks appropriate
+  // &__return {
+  //   width: 16px;
+  // }
+
   &__title-text {
     @include page_header;
     padding-left: 4px;
