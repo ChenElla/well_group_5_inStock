@@ -9,16 +9,20 @@
   &__outer {
     padding: 32px 28px 24px;
     @include tablet {
-      padding: 32px 32px 0;
+      padding: 32px 32px 21px;
+      //THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
       @include desktop {
         @include desktopWidths;
-        padding-top: 24px;
+        padding: 32px 32px 21px;
       }
     }
   }
   &__inner-container {
     @include flexCtrAll;
     align-items: baseline;
+    @include tablet {
+      justify-content: flex-start;
+    }
   }
   &__return {
   }

@@ -12,8 +12,6 @@ function App() {
         <PageHeader pageHeader={"Add New Inventory Item"} />
         {/* <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/video/:videoId" element={<HomePage />} />
-          <Route path="/upload" element={<UploadPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes> */}
       </BrowserRouter>
