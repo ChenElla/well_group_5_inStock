@@ -5,8 +5,9 @@
 
 .pageHeader {
   background-color: $White;
+  border-bottom: 1px solid $Cloud;
   &__outer {
-    padding: 32px 28px 0;
+    padding: 32px 28px 24px;
     @include tablet {
       padding: 32px 32px 0;
       @include desktop {
