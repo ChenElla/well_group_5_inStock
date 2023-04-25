@@ -4,7 +4,7 @@ import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
 
 function ItemDetail() {
   return (
-    <div className="itemDetails">
+    <section className="itemDetails">
       <div className="itemDetails__outer">
         <h2 className="itemDetails__header">Item Details</h2>
         <form className="itemDetails__body">
@@ -45,7 +45,7 @@ function ItemDetail() {
               <img
                 className="itemDetails__drop-Arrow"
                 src={dropArrow}
-                alt="Drop down Arrow"
+                alt="Drop Down Arrow"
               />
             </div>
             {/* <input
@@ -57,7 +57,7 @@ function ItemDetail() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 

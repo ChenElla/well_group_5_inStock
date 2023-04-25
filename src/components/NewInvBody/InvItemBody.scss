@@ -1,0 +1,18 @@
+@import "../../../partials/_colors";
+@import "../../../partials/_fonts";
+@import "../../../partials/_media";
+@import "../../Global.scss";
+
+.invItemBody {
+  &__column {
+    @include tablet {
+      padding-top: 24px;
+      display: flex;
+    }
+  }
+  &__width {
+    @include tablet {
+      width: 50%;
+    }
+  }
+}
