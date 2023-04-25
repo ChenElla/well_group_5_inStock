@@ -10,11 +10,12 @@
     @include tablet {
       padding: 0 32px 21px;
       //THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
-      @include desktop {
-        @include desktopWidths;
-        padding: 32px 32px 21px;
-        // THIS WILL LIKELY NEED TO CHANGE OR BE DELETED. THESE COMPONENTS WILL BE NESTED IN A PARENT DIV THAT MAY NEED THESE STYLES. ***ACTUALLY LOOKS LIKE THE PADDING REMAINS THE SAME FROM TABLET, SO WILL DELETE THIS MEDIA QUERY AND APPLY DESKTOPWIDTHS TO THE OUTER CONTAINER***
-      }
+
+      // @include desktop {
+      //   @include desktopWidths;
+      //   padding: 32px 32px 21px;
+      //   THIS WILL LIKELY NEED TO CHANGE OR BE DELETED. THESE COMPONENTS WILL BE NESTED IN A PARENT DIV THAT MAY NEED THESE STYLES. ***ACTUALLY LOOKS LIKE THE PADDING REMAINS THE SAME FROM TABLET, SO WILL DELETE THIS MEDIA QUERY AND APPLY DESKTOPWIDTHS TO THE OUTER CONTAINER***
+      // }
     }
   }
   &__header {
@@ -39,6 +40,23 @@
     font-weight: 600;
     padding-bottom: 4px;
   }
+  &__radio-ctn {
+    display: flex;
+  }
+  &__rad-package {
+    // flex-grow: 1;
+    width: 50%;
+    @include tablet {
+      width: 40%;
+    }
+  }
+  &__radio-btn {
+  }
+  &__radio-text {
+    @include body_medium;
+    padding-left: 4px;
+  }
+
   &__quantity-package {
   }
   &__input {
@@ -65,8 +83,8 @@
     &--status {
     }
     &--quantity {
-      height: 120px;
-      padding: 8px 16px;
+      // height: 120px;
+      // padding: 8px 16px;
     }
     &--warehouse {
       &::-ms-expand {

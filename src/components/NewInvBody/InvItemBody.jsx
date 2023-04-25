@@ -6,7 +6,7 @@ import "./InvItemBody.scss";
 
 function NewInvBody() {
   return (
-    <div>
+    <div className="invItemBody">
       <PageHeader pageHeader={"Add New Inventory Item"} />
       <div className="invItemBody__column">
         <div className="invItemBody__width">

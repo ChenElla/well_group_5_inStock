@@ -11,7 +11,24 @@ function ItemAvailability() {
           <div className="available__status-package">
             {/* might be able to make name single class as syling looks similar for all packages */}
             <p className="available__label">Status</p>
-            {/* NEED 2 BUTTONS HERE */}
+            <div className="available__radio-ctn">
+              <div className="available__rad-package">
+                <input
+                  type="radio"
+                  className="available__radio-btn"
+                  name="stock"
+                ></input>
+                <label className="available__radio-text">In stock</label>
+              </div>
+              <div className="available__rad-package">
+                <input
+                  type="radio"
+                  className="available__radio-btn"
+                  name="stock"
+                ></input>
+                <label className="available__radio-text">Out of stock</label>
+              </div>
+            </div>
           </div>
           <div className="available__quantity-package">
             <p className="available__label">Quantity</p>
