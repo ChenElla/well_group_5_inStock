@@ -1,8 +1,12 @@
-@use "../../../partials/_colors" as *;
-@use "../../../partials/_grids" as *;
-@use "../../../partials/_media" as *;
+@import "../../../partials/_colors";
+@import "../../../partials/_grids";
+@import "../../../partials/_media";
+@import "../../../partials/_fonts";
+@import "../../Global.scss";
 
 .footer {
+    @include body_medium;
+    color: $Slate;
     text-align: center;
     font-size: 0.6875rem;
     padding: 2.5rem 0;

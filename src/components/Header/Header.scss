@@ -1,0 +1,63 @@
+@import "../../../partials/_colors";
+@import "../../../partials/_fonts";
+@import "../../../partials/_media";
+@import "../../Global.scss";
+
+.header {
+  background-color: $Graphite;
+  height: 200px;
+  min-width: 100%;
+  @include tablet {
+    height: 186px;
+  }
+  &__outer {
+    padding: 24px 16px 0;
+    @include tablet {
+      padding: 32px 32px 0;
+      @include desktop {
+        @include desktopWidths;
+        padding-top: 24px;
+      }
+    }
+    @include flexColumn;
+    gap: 24px;
+    @include tablet {
+      @include flexSpBtwn;
+      flex-direction: row;
+    }
+  }
+  &__logo-contain {
+    @include flexCtrX;
+  }
+
+  &__btn-contain {
+    @include flexCtrX;
+    gap: 16px;
+  }
+
+  &__flexset {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__btn {
+    @include textBtn;
+    &:hover {
+      text-decoration-line: underline;
+    }
+    &--warehouse {
+      background-color: $Instock-Black;
+      color: $White;
+      flex-grow: 1;
+    }
+
+    &--inventory {
+      background-color: $Graphite;
+      color: $Cloud;
+      flex-grow: 1;
+      &:hover {
+        color: $White;
+      }
+    }
+  }
+}
