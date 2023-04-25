@@ -26,14 +26,24 @@ function ItemDetail() {
               required
             ></textarea>
           </div>
-          <div className="itemDetails__catagory-package">
+          <div className="itemDetails__category-package">
             <p className="itemDetails__label">Item Name</p>
-            <input
-              className="itemDetails__input itemDetails__input--catagory"
+
+            <select
+              className="itemDetails__input itemDetails__input--category"
+              name=""
+              placeholder="Please select"
+              required
+            >
+              <option>Electronic</option>
+              <option>test</option>
+            </select>
+            {/* <input
+              className="itemDetails__input itemDetails__input--category"
               type="text"
               placeholder="Please select"
               required
-            />
+            /> */}
           </div>
         </form>
       </div>

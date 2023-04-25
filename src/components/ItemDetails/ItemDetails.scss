@@ -66,11 +66,28 @@
       height: 120px;
       padding: 8px 16px;
     }
-    &--catagory {
+    &--category {
+      &::-ms-expand {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+      }
     }
   }
   &__description-package {
   }
-  &__catagory-package {
+  &__category-package {
   }
+}
+
+// select::-ms-expand {
+//   display: none;
+// }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
 }
