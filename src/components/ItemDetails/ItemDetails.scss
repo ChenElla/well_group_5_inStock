@@ -79,11 +79,16 @@
   }
   &__category-package {
   }
+  &__arrow-container {
+    position: relative;
+  }
+  &__drop-Arrow {
+    position: absolute;
+    right: 16px;
+    top: 6px;
+    pointer-events: none;
+  }
 }
-
-// select::-ms-expand {
-//   display: none;
-// }
 
 select {
   -webkit-appearance: none;

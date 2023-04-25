@@ -1,5 +1,6 @@
 import React from "react";
 import "./ItemDetails.scss";
+import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
 
 function ItemDetail() {
   return (
@@ -28,19 +29,25 @@ function ItemDetail() {
           </div>
           <div className="itemDetails__category-package">
             <p className="itemDetails__label">Item Name</p>
-
-            <select
-              className="itemDetails__input itemDetails__input--category"
-              name=""
-              placeholder="Please select"
-              // PLACEHOLDER NOT WORKING
-              required
-            >
-              {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
-              <option selected>Please select</option>
-              <option>Electronic</option>
-              <option>more needed</option>
-            </select>
+            <div className="itemDetails__arrow-container">
+              <select
+                className="itemDetails__input itemDetails__input--category"
+                name=""
+                placeholder="Please select"
+                // PLACEHOLDER NOT WORKING
+                required
+              >
+                {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
+                <option selected>Please select</option>
+                <option>Electronic</option>
+                <option>more needed</option>
+              </select>
+              <img
+                className="itemDetails__drop-Arrow"
+                src={dropArrow}
+                alt="Drop down Arrow"
+              />
+            </div>
             {/* <input
               className="itemDetails__input itemDetails__input--category"
               type="text"
