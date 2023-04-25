@@ -1,19 +1,17 @@
-@import "../../styling/partials/_colors";
-@import "../../styling/partials/_fonts";
-@import "../../styling/partials/_media";
-@import "../../Global.scss";
+
+@import "../../styling/global.scss";
 
 .header {
   background-color: $Graphite;
-  height: 200px;
   min-width: 100%;
   @include tablet {
-    height: 186px;
   }
   &__outer {
     padding: 24px 16px 0;
+    padding-bottom:24px;
     @include tablet {
       padding: 32px 32px 0;
+      padding-bottom:32px;
       @include desktop {
         @include desktopWidths;
         padding-top: 24px;

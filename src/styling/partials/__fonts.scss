@@ -13,6 +13,7 @@
 @mixin page_header{
     @include fontDef(28px,36px);
     @include TiWeb;
+    font-weight:600;
     @include tablet{
         @include fontDef(32px,40px);
     }
@@ -22,6 +23,7 @@
 @mixin sub_header{
     @include fontDef(20px,28px);
     @include TiWeb;
+    font-weight:600;
     @include tablet{
         @include fontDef(24px,32px);
     }
@@ -31,6 +33,7 @@
 @mixin label_link_button{
     @include fontDef(13px,20px);
     @include TiWeb;
+    font-weight:600;
     @include tablet{
         @include fontDef(14px,22px);
     }

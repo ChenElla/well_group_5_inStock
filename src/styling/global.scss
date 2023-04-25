@@ -1,3 +1,7 @@
+@import './partials/_colors';
+@import './partials/_fonts';
+@import './partials/_grids';
+@import './partials/_media';
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +10,9 @@ body {
 // MIXINS
 
 //Flex
-@mixin flexDisp($align-items,$justify-content){
+@mixin flexDisp($flex-direction,$justify-content){
   display:flex;
-  align-items:$align-items;
+  flex-direction:$flex-direction;
   justify-content:$justify-content;
 }
 

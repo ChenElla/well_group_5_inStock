@@ -1,0 +1,18 @@
+@import '../../../styling/global.scss';
+
+.divider{
+    margin-top:-1px;
+    margin-bottom:0;
+    color:$Cloud;
+    background-color:$White;
+}
+.itemContainer{
+    padding:24px;
+    background-color: $White;
+    @include flexDisp(column,space-between);
+}
+.iconRow{
+    padding:0 24px 24px 24px;
+    background-color: $White;
+    @include flexDisp(row,space-between);
+}
