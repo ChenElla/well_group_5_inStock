@@ -33,10 +33,13 @@ function ItemDetail() {
               className="itemDetails__input itemDetails__input--category"
               name=""
               placeholder="Please select"
+              // PLACEHOLDER NOT WORKING
               required
             >
+              {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
+              <option selected>Please select</option>
               <option>Electronic</option>
-              <option>test</option>
+              <option>more needed</option>
             </select>
             {/* <input
               className="itemDetails__input itemDetails__input--category"
