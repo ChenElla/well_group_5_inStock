@@ -1,3 +1,5 @@
+@import "../partials/_colors";
+
 body {
   margin: 0;
   padding: 0;
@@ -91,4 +93,15 @@ img {
   width: 63.75rem;
   margin: 0 auto;
   padding: 0;
+}
+
+// Borders
+@mixin activeBorder {
+  outline: none;
+  border: 1px solid $Instock-Indigo;
+}
+
+@mixin invalidBorder {
+  outline: none;
+  border: 1px solid $Red;
 }
