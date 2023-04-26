@@ -1,23 +1,47 @@
-@import './partials/_colors';
-@import './partials/_fonts';
-@import './partials/_grids';
-@import './partials/_media';
+@import "./partials/_colors";
+@import "./partials/_fonts";
+@import "./partials/_grids";
+@import "./partials/_media";
 body {
   margin: 0;
   padding: 0;
-  color:$Instock-Black;
+  color: $Instock-Black;
 }
-a{
-  text-decoration: none; 
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+td,
+caption,
+p {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 // MIXINS
 
 //Flex
-@mixin flexDisp($flex-direction,$justify-content){
-  display:flex;
-  flex-direction:$flex-direction;
-  justify-content:$justify-content;
+@mixin flexDisp($flex-direction, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
 }
 
 @mixin flexCtrAll {
@@ -59,7 +83,6 @@ a{
 }
 
 // Button
-
 //change buton name to reflect that it is a text button
 @mixin textBtn {
   @include label_link_button;
@@ -84,9 +107,19 @@ a{
   padding: 0;
 }
 
-//column_name 
-@mixin column_label{
+// Borders
+@mixin activeBorder {
+  outline: none;
+  border: 1px solid $Instock-Indigo;
+}
+
+@mixin invalidBorder {
+  outline: none;
+  border: 1px solid $Red;
+}
+//column_name
+@mixin column_label {
   @include table_header;
   text-transform: uppercase;
-  color:$Slate;
+  color: $Slate;
 }
