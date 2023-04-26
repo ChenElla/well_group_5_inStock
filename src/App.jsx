@@ -7,14 +7,14 @@ import InvItemBody from "./components/NewInvBody/InvItemBody";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import NewInvBody from "./components/NewInvBody/InvItemBody";
-import InventoryPage from "./pages/InventoryPage/Inventory";
+import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
 				<Header />
-				<NewInvBody />
+				{/* <NewInvBody /> */}
 				<Routes>
 					<Route
 						path="/warehouses/:warehouseId"

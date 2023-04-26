@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
+import InventoryItem from "../InventoryItem/InventoryItem";
 
 import "./InventoryList.scss";
 
-function InventoryList() {
-	const { inventory } = useParams();
-	return <div className="inventoryList"></div>;
+function InventoryList({ inventory }) {
+	const inventoryItems = inventory.map((item) => {
+		return <InventoryItem item={item} />;
+	});
+	return <div className="inventoryList">{inventoryItems}</div>;
 }
 
 export default InventoryList;
