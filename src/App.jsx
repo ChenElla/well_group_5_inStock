@@ -7,7 +7,7 @@ import InvItemBody from "./components/NewInvBody/InvItemBody";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import NewInvBody from "./components/NewInvBody/InvItemBody";
-import InventoryPage from "./pages/inventory/Inventory";
+import InventoryPage from "./pages/InventoryPage/Inventory";
 
 function App() {
 	return (

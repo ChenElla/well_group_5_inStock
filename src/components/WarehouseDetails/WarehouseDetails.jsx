@@ -2,7 +2,7 @@ import React from "react";
 import back_icon from "../../assets/Icons/arrow_back-24px.svg";
 import edit_icon from "../../assets/Icons/edit-24px.svg";
 
-import InventoryItem from "./InventoryItem/InventoryItem";
+import InventoryItem from "../InventoryItem/InventoryItem";
 
 import "./WarehouseDetails.scss";
 
