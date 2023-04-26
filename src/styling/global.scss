@@ -1,14 +1,22 @@
+@import './partials/_colors';
+@import './partials/_fonts';
+@import './partials/_grids';
+@import './partials/_media';
 body {
   margin: 0;
   padding: 0;
+  color:$Instock-Black;
+}
+a{
+  text-decoration: none; 
 }
 
 // MIXINS
 
 //Flex
-@mixin flexDisp($align-items,$justify-content){
+@mixin flexDisp($flex-direction,$justify-content){
   display:flex;
-  align-items:$align-items;
+  flex-direction:$flex-direction;
   justify-content:$justify-content;
 }
 
@@ -74,4 +82,11 @@ body {
   width: 63.75rem;
   margin: 0 auto;
   padding: 0;
+}
+
+//column_name 
+@mixin column_label{
+  @include table_header;
+  text-transform: uppercase;
+  color:$Slate;
 }
