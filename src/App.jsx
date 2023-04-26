@@ -7,6 +7,7 @@ import InvItemBody from "./components/NewInvBody/InvItemBody";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import NewInvBody from "./components/NewInvBody/InvItemBody";
+import InventoryPage from "./pages/inventory/Inventory";
 
 function App() {
 	return (
@@ -19,7 +20,7 @@ function App() {
 						path="/warehouses/:warehouseId"
 						element={<WarehouseDetailsPage />}
 					/>
-					<Route path="/inventory" element={<Inventory />} />
+					<Route path="/inventory" element={<InventoryPage />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>
