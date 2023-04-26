@@ -6,20 +6,20 @@ import "./InvItemBody.scss";
 import AddInvItemBtn from "../AddInvItemBtn/AddInvItemBtn";
 
 function NewInvBody() {
-  return (
-    <div className="invItemBody">
-      <PageHeader pageHeader={"Add New Inventory Item"} />
-      <div className="invItemBody__column">
-        <div className="invItemBody__width">
-          <ItemDetails />
-        </div>
-        <div className="invItemBody__width">
-          <ItemAvailability />
-        </div>
-      </div>
-      <AddInvItemBtn />
-    </div>
-  );
+	return (
+		<div className="invItemBody">
+			<PageHeader pageHeader={"Add New Inventory Item"} />
+			<div className="invItemBody__column">
+				<div className="invItemBody__width">
+					<ItemDetails />
+				</div>
+				<div className="invItemBody__width">
+					<ItemAvailability />
+				</div>
+			</div>
+			<AddInvItemBtn />
+		</div>
+	);
 }
 
 export default NewInvBody;
