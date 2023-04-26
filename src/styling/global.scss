@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding: 0;
+  color:$Instock-Black;
 }
 
 // MIXINS
@@ -78,4 +79,11 @@ body {
   width: 63.75rem;
   margin: 0 auto;
   padding: 0;
+}
+
+//column_name 
+@mixin column_label{
+  @include table_header;
+  text-transform: uppercase;
+  color:$Slate;
 }

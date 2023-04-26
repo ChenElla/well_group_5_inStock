@@ -10,6 +10,17 @@
     padding:24px;
     background-color: $White;
     @include flexDisp(column,space-between);
+    &__itemName{
+        padding-bottom:36px;
+        &__title{
+            @include column_label;
+            padding-bottom:4px;
+        }
+        &__name{
+            @include label_link_button;
+            color:$Instock-Indigo;
+        }
+    }
 }
 .iconRow{
     padding:0 24px 24px 24px;

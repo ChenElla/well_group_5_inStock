@@ -11,10 +11,6 @@ export default function InventoryItem({ item }) {
       <hr className="divider" />
       <div className="itemContainer">
         <div className="itemContainer__itemName">
-          <div className="itemContainer__itemName--title">inventory item</div>
-          <div className="itemContainer__itemName--name">{item.item_name}</div>
-        </div>
-        <div className="itemContainer__itemName">
           <div className="itemContainer__itemName__title">inventory item</div>
           <div className="itemContainer__itemName__name">
             <div className="itemContainer__itemName__name--text">

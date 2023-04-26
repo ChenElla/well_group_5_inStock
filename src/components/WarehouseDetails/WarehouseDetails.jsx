@@ -27,7 +27,7 @@ export default function WarehouseDetails({warehouseId,singleWarehouse,inventorie
             <div className = "mainContainer__listContainer__warehouseDetail__warehouseAddress__title">
               warehouse address:
             </div>
-            {singleWarehouse.warehouse_name}
+            {singleWarehouse.address},{singleWarehouse.city},{singleWarehouse.country}
           </div>
           <div className = "mainContainer__listContainer__warehouseDetail__contact">
             <div className = "mainContainer__listContainer__warehouseDetail__contact__contactName">

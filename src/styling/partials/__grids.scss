@@ -1,3 +1,18 @@
+@import './__media.scss';
+
+@mixin side_margins{
+    margin-left:$mobile_margins;
+    margin-right:$mobile_margins;
+    @include tablet{
+        margin-left:$tablet_margins;
+        margin-right:$tablet_margins;
+    }
+    @include desktop{
+        margin-left:$desktop_margins;
+        margin-right:$desktop_margins;
+    }
+}
+
 //DESKTOP(>1280px)
 $desktop_margins:auto;
 $desktop_columns:63px;
