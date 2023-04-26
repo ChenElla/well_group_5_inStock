@@ -1,0 +1,7 @@
+@import "../../styling/global.scss";
+
+.searchBar {
+	&__input {
+		@include input;
+	}
+}
