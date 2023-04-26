@@ -16,7 +16,7 @@ function ItemAvailability() {
                 <input
                   type="radio"
                   className="available__radio-btn"
-                  name="stock"
+                  name="stock" // name must match the other radio button to make sure only one can be selected
                 ></input>
                 <label className="available__radio-text">In stock</label>
               </div>

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import "./PageHeader.scss";
 
+//may want to rename this component to something more specific as may nbeed to make another 2 for the different styles. THOUGH those are more elaborate so they could be modified names i.e. PageHeaderSearch or PageHeaderEdit (which are 2 other styles)
+
 function PageHeader({ pageHeader }) {
   // function to allow user to go back to last page they were on - untested as routes not set up yet, though works if change url via warehouse/inventory buttons
   const navigate = useNavigate();

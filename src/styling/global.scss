@@ -1,8 +1,14 @@
-@import "../partials/_colors";
-
+@import "./partials/_colors";
+@import "./partials/_fonts";
+@import "./partials/_grids";
+@import "./partials/_media";
 body {
   margin: 0;
   padding: 0;
+  color: $Instock-Black;
+}
+a {
+  text-decoration: none;
 }
 
 h1,
@@ -32,6 +38,12 @@ img {
 // MIXINS
 
 //Flex
+@mixin flexDisp($flex-direction, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}
+
 @mixin flexCtrAll {
   display: flex;
   align-items: center;
@@ -104,4 +116,10 @@ img {
 @mixin invalidBorder {
   outline: none;
   border: 1px solid $Red;
+}
+//column_name
+@mixin column_label {
+  @include table_header;
+  text-transform: uppercase;
+  color: $Slate;
 }

@@ -1,0 +1,9 @@
+@import '../../styling/global.scss';
+.loadingContainer{
+    width:100%;
+    @include flexDisp(column,center);
+    align-items:center;
+    &__loading{
+        @include page_header;
+    }
+}
