@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Footer from "./components/Footer/footer";
+import "./styling/global.scss";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import NewInvBody from "./components/NewInvBody/InvItemBody";
 import InventoryDetails from "./components/InventoryDetails/inventorydetails";
-
-const Placeholder = ({ text }) => (
-  <div style={{ padding: "2rem", textAlign: "center" }}>{text}</div>
-);
 
 function App() {
   return (

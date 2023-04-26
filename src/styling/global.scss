@@ -1,19 +1,60 @@
+@import "./partials/_colors";
+@import "./partials/_fonts";
+@import "./partials/_grids";
+@import "./partials/_media";
 body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD:src/Global.scss
   background-color: $Light-Grey;
 }
 
 a {
   text-decoration: none;
+=======
+  color: $Instock-Black;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+td,
+caption,
+p {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+>>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
 }
 
 // MIXINS
 
 //Flex
+<<<<<<< HEAD:src/Global.scss
 @mixin flexDisp($align-items, $justify-content) {
   display: flex;
   align-items: $align-items;
+=======
+@mixin flexDisp($flex-direction, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+>>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
   justify-content: $justify-content;
 }
 
@@ -56,7 +97,6 @@ a {
 }
 
 // Button
-
 //change buton name to reflect that it is a text button
 @mixin textBtn {
   @include label_link_button;
@@ -79,4 +119,25 @@ a {
   width: 63.75rem;
   margin: 0 auto;
   padding: 0;
+<<<<<<< HEAD:src/Global.scss
 }
+=======
+}
+
+// Borders
+@mixin activeBorder {
+  outline: none;
+  border: 1px solid $Instock-Indigo;
+}
+
+@mixin invalidBorder {
+  outline: none;
+  border: 1px solid $Red;
+}
+//column_name
+@mixin column_label {
+  @include table_header;
+  text-transform: uppercase;
+  color: $Slate;
+}
+>>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss

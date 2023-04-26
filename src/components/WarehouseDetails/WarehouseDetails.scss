@@ -1,0 +1,86 @@
+@import "../../styling/global.scss";
+
+.mainContainer{
+    background-color: $Light-Grey;
+    width:100%;
+    &__backgroundContainer{
+        background-color:$Graphite;
+        width:100%;
+        &__titleContainer{
+            @include side_margins;
+            box-sizing: border-box;
+            border-radius:3px 3px 0 0;
+            padding:24px 24px 0 24px;
+            background-color:$White;
+            @include tablet{
+                padding:24px;
+            }
+            @include desktop{
+                width:80%;
+            }
+            @include flexDisp(row,space-between);
+            &__nameContainer{
+                @include flexDisp(row,flex-start);
+                align-items:center;
+                @include label_link_button;
+                &__title{
+                    @include page_header;
+                }
+            }
+        }
+    }
+    
+    &__listContainer{
+        background-color:$White;
+        @include side_margins;
+        padding-top:24px;
+        box-sizing: border-box;
+        @include tablet{
+            padding-top:0;
+        }
+        @include desktop{
+            width:80%;
+        }
+        &__divider{
+            border-top: 1px solid $Cloud;
+            margin:0;
+            background-color:$White;
+        }
+        &__warehouseDetail{
+            padding:24px;
+            background-color: $White;
+            @include flexDisp(column,space-between);
+            &__warehouseAddress{
+                @include label_link_button;
+                padding-bottom:36px;
+                &__title{
+                    @include column_label;
+                    padding-bottom:4px;
+                }
+            }
+            &__contact{
+                @include flexDisp(row,flex-start);
+                &__contactName{
+                    width:50%;
+                    @include label_link_button;
+                    &__title{
+                        @include column_label;
+                        padding-bottom:4px;
+                    }
+                }
+                &__contactInfo{
+                    width:50%;
+                    @include label_link_button;
+                    font-weight:400;
+                    &__title{
+                        @include column_label;
+                        padding-bottom:4px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+}
