@@ -3,7 +3,7 @@ import PageHeader from "../PageHeader/PageHeader";
 import ItemDetails from "../ItemDetails/ItemDetails";
 import ItemAvailability from "../ItemAvailability/ItemAvailability";
 import "./InvItemBody.scss";
-import AddInvItemBtn from "../AddInvItemBtn/AddInvItemBtn";
+import AddButton from "../AddButton/AddButton";
 
 function NewInvBody() {
 	return (
@@ -17,7 +17,7 @@ function NewInvBody() {
 					<ItemAvailability />
 				</div>
 			</div>
-			<AddInvItemBtn />
+			<AddButton name="Item" addCallback={() => {}} cancelCallback={() => {}} />
 		</div>
 	);
 }
