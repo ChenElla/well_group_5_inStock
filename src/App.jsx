@@ -1,21 +1,27 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./Global.scss";
+import "./styling/global.scss";
+
 import Header from "./components/Header/Header";
-import Inventory from "./pages/inventory/Inventory";
+import InvItemBody from "./components/NewInvBody/InvItemBody";
+import Footer from "./components/Footer/Footer";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import NewInvBody from "./components/NewInvBody/InvItemBody";
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
 				<Header />
-				{/* <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/video/:videoId" element={<HomePage />} />
-          <Route path="/upload" element={<UploadPage />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes> */}
-				<Route path="/inventory" element={<Inventory />} />
+				<NewInvBody />
+				<Routes>
+					<Route
+						path="/warehouses/:warehouseId"
+						element={<WarehouseDetailsPage />}
+					/>
+					<Route path="/inventory" element={<Inventory />} />
+				</Routes>
+				<Footer />
 			</BrowserRouter>
 		</>
 	);
