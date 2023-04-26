@@ -61,14 +61,6 @@ export default function InventoryDetails() {
                             />
                             <h1 className="detail__title">{selectedItem.item_name}</h1>
                         </div>
-                        <div className="detail__edit-wrapper">
-                            <Link to={`/inventory/edit/${selectedItem.inventoryId}`}>
-                                <div className="detail__edit-icon">
-                                    <img src={editIconImg} alt="edit icon" />
-                                </div>
-                                <p className="detail__edit-text">Edit</p>
-                            </Link>
-                        </div>
 
                     </div>
                     <div className="detail__card">

@@ -4,9 +4,19 @@ body {
   background-color: $Light-Grey;
 }
 
+a {
+  text-decoration: none;
+}
+
 // MIXINS
 
 //Flex
+@mixin flexDisp($align-items, $justify-content) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
 @mixin flexCtrAll {
   display: flex;
   align-items: center;
@@ -51,13 +61,13 @@ body {
 @mixin textBtn {
   @include label_link_button;
   display: inline-block;
-  border: none;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   border-radius: 20px;
   height: 36px;
   font-weight: 600;
+
   @include tablet {
     height: 38px;
     padding: 0 16px 0;
