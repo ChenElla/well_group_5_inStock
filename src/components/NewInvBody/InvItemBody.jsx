@@ -17,7 +17,12 @@ function NewInvBody() {
 					<ItemAvailability />
 				</div>
 			</div>
-			<AddButton name="Item" addCallback={() => {}} cancelCallback={() => {}} />
+			<AddButton
+				name="Item"
+				addCallback={() => {}}
+				cancelCallback={() => {}}
+				cancel={true}
+			/>
 		</div>
 	);
 }
