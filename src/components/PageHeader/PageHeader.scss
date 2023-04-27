@@ -20,11 +20,16 @@
 		}
 	}
 	&__inner-container {
-		@include flexCtrAll;
-		align-items: baseline;
+		@include flexDisp(column, flex-start);
+		width: 100%;
+
 		@include tablet {
-			justify-content: flex-start;
+			@include flexDisp(row, flex-start);
 		}
+	}
+	&__inner-static {
+		width: 100%;
+		@include flexDisp(row, flex-start);
 	}
 
 	&__return {

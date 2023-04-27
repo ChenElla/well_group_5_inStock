@@ -16,16 +16,21 @@ function PageHeader({ pageHeader, children, backButton = true }) {
 		<div className="pageHeader">
 			<div className="pageHeader__outer">
 				<div className="pageHeader__inner-container">
-					{backButton && (
-						<img
-							className="pageHeader__return"
-							src={backArrow}
-							alt="Back Arrow"
-							onClick={goBack}
-						/>
-					)}
-					<h1 className="pageHeader__title-text">{pageHeader}</h1>
-					{children}
+					<div>
+						<div className="pageHeader__inner-static">
+							{backButton && (
+								<img
+									className="pageHeader__return"
+									src={backArrow}
+									alt="Back Arrow"
+									onClick={goBack}
+								/>
+							)}
+
+							<h1 className="pageHeader__title-text">{pageHeader}</h1>
+						</div>
+						{children}
+					</div>
 				</div>
 			</div>
 		</div>
