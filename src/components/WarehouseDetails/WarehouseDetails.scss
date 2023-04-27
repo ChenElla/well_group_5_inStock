@@ -17,6 +17,7 @@
             }
             @include desktop{
                 width:80%;
+                padding:40px;
             }
             @include flexDisp(row,space-between);
             &__iconContainer{
@@ -31,7 +32,7 @@
                     height:auto;
                     width:auto;
                     border-radius:20px;
-                    padding:6px 18px;
+                    padding:8px 16px;
                 }
                 &__editIcon{
                     filter: brightness(0) invert(1);
@@ -89,12 +90,18 @@
                 @include flexDisp(row,space-between);
                 padding:18px 32px;
             }
+            @include desktop{
+                padding:24px 40px;
+            }
             &__warehouseAddress{
                 @include label_link_button;
                 padding-bottom:36px;
                 @include tablet{
                     width:50%;
                     padding-bottom:0;
+                }
+                @include desktop{
+                    width:35%;
                 }
                 &__nextLine{
                     display:none;
@@ -116,11 +123,19 @@
                     background-color:$White;
                     @include flexDisp(row,space-around);
                 }
+                @include desktop{
+                    width:65%;
+                    @include flexDisp(row,space-around);
+                }
                 &__contactName{
                     width:50%;
                     @include label_link_button;
                     @include tablet{
                         width:auto;
+                    }
+                    @include desktop{
+                        width:35%;
+                        padding-left:40px;
                     }
                     &__title{
                         @include column_label;
@@ -132,6 +147,10 @@
                     @include label_link_button;
                     @include tablet{
                         width:auto;
+                    }
+                    @include desktop{
+                        width:65%;
+                        padding-left:40px
                     }
                     &__title{
                         @include column_label;
@@ -148,6 +167,9 @@
                 padding:18px 32px;
                 display:block;
                 @include flexDisp(row,space-between);
+            }
+            @include desktop{
+                padding:18px 40px;
             }
             &__invContainer,&__categoryContainer,&__statusContainer, &__quantityContainer, &__actionsContainer{
                 @include flexDisp(row,flex-start);

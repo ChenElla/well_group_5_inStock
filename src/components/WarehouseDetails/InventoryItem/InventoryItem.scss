@@ -19,6 +19,9 @@
         padding-bottom:0;
         padding:18px 32px 0px 32px;
     }
+    @include desktop{
+        padding:18px 40px 0 40px;
+    }
     &__itemName{
         width:50%;
         padding-bottom:20px;
@@ -115,7 +118,7 @@
         }
         &__deleteIcon,&__editIcon{
             height:18px;
-            margin-right:10px;
+            margin-right:24px;
         }
     }
 }
@@ -126,6 +129,9 @@
     @include flexDisp(row,space-between);
     @include tablet{
         padding:0 32px 18px 32px;
+    }
+    @include desktop{
+        padding:0 40px 18px 40px;
     }
     &__deleteIcon,&__editIcon{
         display: block;
