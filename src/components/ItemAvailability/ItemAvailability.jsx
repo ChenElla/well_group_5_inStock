@@ -12,7 +12,7 @@ function ItemAvailability({
   warehouse,
   setWarehouse,
 }) {
-  const [warehouseList, setWarehouseList] = useState(null);
+  const [warehouseList, setWarehouseList] = useState("");
   //   HAve to do get request to get info for warehouses
   //   SELECT distinct category
   // FROM `instock`.`inventories`
@@ -28,8 +28,17 @@ function ItemAvailability({
     axios
       .get(`http://localhost:5050/warehouses/`)
       .then((res) => {
-        console.log(res.data);
-        setWarehouseList(res.data);
+        // console.log(res.data);
+        // setWarehouseList(res.data);
+
+        const allData = res.data;
+
+        const cityAndID = allData.map(({ id, warehouse_name }) => ({
+          id,
+          warehouse_name,
+        }));
+
+        setWarehouseList(cityAndID);
       })
       .catch((err) => {
         console.log(err);
@@ -38,10 +47,12 @@ function ItemAvailability({
   }, []);
 
   console.log("here is warehouse list", warehouseList);
-  const cityAndID = warehouseList.map(({ id, warehouse_name }) => ({
-    id,
-    warehouse_name,
-  })); //will need to remove ';' to test .filter
+  // const cityAndID = warehouseList.map(({ id, warehouse_name }) => ({
+  //   id,
+  //   warehouse_name,
+  // }));
+
+  //will need to remove ';' to test .filter
   // .filter(
   //   (warehouseList, index, self) =>
   //     index ===
@@ -51,7 +62,7 @@ function ItemAvailability({
   //     )
   // );
 
-  console.log(cityAndID);
+  // console.log(cityAndID);
 
   return (
     <section className="available">
