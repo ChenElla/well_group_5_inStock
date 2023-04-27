@@ -5,10 +5,10 @@ import edit_icon from "../../../assets/icons/edit-24px.svg";
 
 import './InventoryItem.scss';
 
-export default function InventoryItem({ item }) {
+export default function InventoryItem({ index,item,last }) {
   return (
     <>
-      <hr className="divider" />
+      <hr className={`divider--${index} divider`} />
       <div className="itemContainer">
         <div className="itemContainer__itemName">
           <div className="itemContainer__itemName__title">inventory item</div>
@@ -51,11 +51,20 @@ export default function InventoryItem({ item }) {
             {item.quantity}
           </div>
         </div>
+        <div className = "itemContainer__icons">
+          <img className = "itemContainer__icons__deleteIcon" src = {delete_icon} alt = "delete_icon"/>
+          <img className = "itemContainer__icons__editIcon" src = {edit_icon} alt = "edit_icon" />
+        </div>
       </div>
-      <div className = "iconRow">
-        <img className = "iconRow__deleteIcon" src = {delete_icon} alt = "delete_icon"/>
-        <img className = "iconRow__editIcon" src = {edit_icon} alt = "edit_icon" />
-      </div>
+      { last === "true"?
+        (<div className = "iconRow iconRow__lastItem">
+          <img className = "iconRow__deleteIcon" src = {delete_icon} alt = "delete_icon"/>
+          <img className = "iconRow__editIcon" src = {edit_icon} alt = "edit_icon" />
+        </div>):(
+        <div className = "iconRow">
+          <img className = "iconRow__deleteIcon" src = {delete_icon} alt = "delete_icon"/>
+          <img className = "iconRow__editIcon" src = {edit_icon} alt = "edit_icon" />
+        </div>)}
     </>
   );
 }

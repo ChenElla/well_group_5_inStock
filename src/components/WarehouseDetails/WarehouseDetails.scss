@@ -13,7 +13,7 @@
             padding:24px 24px 0 24px;
             background-color:$White;
             @include tablet{
-                padding:24px;
+                padding:32px;
             }
             @include desktop{
                 width:80%;
@@ -27,10 +27,26 @@
                 @include flexDisp(row,center);
                 align-items:center;
                 @include tablet{
-                    
+                    @include flexDisp(row,center);
+                    height:auto;
+                    width:auto;
+                    border-radius:20px;
+                    padding:6px 18px;
                 }
                 &__editIcon{
                     filter: brightness(0) invert(1);
+                    @include tablet{
+                        height:14px;
+                        margin-right:3px;
+                    }
+                }
+                &__text{
+                    @include label_link_button;
+                    display:none;
+                    color:$White;
+                    @include tablet{
+                        display:block;
+                    }
                 }
             }
             
@@ -40,6 +56,9 @@
                 @include label_link_button;
                 &__title{
                     @include page_header;
+                    @include tablet{
+                        margin-left:12px;
+                    }
                 }
             }
         }
@@ -50,6 +69,7 @@
         @include side_margins;
         padding-top:24px;
         box-sizing: border-box;
+        box-shadow: 1px 0px $Cloud,-1px 0px $Cloud;
         @include tablet{
             padding-top:0;
         }
@@ -65,28 +85,54 @@
             padding:16px 24px;
             background-color: $White;
             @include flexDisp(column,space-between);
+            @include tablet{
+                @include flexDisp(row,space-between);
+                padding:18px 32px;
+            }
             &__warehouseAddress{
                 @include label_link_button;
                 padding-bottom:36px;
+                @include tablet{
+                    width:50%;
+                    padding-bottom:0;
+                }
+                &__nextLine{
+                    display:none;
+                    @include tablet{
+                        display:block;
+                    }
+                }
                 &__title{
                     @include column_label;
-                    padding-bottom:4px;
+                    margin-bottom:4px;
                 }
+
             }
             &__contact{
                 @include flexDisp(row,flex-start);
+                @include tablet{
+                    width:50%;
+                    border-left: 1px solid $Cloud;
+                    background-color:$White;
+                    @include flexDisp(row,space-around);
+                }
                 &__contactName{
                     width:50%;
                     @include label_link_button;
+                    @include tablet{
+                        width:auto;
+                    }
                     &__title{
                         @include column_label;
-                        padding-bottom:4px;
+                        margin-bottom:4px;
                     }
                 }
                 &__contactInfo{
                     width:50%;
                     @include label_link_button;
-                    font-weight:400;
+                    @include tablet{
+                        width:auto;
+                    }
                     &__title{
                         @include column_label;
                         padding-bottom:4px;
@@ -94,7 +140,34 @@
                 }
             }
         }
-        
+        &__row{
+            display:none;
+            padding:16px 24px;
+            background-color: $Light-Grey;
+            @include tablet{
+                padding:18px 32px;
+                display:block;
+                @include flexDisp(row,space-between);
+            }
+            &__invContainer,&__categoryContainer,&__statusContainer, &__quantityContainer, &__actionsContainer{
+                @include flexDisp(row,flex-start);
+                align-items:center;
+                width:20%;
+                &__name{
+                    @include column_label;
+                }
+                &__icon{
+                    height:14px;
+                }
+            }
+            &__actionsContainer{
+                @include flexDisp(row,flex-end);
+            }
+            &__quantityContainer{
+                @include flexDisp(row, flex-start);
+                padding-left:20px;
+            }
+        }
     }
 
 
