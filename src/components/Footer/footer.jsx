@@ -1,11 +1,5 @@
-import "./footer.scss";
+import React from "react";
 
 export default function Footer() {
-  return (
-    <>
-      <footer className="footer">
-        <p className="footer__text">© InStock Inc. All Rights Reserved.</p>
-      </footer>
-    </>
-  );
+    return <div>Footer</div>;
 }
