@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import InventoryList from "../../components/InventoryList/InventoryList";
 import Loading from "../../components/Loading/Loading";
+import PageContainer from "../../components/PageContainer/PageContainer";
 
 function InventoryPage() {
 	const [inventory, setInventory] = useState(null);
@@ -19,7 +20,12 @@ function InventoryPage() {
 			});
 	}, []);
 
-	if (inventory) return <InventoryList inventory={inventory} />;
+	if (inventory)
+		return (
+			<PageContainer>
+				<InventoryList inventory={inventory} />;
+			</PageContainer>
+		);
 	else return <Loading />;
 }
 

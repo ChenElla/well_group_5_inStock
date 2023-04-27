@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap"); /*To use Chakra for this purpose, please refer to https://www.youtube.com/watch?v=SCUSo6tOiZk */
+/*To use Chakra for this purpose, please refer to https://www.youtube.com/watch?v=SCUSo6tOiZk */
+/*To use Chakra for this purpose, please refer to https://www.youtube.com/watch?v=SCUSo6tOiZk */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f8f9;
+}
+
+a {
+  text-decoration: none;
+  color: #13182c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+td,
+caption,
+p {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.pageContainer {
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1019607843);
+  border-radius: 3px;
+}
+@media screen and (min-width: 1280px) {
+  .pageContainer {
+    width: 63.75rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 767px) {
+  .pageContainer__column {
+    padding: 24px 0;
+    display: flex;
+  }
+}
+@media screen and (min-width: 767px) {
+  .pageContainer__width {
+    flex-grow: 1;
+  }
+}/*# sourceMappingURL=PageContainer.css.map */

@@ -5,10 +5,12 @@
 body {
   margin: 0;
   padding: 0;
-  color: $Instock-Black;
+  background-color: $Light-Grey;
 }
+
 a {
   text-decoration: none;
+  color: $Instock-Black;
 }
 
 h1,
@@ -38,6 +40,7 @@ img {
 // MIXINS
 
 //Flex
+
 @mixin flexDisp($flex-direction, $justify-content) {
   display: flex;
   flex-direction: $flex-direction;
@@ -87,13 +90,13 @@ img {
 @mixin textBtn {
   @include label_link_button;
   display: inline-block;
-  border: none;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   border-radius: 20px;
   height: 36px;
   font-weight: 600;
+
   @include tablet {
     height: 38px;
     padding: 0 16px 0;

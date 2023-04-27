@@ -47,12 +47,14 @@
     }
     &--warehouse {
       background-color: $Instock-Black;
+      border: none;
       color: $White;
       flex-grow: 1;
     }
 
     &--inventory {
       background-color: $Graphite;
+      border: none;
       color: $Cloud;
       flex-grow: 1;
       &:hover {
