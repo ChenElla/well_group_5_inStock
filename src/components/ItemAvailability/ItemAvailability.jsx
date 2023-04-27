@@ -2,7 +2,14 @@ import React from "react";
 import "./ItemAvailability.scss";
 import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
 
-function ItemAvailability({ setStatus, setQuantity, setWarehouse }) {
+function ItemAvailability({
+  status,
+  setStatus,
+  quantity,
+  setQuantity,
+  warehouse,
+  setWarehouse,
+}) {
   //   HAve to do get request to get info for warehouses
   //   SELECT distinct category
   // FROM `instock`.`inventories`
@@ -20,6 +27,7 @@ function ItemAvailability({ setStatus, setQuantity, setWarehouse }) {
               <div className="available__rad-package">
                 <input
                   type="radio"
+                  value={status}
                   className="available__radio-btn"
                   onChange={(e) => setStatus("Out of Stock")}
                   name="stock" // name must match the other radio button to make sure only one can be selected
@@ -30,6 +38,7 @@ function ItemAvailability({ setStatus, setQuantity, setWarehouse }) {
                 <input
                   type="radio"
                   className="available__radio-btn"
+                  value={status}
                   onChange={(e) => setStatus("In Stock")}
                   name="stock"
                 ></input>
@@ -43,7 +52,7 @@ function ItemAvailability({ setStatus, setQuantity, setWarehouse }) {
               className="available__input item available__input--quantity"
               type="number"
               placeholder="0"
-              // value={quantity}
+              value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               required
             />
@@ -54,6 +63,7 @@ function ItemAvailability({ setStatus, setQuantity, setWarehouse }) {
               <select
                 className="available__input available__input--warehouse"
                 name=""
+                value={warehouse}
                 onChange={(e) => setWarehouse(e.target.value)}
                 placeholder="Please select"
                 // PLACEHOLDER NOT WORKING

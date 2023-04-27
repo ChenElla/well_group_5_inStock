@@ -7,6 +7,7 @@ function ItemDetail({
   setName,
   description,
   setDescription,
+  category,
   setCategory,
 }) {
   return (
@@ -39,11 +40,12 @@ function ItemDetail({
             ></textarea>
           </div>
           <div className="itemDetails__category-package">
-            <p className="itemDetails__label">Item Name</p>
+            <p className="itemDetails__label">Category</p>
             <div className="itemDetails__arrow-container">
               <select
                 className="itemDetails__input itemDetails__input--category"
                 name=""
+                value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 placeholder="Please select"
                 // PLACEHOLDER NOT WORKING
