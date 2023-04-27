@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import NewInvBody from "../../components/NewInvBody/InvItemBody";
 
 function AddNewInventoryItemPage() {
-  const [name, setName] = useState("");
+  const [item_name, setItem_name] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [warehouse, setWarehouse] = useState("");
+  const [warehouse_id, setWarehouse_id] = useState("");
 
   let navigate = useNavigate();
 
@@ -18,29 +18,27 @@ function AddNewInventoryItemPage() {
   function handleSubmit(e) {
     e.preventDefault();
     const joinedState = {
-      warehouse: "2922c286-16cd-4d43-ab98-c79f698aeab0",
-      // name,
-      item_name: "bat",
+      warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
+      item_name,
+      // item_name: "bat",
       description,
       category,
       status,
       quantity,
+      // warehouse, tried hardcoding for testing
     };
 
-    const testing = JSON.stringify(joinedState);
-
     console.log(joinedState);
-    console.log(testing);
 
     axios
       .post(`http://localhost:5050/inventories`, testing)
       .then((res) => {
-        setName("");
+        setItem_name("");
         setDescription("");
         setCategory("");
         setStatus("");
         setQuantity("");
-        setWarehouse("");
+        setWarehouse_id("");
         alert(`item ${name} was added to the warehouse`);
         navigate("/");
       })
@@ -51,15 +49,15 @@ function AddNewInventoryItemPage() {
     <div>
       <NewInvBody
         handleSubmit={handleSubmit}
-        name={name}
-        setName={setName}
+        name={item_name}
+        setName={setItem_name}
         description={description}
         setDescription={setDescription}
         category={category}
         setCategory={setCategory}
         setStatus={setStatus}
         setQuantity={setQuantity}
-        setWarehouse={setWarehouse}
+        setWarehouse={setWarehouse_id}
       />
     </div>
   );
