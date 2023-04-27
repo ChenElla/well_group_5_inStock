@@ -34,6 +34,10 @@
                     border-radius:20px;
                     padding:8px 16px;
                 }
+                &:hover{
+                    background-color:$Graphite;
+                    cursor:pointer;
+                }
                 &__editIcon{
                     filter: brightness(0) invert(1);
                     @include tablet{
@@ -60,6 +64,10 @@
                     @include tablet{
                         margin-left:12px;
                     }
+                }
+                &__backIcon{
+                    @include flexDisp(row,center);
+                    align-items:center;
                 }
             }
         }

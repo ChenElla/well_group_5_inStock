@@ -112,14 +112,24 @@
     }
     &__icons{
         width:50%;
-        @include flexDisp(row,flex-end);
+        display:none;
         @include tablet{
             width:20%;
+            display:block;
+            flex-wrap:none;
+            @include flexDisp(row,flex-end);
         }
-        &__deleteIcon,&__editIcon{
-            height:18px;
-            margin-right:24px;
+        &__iconContainer{
+            @include flexDisp(row,space-between);
+            align-items:center;
+            &__deleteIcon,&__editIcon{
+                height:18px;
+            }
+            &__deleteIcon{
+                margin-right:24px;
+            }
         }
+        
     }
 }
 .iconRow{

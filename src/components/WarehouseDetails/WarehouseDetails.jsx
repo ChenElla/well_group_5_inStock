@@ -5,6 +5,7 @@ import unfold_icon from '../../assets/icons/unfold_more.svg';
 import InventoryItem from './InventoryItem/InventoryItem';
 
 import "./WarehouseDetails.scss";
+import { NavLink } from 'react-router-dom';
 
 export default function WarehouseDetails({warehouseId,singleWarehouse,inventories}) {
   return (
@@ -12,17 +13,19 @@ export default function WarehouseDetails({warehouseId,singleWarehouse,inventorie
       <div className = "mainContainer__backgroundContainer">
         <div className = "mainContainer__backgroundContainer__titleContainer">
           <div className = "mainContainer__backgroundContainer__titleContainer__nameContainer">
-            <img className = "mainContainer__backgroundContainer__titleContainer__nameContainer__backIcon" src = {back_icon} alt = "back_icon"/>
+            <NavLink className = "mainContainer__backgroundContainer__titleContainer__nameContainer__backIcon" to = {`/warehouses`}>
+                <img className = "mainContainer__backgroundContainer__titleContainer__nameContainer__backIcon__icon" src = {back_icon} alt = "back_icon"/>
+            </NavLink>
             <div className = "mainContainer__backgroundContainer__titleContainer__nameContainer__title">
               {singleWarehouse.warehouse_name}
             </div>
           </div>
-          <div className = "mainContainer__backgroundContainer__titleContainer__iconContainer">
+          <NavLink className = "mainContainer__backgroundContainer__titleContainer__iconContainer" to = {`/warehouses/${warehouseId}/edit`}>
             <img className = "mainContainer__backgroundContainer__titleContainer__iconContainer__editIcon" src = {edit_icon} alt = "edit_icon"/>
             <div className = "mainContainer__backgroundContainer__titleContainer__iconContainer__text">
               Edit
             </div>
-          </div>
+          </NavLink>
         </div>
       </div>
       <div className = "mainContainer__listContainer">
