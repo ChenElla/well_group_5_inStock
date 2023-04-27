@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./ItemAvailability.scss";
 import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
 
@@ -10,9 +12,46 @@ function ItemAvailability({
   warehouse,
   setWarehouse,
 }) {
+  const [warehouseList, setWarehouseList] = useState(null);
   //   HAve to do get request to get info for warehouses
   //   SELECT distinct category
   // FROM `instock`.`inventories`
+
+  // TO DO
+  // need to get all warehouses. Filter for id and city. set those as state. need to conflate id and city name.
+
+  //localhost:5050/warehouses/
+
+  //SHOULD I BE MAKING A COMPONENT FOR THE DROP DOWN BOX AND DO ALL THIS IN THAT?
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5050/warehouses/`)
+      .then((res) => {
+        console.log(res.data);
+        setWarehouseList(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        // navigate("/");
+      });
+  }, []);
+
+  console.log("here is warehouse list", warehouseList);
+  const cityAndID = warehouseList.map(({ id, warehouse_name }) => ({
+    id,
+    warehouse_name,
+  })); //will need to remove ';' to test .filter
+  // .filter(
+  //   (warehouseList, index, self) =>
+  //     index ===
+  //     self.findIndex(
+  //       ({ id, warehouse_name }) =>
+  //         id === warehouseList.id && warehouse_name === warehouseList.city
+  //     )
+  // );
+
+  console.log(cityAndID);
 
   return (
     <section className="available">
