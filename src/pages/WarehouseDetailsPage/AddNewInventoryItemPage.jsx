@@ -31,7 +31,7 @@ function AddNewInventoryItemPage() {
     console.log(joinedState);
 
     axios
-      .post(`http://localhost:5050/inventories`, testing)
+      .post(`http://localhost:5050/inventories`, joinedState)
       .then((res) => {
         setItem_name("");
         setDescription("");

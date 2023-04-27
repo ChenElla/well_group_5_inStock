@@ -71,6 +71,8 @@
     &--description {
       height: 120px;
       padding: 8px 16px;
+      resize: none;
+      overflow: hidden;
     }
     &--category {
       &::-ms-expand {
