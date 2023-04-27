@@ -7,16 +7,16 @@
 	@include desktop {
 		@include desktopWidths;
 	}
-	&__column {
-		@include tablet {
-			padding: 24px 0;
-			display: flex;
-		}
-	}
-	&__width {
-		@include tablet {
-			// width: 50%;
-			flex-grow: 1;
+
+	@include side_margins;
+
+	&__inset {
+		width: 100%;
+		background-color: $Graphite;
+		height: 4.5rem;
+
+		@include desktop {
+			height: 6rem;
 		}
 	}
 }
