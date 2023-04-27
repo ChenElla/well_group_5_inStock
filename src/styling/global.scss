@@ -5,17 +5,12 @@
 body {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD:src/Global.scss
   background-color: $Light-Grey;
 }
 
 a {
   text-decoration: none;
-=======
   color: $Instock-Black;
-}
-a {
-  text-decoration: none;
 }
 
 h1,
@@ -40,21 +35,15 @@ img {
 * {
   box-sizing: border-box;
   text-decoration: none;
->>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
 }
 
 // MIXINS
 
 //Flex
-<<<<<<< HEAD:src/Global.scss
-@mixin flexDisp($align-items, $justify-content) {
-  display: flex;
-  align-items: $align-items;
-=======
+
 @mixin flexDisp($flex-direction, $justify-content) {
   display: flex;
   flex-direction: $flex-direction;
->>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
   justify-content: $justify-content;
 }
 
@@ -119,9 +108,6 @@ img {
   width: 63.75rem;
   margin: 0 auto;
   padding: 0;
-<<<<<<< HEAD:src/Global.scss
-}
-=======
 }
 
 // Borders
@@ -140,4 +126,3 @@ img {
   text-transform: uppercase;
   color: $Slate;
 }
->>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
