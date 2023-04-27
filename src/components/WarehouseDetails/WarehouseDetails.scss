@@ -19,6 +19,21 @@
                 width:80%;
             }
             @include flexDisp(row,space-between);
+            &__iconContainer{
+                background-color:$Instock-Indigo;
+                border-radius:100%;
+                width:36px;
+                height:36px;
+                @include flexDisp(row,center);
+                align-items:center;
+                @include tablet{
+                    
+                }
+                &__editIcon{
+                    filter: brightness(0) invert(1);
+                }
+            }
+            
             &__nameContainer{
                 @include flexDisp(row,flex-start);
                 align-items:center;
@@ -47,7 +62,7 @@
             background-color:$White;
         }
         &__warehouseDetail{
-            padding:24px;
+            padding:16px 24px;
             background-color: $White;
             @include flexDisp(column,space-between);
             &__warehouseAddress{

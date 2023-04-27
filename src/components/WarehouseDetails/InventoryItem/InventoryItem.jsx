@@ -26,11 +26,11 @@ export default function InventoryItem({ item }) {
         <div className = "itemContainer__itemStatus">
           <div className = "itemContainer__itemStatus__title">status</div>
           {item.status.toLowerCase() === "in stock" ? (
-            <button className = "itemContainer__itemStatus__status--inStock">
+            <button className = "itemContainer__itemStatus__status itemContainer__itemStatus__status--inStock">
               {item.status}
             </button>
           ) : (
-            <button className = "itemContainer__itemStatus__status--outOfStock">
+            <button className = "itemContainer__itemStatus__status itemContainer__itemStatus__status--outOfStock">
               {item.status}
             </button>
           )}

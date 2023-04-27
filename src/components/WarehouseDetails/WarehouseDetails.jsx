@@ -17,7 +17,9 @@ export default function WarehouseDetails({warehouseId,singleWarehouse,inventorie
               {singleWarehouse.warehouse_name}
             </div>
           </div>
-          <img className = "mainContainer__backgroundContainer__titleContainer__editIcon" src = {edit_icon} alt = "edit_icon"/>
+          <div className = "mainContainer__backgroundContainer__titleContainer__iconContainer">
+            <img className = "mainContainer__backgroundContainer__titleContainer__iconContainer__editIcon" src = {edit_icon} alt = "edit_icon"/>
+          </div>
         </div>
       </div>
       <div className = "mainContainer__listContainer">

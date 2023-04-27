@@ -7,11 +7,13 @@
     background-color:$White;
 }
 .itemContainer{
-    padding:24px;
+    padding:16px 24px;
     background-color: $White;
-    @include flexDisp(column,space-between);
+    @include flexDisp(row,space-between);
+    flex-wrap:wrap;
     &__itemName{
-        padding-bottom:36px;
+        width:50%;
+        padding-bottom:20px;
         &__title{
             @include column_label;
             padding-bottom:4px;
@@ -19,6 +21,50 @@
         &__name{
             @include label_link_button;
             color:$Instock-Indigo;
+            @include flexDisp(row,flex-start);
+            align-items:center;
+        }
+    }
+    &__itemStatus{
+        width:50%;
+        padding-bottom:20px;
+        &__title{  
+            @include column_label;
+            padding-bottom:4px;
+        }
+        &__status{
+            border-radius:20px;
+            padding:4px 8px;
+            border:none;
+            text-align: center;
+            text-decoration: none;
+            @include column_label;
+            &--inStock{
+                color:$Green;
+            }
+            &--outOfStock{
+                color:$Red;
+            }  
+        }
+    }
+    &__itemCategory{
+        width:50%;
+        &__title{  
+            @include column_label;
+            padding-bottom:4px;
+        }
+        &__category{
+            @include label_link_button;
+        }
+    }
+    &__itemQty{
+        width:50%;
+        &__title{  
+            @include column_label;
+            padding-bottom:4px;
+        }
+        &__quantity{
+            @include label_link_button;
         }
     }
 }
