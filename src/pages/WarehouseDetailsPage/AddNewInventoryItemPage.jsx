@@ -39,8 +39,8 @@ function AddNewInventoryItemPage() {
         setStatus("");
         setQuantity("");
         setWarehouse_id("");
-        alert(`item ${name} was added to the warehouse`);
-        navigate("/");
+        alert(`${item_name} was added to the warehouse`);
+        navigate("/warehouse");
       })
       .catch((err) => console.log(err));
   }
