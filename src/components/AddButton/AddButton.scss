@@ -23,6 +23,7 @@
 	}
 	&__button {
 		@include textBtn;
+		border: none;
 		flex-grow: 1;
 		@include tablet {
 			flex-grow: 0;
