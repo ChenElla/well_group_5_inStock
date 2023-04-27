@@ -17,12 +17,12 @@ function Header() {
           </Link>
         </div>
         <div className="header__btn-contain">
-          <Link className="header__flexset" to="/warehouse">
+          <Link className="header__flexset" to="/warehouses">
             <button className="header__btn header__btn--warehouse">
               Warehouse
             </button>
           </Link>
-          <Link className="header__flexset" to="/inventory">
+          <Link className="header__flexset" to="/inventories">
             <button className="header__btn header__btn--inventory">
               Inventory
             </button>

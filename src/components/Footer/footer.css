@@ -1,0 +1,15 @@
+.footer {
+  text-align: center;
+  font-size: 0.6875rem;
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 767px) {
+  .footer {
+    padding: 2.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 3rem 0;
+  }
+}/*# sourceMappingURL=footer.css.map */

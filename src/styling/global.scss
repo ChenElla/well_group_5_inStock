@@ -5,6 +5,13 @@
 body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD:src/Global.scss
+  background-color: $Light-Grey;
+}
+
+a {
+  text-decoration: none;
+=======
   color: $Instock-Black;
 }
 a {
@@ -33,14 +40,21 @@ img {
 * {
   box-sizing: border-box;
   text-decoration: none;
+>>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
 }
 
 // MIXINS
 
 //Flex
+<<<<<<< HEAD:src/Global.scss
+@mixin flexDisp($align-items, $justify-content) {
+  display: flex;
+  align-items: $align-items;
+=======
 @mixin flexDisp($flex-direction, $justify-content) {
   display: flex;
   flex-direction: $flex-direction;
+>>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
   justify-content: $justify-content;
 }
 
@@ -87,13 +101,13 @@ img {
 @mixin textBtn {
   @include label_link_button;
   display: inline-block;
-  border: none;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   border-radius: 20px;
   height: 36px;
   font-weight: 600;
+
   @include tablet {
     height: 38px;
     padding: 0 16px 0;
@@ -105,6 +119,9 @@ img {
   width: 63.75rem;
   margin: 0 auto;
   padding: 0;
+<<<<<<< HEAD:src/Global.scss
+}
+=======
 }
 
 // Borders
@@ -123,3 +140,4 @@ img {
   text-transform: uppercase;
   color: $Slate;
 }
+>>>>>>> dffd10ea4373ff85b2fa8f507e88661f71f26182:src/styling/global.scss
