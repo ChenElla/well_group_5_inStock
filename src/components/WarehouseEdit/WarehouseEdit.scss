@@ -1,4 +1,17 @@
 @import '../../styling/global.scss';
+
+.errorMessage{
+    display:none;
+}
+
+.errorMessage--display{
+    @include flexDisp(row,flex-start);
+    align-items:center;
+    color:$Red;
+}
+.focus{
+    outline:1px solid $Red;
+}
 .divider{
     border-top: 1px solid $Cloud;
     margin:0;
@@ -91,9 +104,6 @@
                     width:100%;
                     padding-bottom:24px;
                 }
-                @include desktop{
-                    padding-bottom:40px;
-                }
                 &__title{
                     @include sub_header;
                     margin-bottom:24px;
@@ -105,6 +115,12 @@
                     border-radius:20px;
                     border:solid $Cloud 1px;
                     padding:8px 16px;
+                    &:focus{
+                        border:solid $Red 1px;
+                    }
+                }
+                &--error{
+                    padding-bottom:0;
                 }
             }
         }
@@ -124,6 +140,7 @@
         &__buttonRow{
             background-color:$Light-Grey;
             padding:16px 24px;
+            
             @include flexDisp(row,space-between);
             @include tablet{
                 width:100%;
@@ -167,8 +184,6 @@
                 }
             }
         }
-
+        border-radius:0 0 3px 3px;
     }
-
-
 }

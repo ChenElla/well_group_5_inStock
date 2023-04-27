@@ -36,6 +36,9 @@
                 display:none;
                 padding-bottom:0;
             }
+            &:hover{
+                text-decoration: underline;
+            }
         }
         &__name{
             @include label_link_button;
