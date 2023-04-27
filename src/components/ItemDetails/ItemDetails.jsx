@@ -2,18 +2,28 @@ import React from "react";
 import "./ItemDetails.scss";
 import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
 
-function ItemDetail() {
+function ItemDetail({
+  name,
+  setName,
+  description,
+  setDescription,
+  setCategory,
+}) {
   return (
     <section className="itemDetails">
       <div className="itemDetails__outer">
         <h2 className="itemDetails__header">Item Details</h2>
-        <form className="itemDetails__body">
+        <div className="itemDetails__body">
+          {/* Might need to reomove form as nested in another form */}
           <div className="itemDetails__name-package">
             {/* might be able to make name single class as syling looks similar for all packages */}
             <p className="itemDetails__label">Item Name</p>
             <input
               className="itemDetails__input itemDetails__input--name"
               type="text"
+              value={name}
+              // do I need to import name as props? If so need to do this elsewhere
+              onChange={(e) => setName(e.target.value)}
               placeholder="Item Name"
               required
             />
@@ -22,7 +32,8 @@ function ItemDetail() {
             <p className="itemDetails__label">Description</p>
             <textarea
               className="itemDetails__input itemDetails__input--description"
-              name=""
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               placeholder="Please enter a brief item description..."
               required
             ></textarea>
@@ -33,14 +44,18 @@ function ItemDetail() {
               <select
                 className="itemDetails__input itemDetails__input--category"
                 name=""
+                onChange={(e) => setCategory(e.target.value)}
                 placeholder="Please select"
                 // PLACEHOLDER NOT WORKING
                 required
               >
                 {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
                 <option selected>Please select</option>
-                <option>Electronic</option>
-                <option>more needed</option>
+                <option>Accessories</option>
+                <option>Apparel</option>
+                <option>Electronics</option>
+                <option>Gear</option>
+                <option>Health</option>
               </select>
               <img
                 className="itemDetails__drop-Arrow"
@@ -48,14 +63,8 @@ function ItemDetail() {
                 alt="Drop Down Arrow"
               />
             </div>
-            {/* <input
-              className="itemDetails__input itemDetails__input--category"
-              type="text"
-              placeholder="Please select"
-              required
-            /> */}
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );

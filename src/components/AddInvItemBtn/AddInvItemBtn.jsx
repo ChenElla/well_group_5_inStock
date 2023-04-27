@@ -11,7 +11,12 @@ function AddInvItemBtn() {
           </button>
         </div>
         <div className="AddInvItemBtn__flex-ctn">
-          <button className="AddInvItemBtn__button AddInvItemBtn__button--add">
+          <button
+            className="AddInvItemBtn__button AddInvItemBtn__button--add"
+            type="submit"
+            // value="PUBLISH"
+            form="invItemBody__form"
+          >
             + Add Item
           </button>
         </div>

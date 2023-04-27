@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import NewInvBody from "./components/NewInvBody/InvItemBody";
 import InventoryDetails from "./components/InventoryDetails/inventorydetails";
+import AddNewInventoryItemPage from "./pages/WarehouseDetailsPage/AddNewInventoryItemPage";
 
 function App() {
   const Placeholder = ({ text }) => (
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Header />
+          <AddNewInventoryItemPage />
           <Routes>
             <Route path="/" element={<Placeholder text="Warehouses" />} />
             <Route

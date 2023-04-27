@@ -2,12 +2,17 @@ import React from "react";
 import "./ItemAvailability.scss";
 import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
 
-function ItemAvailability() {
+function ItemAvailability({ setStatus, setQuantity, setWarehouse }) {
+  //   HAve to do get request to get info for warehouses
+  //   SELECT distinct category
+  // FROM `instock`.`inventories`
+
   return (
     <section className="available">
       <div className="available__outer">
         <h2 className="available__header">Item Availability</h2>
-        <form className="available__body">
+        <div className="available__body">
+          {/* may need to alter and remove form tag */}
           <div className="available__status-package">
             {/* might be able to make name single class as syling looks similar for all packages */}
             <p className="available__label">Status</p>
@@ -16,6 +21,7 @@ function ItemAvailability() {
                 <input
                   type="radio"
                   className="available__radio-btn"
+                  onChange={(e) => setStatus("Out of Stock")}
                   name="stock" // name must match the other radio button to make sure only one can be selected
                 ></input>
                 <label className="available__radio-text">In stock</label>
@@ -24,6 +30,7 @@ function ItemAvailability() {
                 <input
                   type="radio"
                   className="available__radio-btn"
+                  onChange={(e) => setStatus("In Stock")}
                   name="stock"
                 ></input>
                 <label className="available__radio-text">Out of stock</label>
@@ -36,6 +43,8 @@ function ItemAvailability() {
               className="available__input item available__input--quantity"
               type="number"
               placeholder="0"
+              // value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
               required
             />
           </div>
@@ -45,6 +54,7 @@ function ItemAvailability() {
               <select
                 className="available__input available__input--warehouse"
                 name=""
+                onChange={(e) => setWarehouse(e.target.value)}
                 placeholder="Please select"
                 // PLACEHOLDER NOT WORKING
                 required
@@ -61,7 +71,7 @@ function ItemAvailability() {
               />
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );
