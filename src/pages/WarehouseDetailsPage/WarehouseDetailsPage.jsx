@@ -27,8 +27,9 @@ export default function WarehouseDetailsPage() {
                         console.log(err);
                     })
             }).catch((err)=>{
-                console.log(err);
-                // navigate("/");
+                console.log(err.response.status)
+                if(err.response.status === 404)
+                    navigate("/error");
             })
     },[warehouseId])
     if(singleWarehouseInventories)
