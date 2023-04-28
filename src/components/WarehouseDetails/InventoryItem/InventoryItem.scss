@@ -130,6 +130,9 @@
             }
             &__deleteIcon{
                 margin-right:24px;
+                &:hover{
+                    cursor:pointer;
+                }
             }
         }
         
@@ -150,6 +153,9 @@
         display: block;
         @include tablet{
             display:none;
+        }
+        &:hover{
+            cursor:pointer;
         }
     }
     &__lastItem{
