@@ -14,8 +14,8 @@ function DropdownWarehouses({ warehouse, warehouseList, setWarehouse }) {
 
   // Create an array of <option> elements from the unique warehouse names
 
-  const dropdownOptions = uniqueWarehouseNames.map((name) => (
-    <option value={warehouseList.id}>{name}</option>
+  const dropdownOptions = uniqueWarehouseNames.map((name, index) => (
+    <option key = {index} value={warehouseList.id}>{name}</option>
   ));
 
   // if (!warehouseList)
