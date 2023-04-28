@@ -14,12 +14,11 @@ function InventoryPage() {
 			.get("http://localhost:5050/inventories")
 			.then((res) => {
 				setInventory(res.data);
-				console.log(res.data);
 			})
 			.catch((e) => {
 				console.error(e);
 			});
-	}, deletedID);
+	}, [deletedID]);
 
 	if (inventory)
 		return (

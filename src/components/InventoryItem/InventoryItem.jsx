@@ -11,7 +11,6 @@ import edit_icon from "../../assets/Icons/edit-24px.svg";
 import "./InventoryItem.scss";
 
 export default function InventoryItem({ item, showWarehouse, updateList }) {
-	console.log(updateList);
 	const [deleteVisible, setDeleteVisible] = useState(false);
 	return (
 		<div className="itemContainer__outer">
