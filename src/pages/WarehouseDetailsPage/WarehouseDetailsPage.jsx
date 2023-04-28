@@ -24,11 +24,15 @@ export default function WarehouseDetailsPage() {
                         setSingleWarehouseInventories(response.data);
                         // console.log(response.data)
                     }).catch((err)=>{
+                        if(err.response.status === 404)
+                            alert("We are sorry but this warehouse curretly does not hold any inventories.");
+                            navigate("/warehouses");
                         console.log(err);
                     })
             }).catch((err)=>{
-                console.log(err);
-                // navigate("/");
+                console.log(err.response.status)
+                if(err.response.status === 404)
+                    navigate("/error");
             })
     },[warehouseId])
     if(singleWarehouseInventories)
@@ -37,6 +41,7 @@ export default function WarehouseDetailsPage() {
                 warehouseId = {warehouseId}
                 singleWarehouse = {singleWarehouse}
                 inventories = {singleWarehouseInventories}
+                setInventories = {setSingleWarehouseInventories}
             />
         )
     else{

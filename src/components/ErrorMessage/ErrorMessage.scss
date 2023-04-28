@@ -1,0 +1,16 @@
+@import '../../styling/global.scss';
+.container{
+    @include flexDisp(row,center);
+    padding-left:24px;
+    padding-right:24px;
+    vertical-align: center;
+    @include tablet{
+        padding:40px;
+    }
+    
+    &__errorColumn{
+        @include page_header;
+        padding-top:32px;
+
+    }
+}
