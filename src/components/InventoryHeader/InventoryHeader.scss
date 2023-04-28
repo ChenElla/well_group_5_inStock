@@ -1,0 +1,82 @@
+@import "../../styling/global.scss";
+
+.divider {
+	margin-top: -1px;
+	margin-bottom: 0;
+	color: $Cloud;
+	background-color: $White;
+}
+.inventoryHeader {
+	padding: 24px;
+	background-color: $White;
+	@include flexDisp(row, space-between);
+
+	@include tablet {
+		width: 80%;
+		@include flexDisp(row, flex-start);
+		gap: 2rem;
+	}
+	&__itemName {
+		width: 60%;
+		&__title {
+			@include column_label;
+			padding-bottom: 4px;
+		}
+		&__name {
+			@include label_link_button;
+			color: $Instock-Indigo;
+
+			display: flex;
+			align-items: center;
+			&--text {
+				font-weight: 700;
+				font-size: large;
+				color: $Instock-Indigo;
+			}
+		}
+	}
+	&__itemStatus {
+		@include tablet {
+			width: 30%;
+		}
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		width: 50%;
+		gap: 2rem;
+
+		@include tablet {
+			flex-direction: row;
+			width: 40%;
+			align-items: center;
+			flex-grow: 0;
+		}
+	}
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: 0.25rem;
+		font-size: 0.9rem;
+		color: $Slate;
+		@include TiWeb;
+		font-weight: 700;
+	}
+	&__outer {
+		@include tablet {
+			background-color: white;
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+	}
+	&__itemQty {
+		@include tablet {
+			width: 10%;
+		}
+	}
+	&__flex {
+		display: flex;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,51 @@
+// @import "../../../partials/_colors";
+// @import "../../../partials/_fonts";
+// @import "../../../partials/_media";
+// @import "../../Global.scss";
+
+@import "../../styling/global.scss";
+
+.AddButton {
+	width: 100%;
+	&__outer {
+		// @include flexCtrAll;
+		display: flex;
+
+		// padding: 16px 32px;
+		gap: 10px;
+		@include tablet {
+			justify-content: flex-end;
+			// padding: 16px 32px;
+		}
+		width: 100%;
+
+		&--cancel {
+			padding: 16px 32px;
+		}
+	}
+	&__flex-ctn {
+		flex-grow: 1;
+		display: flex;
+		width: 50%;
+		@include tablet {
+			width: auto;
+		}
+	}
+	&__button {
+		@include textBtn;
+		border: none;
+		flex-grow: 1;
+		@include tablet {
+			flex-grow: 0;
+		}
+		&--cancel {
+			color: $Slate;
+			background: #ffffff;
+			border: 1px solid #bdc5d5;
+		}
+		&--add {
+			color: $White;
+			background: #2e66e6;
+		}
+	}
+}

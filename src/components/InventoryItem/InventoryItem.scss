@@ -1,0 +1,130 @@
+@import "../../styling/global.scss";
+
+.divider {
+	margin-top: -1px;
+	margin-bottom: 0;
+	color: $Cloud;
+	background-color: $White;
+}
+.itemContainer {
+	padding: 24px;
+
+	@include flexDisp(row, space-between);
+	@include TiWeb;
+
+	@include tablet {
+		width: 80%;
+		@include flexDisp(row, flex-start);
+		gap: 2rem;
+	}
+	&__itemName {
+		@include tablet {
+			width: 60%;
+		}
+		&__title {
+			@include column_label;
+			padding-bottom: 4px;
+		}
+		&__name {
+			@include label_link_button;
+			color: $Instock-Indigo;
+
+			display: flex;
+			align-items: center;
+			&--text {
+				font-weight: 700;
+				font-size: large;
+				color: $Instock-Indigo;
+			}
+		}
+	}
+	&__itemStatus {
+		@include tablet {
+			width: 30%;
+		}
+		&__status {
+			border-radius: 20px;
+			padding: 4px 8px;
+			border: none;
+			text-align: center;
+			text-decoration: none;
+			@include column_label;
+			&--inStock {
+				color: $Green;
+				background-color: transparentize($color: $Green, $amount: 0.9);
+			}
+			&--outOfStock {
+				color: $Red;
+				background-color: transparentize($color: $Red, $amount: 0.9);
+			}
+		}
+	}
+	&__itemCategory {
+		&__title {
+			text-transform: uppercase;
+		}
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		width: 50%;
+		gap: 2rem;
+
+		@include tablet {
+			flex-direction: row;
+			width: 40%;
+			align-items: center;
+			flex-grow: 0;
+		}
+	}
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: 0.25rem;
+		font-size: 0.9rem;
+		color: $Slate;
+		@include TiWeb;
+		font-weight: 700;
+
+		&--mobile {
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+	&__outer {
+		@include tablet {
+			background-color: white;
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+		border-bottom: 1px solid $Cloud;
+		&:hover {
+			background-color: transparentize($color: $Instock-Indigo, $amount: 0.93);
+		}
+	}
+	&__itemQty {
+		@include tablet {
+			width: 10%;
+		}
+	}
+	&__hidden {
+		display: none;
+	}
+}
+.iconRow {
+	padding: 0 24px 24px 24px;
+	width: 100%;
+	@include flexDisp(row, space-between);
+	& > * {
+		cursor: pointer;
+	}
+
+	@include tablet {
+		@include flexDisp(row, flex-end);
+		width: fit-content;
+		align-items: baseline;
+		gap: 1rem;
+	}
+}

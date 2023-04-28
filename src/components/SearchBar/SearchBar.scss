@@ -1,0 +1,8 @@
+@import "../../styling/global.scss";
+
+.searchBar {
+	flex-grow: 1;
+	&__input {
+		@include input;
+	}
+}

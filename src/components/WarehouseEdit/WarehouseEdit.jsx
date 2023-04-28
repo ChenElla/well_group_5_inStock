@@ -1,7 +1,7 @@
 import React from "react";
 
-import back_icon from "../../assets/icons/arrow_back-24px.svg";
-import error_icon from "../../assets/icons/error-24px.svg";
+import back_icon from "../../assets/Icons/arrow_back-24px.svg";
+import error_icon from "../../assets/Icons/error-24px.svg";
 
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,21 +11,21 @@ import axios from "axios";
 import "./WarehouseEdit.scss";
 
 export default function WarehouseEdit({ warehouseId, singleWarehouse }) {
-    console.log(warehouseId);
-    const form_ref = useRef();
-    const address_ref = useRef();
-    const city_ref = useRef();
-    const country_ref = useRef();
-    const warehouse_name_ref = useRef();
-    const contact_name_ref = useRef();
-    const phone_ref = useRef();
-    const position_ref = useRef();
-    const email_ref = useRef();
-    const navigate = useNavigate();
+	console.log(warehouseId);
+	const form_ref = useRef();
+	const address_ref = useRef();
+	const city_ref = useRef();
+	const country_ref = useRef();
+	const warehouse_name_ref = useRef();
+	const contact_name_ref = useRef();
+	const phone_ref = useRef();
+	const position_ref = useRef();
+	const email_ref = useRef();
+	const navigate = useNavigate();
 
-    const goBack = () => {
-        navigate(-1);
-    };
+	const goBack = () => {
+		navigate(-1);
+	};
 
     const handleSubmit = (e) => {
         e.preventDefault();
