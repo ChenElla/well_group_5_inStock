@@ -7,7 +7,13 @@ cancel is set to false by default, since I think it gets used less.
 function AddButton({ name, addCallback, cancelCallback, cancel = false }) {
 	return (
 		<div className="AddButton">
-			<div className="AddButton__outer">
+			<div
+				className={
+					cancel
+						? "AddButton__outer--cancel AddButton__outer"
+						: "AddButton__outer"
+				}
+			>
 				{cancel && (
 					<div className="AddButton__flex-ctn">
 						<button

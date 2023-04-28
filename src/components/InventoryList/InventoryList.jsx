@@ -9,7 +9,7 @@ import AddButton from "../AddButton/AddButton";
 
 function InventoryList({ inventory }) {
 	const inventoryItems = inventory.map((item) => {
-		return <InventoryItem item={item} />;
+		return <InventoryItem item={item} showWarehouse={true} />;
 	});
 	return (
 		<div className="inventoryList">
@@ -21,6 +21,9 @@ function InventoryList({ inventory }) {
 					cancelCallback={() => {}}
 				/>
 			</PageHeader>
+			{/* <div className="tableHeaders">
+
+			</div> */}
 			{inventoryItems}
 		</div>
 	);
