@@ -1,15 +1,18 @@
 import React from "react";
 import back_icon from "../../assets/Icons/arrow_back-24px.svg";
 import edit_icon from "../../assets/Icons/edit-24px.svg";
-import unfold_icon from "../../assets/Icons/unfold_more.svg";
-import InventoryItem from "../InventoryItem/InventoryItem";
+// import unfold_icon from "../../assets/Icons/unfold_more.svg";
+// import InventoryItem from "../InventoryItem/InventoryItem";
 import DeleteConfirm from "./InventoryItem/DeleteConfirm";
 
 import "./WarehouseDetails.scss";
 
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import InventoryHeader from "../InventoryHeader/InventoryHeader";
+import InventoryList from "../InventoryList/InventoryList";
 export default function WarehouseDetails({
 	warehouseId,
 	singleWarehouse,
@@ -18,11 +21,24 @@ export default function WarehouseDetails({
 }) {
 	const [deleteItem, setDeleteItem] = useState(null);
 	const [modalHandler, setModalHandler] = useState(false);
+	const [inventory, setInventory] = useState([]);
+	const [deletedID, updateList] = useState(0);
 	const navigate = useNavigate();
 
 	const goBack = () => {
 		navigate(-1);
 	};
+
+	useEffect(() => {
+		axios
+			.get(`http://localhost:5050/warehouses/${warehouseId}/inventories`)
+			.then((res) => {
+				setInventory(res.data);
+			})
+			.catch((e) => {
+				console.error(e);
+			});
+	}, [deletedID]);
 
 	return (
 		<>
@@ -100,78 +116,11 @@ export default function WarehouseDetails({
 							</div>
 						</div>
 					</div>
-					<div className="mainContainer__listContainer__row">
-						<div className="mainContainer__listContainer__row__invContainer">
-							<div className="mainContainer__listContainer__row__invContainer__name">
-								inventory item
-							</div>
-							<img
-								className="mainContainer__listContainer__row__invContainer__icon"
-								src={unfold_icon}
-								alt="unfold_arrow_icon"
-							/>
-						</div>
-						<div className="mainContainer__listContainer__row__categoryContainer">
-							<div className="mainContainer__listContainer__row__categoryContainer__name">
-								category
-							</div>
-							<img
-								className="mainContainer__listContainer__row__categoryContainer__icon"
-								src={unfold_icon}
-								alt="unfold_arrow_icon"
-							/>
-						</div>
-						<div className="mainContainer__listContainer__row__statusContainer">
-							<div className="mainContainer__listContainer__row__statusContainer__name">
-								status
-							</div>
-							<img
-								className="mainContainer__listContainer__row__statusContainer__icon"
-								src={unfold_icon}
-								alt="unfold_arrow_icon"
-							/>
-						</div>
-						<div className="mainContainer__listContainer__row__quantityContainer">
-							<div className="mainContainer__listContainer__row__quantityContainer__name">
-								quantity
-							</div>
-							<img
-								className="mainContainer__listContainer__row__quantityContainer__icon"
-								src={unfold_icon}
-								alt="unfold_arrow_icon"
-							/>
-						</div>
-						<div className="mainContainer__listContainer__row__actionsContainer">
-							<div className="mainContainer__listContainer__row__actionsContainer__name">
-								actions
-							</div>
-							<img
-								className="mainContainer__listContainer__row__actionsContainer__icon"
-								src={unfold_icon}
-								alt="unfold_arrow_icon"
-							/>
-						</div>
-					</div>
-					{inventories.map((item, index) =>
-						index !== inventories.length - 1 ? (
-							<InventoryItem
-								key={index}
-								index={index}
-								item={item}
-								last="false"
-								setDeleteItem={setDeleteItem}
-								setModalHandler={setModalHandler}
-							/>
-						) : (
-							<InventoryItem
-								key={index}
-								index={index}
-								item={item}
-								last="true"
-								setModalHandler={setModalHandler}
-							/>
-						)
-					)}
+					<InventoryList
+						inventory={inventory}
+						updateList={updateList}
+						pageHeader={false}
+					/>
 				</div>
 			</div>
 		</>

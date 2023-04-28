@@ -3,7 +3,7 @@ import React from "react";
 import Sort from "../../assets/Icons/sort-24px.svg";
 import "./InventoryHeader.scss";
 
-export default function InventoryHeader() {
+export default function InventoryHeader({ showWarehouse }) {
 	return (
 		<div className="inventoryHeader__outer">
 			<div className="inventoryHeader">
@@ -34,12 +34,14 @@ export default function InventoryHeader() {
 						</div>
 						<img src={Sort} className="inventoryHeader__sortIcon" />
 					</div>
-					<div className="inventoryHeader__itemWarehouse inventoryHeader__flex">
-						<div className="inventoryHeader__title inventoryHeader__title--mobile">
-							warehouse
+					{showWarehouse && (
+						<div className="inventoryHeader__itemWarehouse inventoryHeader__flex">
+							<div className="inventoryHeader__title inventoryHeader__title--mobile">
+								warehouse
+							</div>
+							<img src={Sort} className="inventoryHeader__sortIcon" />
 						</div>
-						<img src={Sort} className="inventoryHeader__sortIcon" />
-					</div>
+					)}
 				</div>
 			</div>
 		</div>

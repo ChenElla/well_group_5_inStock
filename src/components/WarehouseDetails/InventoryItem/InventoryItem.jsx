@@ -1,7 +1,7 @@
 import React from "react";
-import proceed_icon from "../../../assets/icons/chevron_right-24px.svg";
-import delete_icon from "../../../assets/icons/delete_outline-24px.svg";
-import edit_icon from "../../../assets/icons/edit-24px.svg";
+import proceed_icon from "../../../assets/Icons/chevron_right-24px.svg";
+import delete_icon from "../../../assets/Icons/delete_outline-24px.svg";
+import edit_icon from "../../../assets/Icons/edit-24px.svg";
 import { NavLink } from "react-router-dom";
 import "./InventoryItem.scss";
 
