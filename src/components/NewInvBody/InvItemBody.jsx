@@ -19,32 +19,35 @@ function NewInvBody() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const joinedState = {
-      warehouse_id,
-      // warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
-      item_name,
-      description,
-      category,
-      status,
-      quantity,
-    };
-
-    console.log(joinedState);
-    console.log("warehouse_id", warehouse_id);
-
     axios
-      .post(`http://localhost:5050/inventories`, joinedState)
-      .then((res) => {
-        setItem_name("");
-        setDescription("");
-        setCategory("");
-        setStatus("");
-        setQuantity("");
-        setWarehouse_id("");
-        alert(`${item_name} was added to the warehouse`);
-        navigate("/warehouse");
+      .get(`http://localhost:5050/warehouses/name_to_id/${warehouse_id}`)
+      .then((data) => {
+        const joinedState = {
+          data,
+          // warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
+          item_name,
+          description,
+          category,
+          status,
+          quantity,
+        };
+        console.log(joinedState);
+        console.log("warehouse_id", data);
+        axios
+          .post(`http://localhost:5050/inventories`, joinedState)
+          .then((res) => {
+            setItem_name("");
+            setDescription("");
+            setCategory("");
+            setStatus("");
+            setQuantity("");
+            setWarehouse_id("");
+            alert(`${item_name} was added to the warehouse`);
+            navigate("/warehouse");
+          })
+          .catch((err) => console.log(err));
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error));
   }
   return (
     <div className="invItemBody">
