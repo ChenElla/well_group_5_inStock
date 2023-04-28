@@ -24,11 +24,14 @@ export default function WarehouseDetailsPage() {
                         setSingleWarehouseInventories(response.data);
                         // console.log(response.data)
                     }).catch((err)=>{
+                        if(err.response.status === 404)
+                            navigate("/error/2");
                         console.log(err);
                     })
             }).catch((err)=>{
-                console.log(err);
-                // navigate("/");
+                console.log(err.response.status)
+                if(err.response.status === 404)
+                    navigate("/error/1");
             })
     },[warehouseId])
     if(singleWarehouseInventories)
@@ -37,6 +40,7 @@ export default function WarehouseDetailsPage() {
                 warehouseId = {warehouseId}
                 singleWarehouse = {singleWarehouse}
                 inventories = {singleWarehouseInventories}
+                setInventories = {setSingleWarehouseInventories}
             />
         )
     else{

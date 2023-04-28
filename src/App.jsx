@@ -3,15 +3,15 @@ import "./styling/global.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
-import NewInvBody from "./components/NewInvBody/InvItemBody";
 import InventoryDetails from "./components/InventoryDetails/inventorydetails";
+import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
 function App() {
 	const Placeholder = ({ text }) => (
 		<div style={{ padding: "2rem", textAlign: "center" }}>{text}</div>
 	);
-
 	return (
 		<div className="root">
 			<BrowserRouter>
@@ -26,8 +26,8 @@ function App() {
 						/>
 						<Route path="/inventories/:id" element={<InventoryDetails />} />
 						<Route
-							path="/warehouses/:id/edit"
-							element={<Placeholder text="Edit Warehouse" />}
+							path="/warehouses/:warehouseId/edit"
+							element={<WarehouseEditPage />}
 						/>
 						<Route
 							path="/warehouses/add"
@@ -39,8 +39,9 @@ function App() {
 						/>
 						<Route
 							path="/inventories/add"
-							element={<NewInvBody></NewInvBody>}
+							element={<Placeholder text="Add Inventory" />}
 						/>
+						<Route path="/error/:id" element={<ErrorPage />} />
 					</Routes>
 					<Footer />
 				</div>

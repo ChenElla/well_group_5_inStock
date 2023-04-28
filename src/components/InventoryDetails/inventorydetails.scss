@@ -5,28 +5,32 @@
 
 .detail {
     position: relative;
-    bottom: 1.875rem;
+    bottom: 1.5rem;
     margin: 0 1rem;
     height: fit-content;
     background-color: $White;
     box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
     border-radius: 0.188rem;
-
-    @include tablet {
-        bottom: 3.125rem;
-        margin: 0 2rem;
+    &__container{
+        background-color:$Graphite;
+        width:100%;
+        border-radius: 0.188rem;
+        @include tablet {
+        bottom: 5rem;
     }
 
     @include desktop {
-        margin: 0 5.625rem;
+        // margin: 0 5.625rem;
     }
 
     &__header {
+        background-color: $White;
         padding: 2rem 1.5rem 1.5rem;
         border-bottom: 0.063rem solid $Cloud;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-radius: 0.188rem;
 
         @include tablet {
             padding: 2rem 2rem 1.5rem;
@@ -55,7 +59,49 @@
             line-height: 2.5rem;
         }
     }
+    &__edit-wrapper {
+        display: inline-block;
+        background-color: $Instock-Indigo;
+        width: 15%;
+        border-radius: 50px;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+        align-items: center;
+        @include textBtn;
+        @include tablet{
+            display: inline-block;
+        }
     
+        @include desktop {
+          width: 7%;
+        }
+      }
+    
+      &__edit {
+        margin-left: 0.5rem;
+        margin-bottom: 0.7rem;
+        color: $White;
+        display: inline-block;
+        
+        @include tablet {
+          display: inline-flex;
+          font-size: 1rem;
+          font-weight: 600;
+          margin: 0.12rem 0.15rem 0 0.15rem;
+        }
+      }
+      
+      &__edit-icon {
+        width: 1.5rem;
+        filter: brightness(0) invert(1);
+        margin-top: 0.35rem;
+        @include tablet {
+          width: 1.2em;
+          display: inline-block;
+        }
+      }
+    }
 
     &__card {
         padding: 1rem 1.5rem;

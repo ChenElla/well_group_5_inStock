@@ -47,15 +47,30 @@ export default function InventoryDetails() {
 		<>
 			{selectedItem && (
 				<div className="detail">
-					<div className="detail__header">
-						<div className="detail__title-wrapper">
-							<img
-								onClick={navigateBack}
-								className="detail__back-arrow"
-								src={backArrowImg}
-								alt="back arrow"
-							/>
-							<h1 className="detail__title">{selectedItem.item_name}</h1>
+					<div className="detail__container">
+						<div className="detail__container__header">
+							<div className="detail__container__title-wrapper">
+								<img
+									onClick={navigateBack}
+									className="detail__container__back-arrow"
+									src={backArrowImg}
+									alt="back arrow"
+								/>
+								<h1 className="detail__container__title">
+									{selectedItem.item_name}
+								</h1>
+							</div>
+							<Link
+								className="detail__container__edit-wrapper"
+								to={`/inventory/${id}/edit`}
+							>
+								<img
+									src={editIconImg}
+									alt="edit icon"
+									className="detail__container__edit-icon"
+								/>
+								<h2 className="detail__container__edit">Edit</h2>
+							</Link>
 						</div>
 					</div>
 					<div className="detail__card">

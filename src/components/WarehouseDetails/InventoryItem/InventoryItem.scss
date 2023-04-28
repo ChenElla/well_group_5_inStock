@@ -1,0 +1,169 @@
+@import '../../../styling/global.scss';
+
+.divider{
+    margin-top:-1px;
+    margin-bottom:0;
+    color:$Cloud;
+    background-color:$White;
+    &--0{
+        display:none;
+    }
+}
+.itemContainer{
+    box-shadow: 1px 0px $Cloud,-1px 0px $Cloud;
+    padding:16px 24px;
+    background-color: $White;
+    @include flexDisp(row,space-between);
+    flex-wrap:wrap;
+    @include tablet{
+        padding-bottom:0;
+        padding:18px 32px 0px 32px;
+    }
+    @include desktop{
+        padding:18px 40px 0 40px;
+    }
+    &__itemName{
+        width:50%;
+        padding-bottom:20px;
+        @include tablet{
+            width:20%;
+            padding-bottom:0;
+        }
+        &__title{
+            @include column_label;
+            padding-bottom:4px;
+            @include tablet{
+                display:none;
+                padding-bottom:0;
+            }
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &__name{
+            @include label_link_button;
+            color:$Instock-Indigo;
+            @include flexDisp(row,flex-start);
+            align-items:center;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    &__itemStatus{
+        width:50%;
+        padding-bottom:20px;
+        @include tablet{
+            width:20%;
+            padding-bottom:0;
+        }
+        &__title{  
+            @include column_label;
+            padding-bottom:4px;
+            @include tablet{
+                display:none;
+                padding-bottom:0;
+            }
+        }
+        &__status{
+            border-radius:20px;
+            padding:4px 8px;
+            border:none;
+            text-align: center;
+            text-decoration: none;
+            @include column_label;
+            &--inStock{
+                color:$Green;
+            }
+            &--outOfStock{
+                color:$Red;
+            }  
+        }
+    }
+    &__itemCategory{
+        width:50%;
+        @include tablet{
+            width:20%;
+        }
+        &__title{  
+            @include column_label;
+            padding-bottom:4px;
+            @include tablet{
+                display:none;
+                padding-bottom:0;
+            }
+        }
+        &__category{
+            @include label_link_button;
+        }
+    }
+    &__itemQty{
+        width:50%;
+        @include tablet{
+            width:20%;
+            @include flexDisp(row, flex-start);
+            padding-left:20px;
+        }
+        &__title{  
+            @include column_label;
+            padding-bottom:4px;
+            @include tablet{
+                display:none;
+                padding-bottom:0;
+            }
+        }
+        &__quantity{
+            @include label_link_button;
+        }
+    }
+    &__icons{
+        width:50%;
+        display:none;
+        @include tablet{
+            width:20%;
+            display:block;
+            flex-wrap:none;
+            @include flexDisp(row,flex-end);
+        }
+        &__iconContainer{
+            @include flexDisp(row,space-between);
+            align-items:center;
+            &__deleteIcon,&__editIcon{
+                height:18px;
+            }
+            &__deleteIcon{
+                margin-right:24px;
+                &:hover{
+                    cursor:pointer;
+                }
+            }
+        }
+        
+    }
+}
+.iconRow{
+    box-shadow: 1px 0px $Cloud,-1px 0px $Cloud;
+    padding:0 24px 24px 24px;
+    background-color: $White;
+    @include flexDisp(row,space-between);
+    @include tablet{
+        padding:0 32px 18px 32px;
+    }
+    @include desktop{
+        padding:0 40px 18px 40px;
+    }
+    &__deleteIcon,&__editIcon{
+        display: block;
+        @include tablet{
+            display:none;
+        }
+        &:hover{
+            cursor:pointer;
+        }
+    }
+    &__lastItem{
+        box-shadow: 1px 0px $Cloud,-1px 0px $Cloud,0px 1px 0px 0px $Cloud;
+        border-bottom-left-radius:3px;
+        border-bottom-right-radius:3px;
+    }
+}
