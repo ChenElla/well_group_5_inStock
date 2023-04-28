@@ -6,6 +6,7 @@ import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsP
 import InventoryDetails from "./components/InventoryDetails/inventorydetails";
 import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 function App() {
   const Placeholder = ({ text }) => (
     <div style={{ padding: "2rem", textAlign: "center" }}>{text}</div>
@@ -21,7 +22,7 @@ function App() {
             <Route path="/warehouses/:warehouseId" element={<WarehouseDetailsPage/>} />
             <Route path="/inventories/:id" element={<InventoryDetails />} />
             <Route path="/warehouses/:warehouseId/edit" element={<WarehouseEditPage/>} />
-            <Route path="/warehouses/add" element={<Placeholder text="Add Warehouse" />} />
+            <Route path="/warehouses/add" element={<AddWarehousePage />} />
             <Route path="/inventories/:id/edit" element={<Placeholder text="Edit Inventory" />} />
             <Route path="/inventories/add" element={<Placeholder text="Add Inventory" />} />
             <Route
