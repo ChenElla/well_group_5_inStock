@@ -20,7 +20,7 @@ function InventoryList({ inventory, updateList, pageHeader = true }) {
 	return (
 		<div className="inventoryList">
 			{pageHeader && (
-				<PageHeader pageHeader="Inventory" border={false}>
+				<PageHeader pageHeader="Inventory" border={false} backButton={false}>
 					<SearchBar />
 					<AddButton
 						name="New Item"
