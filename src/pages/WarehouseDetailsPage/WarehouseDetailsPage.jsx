@@ -24,6 +24,9 @@ export default function WarehouseDetailsPage() {
                         setSingleWarehouseInventories(response.data);
                         // console.log(response.data)
                     }).catch((err)=>{
+                        if(err.response.status === 404)
+                            alert("We are sorry but this warehouse curretly does not hold any inventories.");
+                            navigate("/warehouses");
                         console.log(err);
                     })
             }).catch((err)=>{
