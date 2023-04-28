@@ -51,9 +51,7 @@ function ItemAvailability({
     setShowQuantity(!showQuantity);
   };
 
-  // console.log("here is warehouse list", warehouseList);
   if (warehouseList)
-    // if (warehouse && warehouseList && setWarehouse)
     return (
       <section className="available">
         <div className="available__outer">
@@ -71,8 +69,8 @@ function ItemAvailability({
                     className="available__radio-btn"
                     value="In Stock"
                     name="stock" // name must match the other radio button to make sure only one can be selected
-                    // checked={status === "In Stock"}
                     onClick={showQuantityHandler}
+                    defaultChecked
                   />
                   <label className="available__radio-text">In stock</label>
                 </div>
@@ -82,7 +80,6 @@ function ItemAvailability({
                     className="available__radio-btn"
                     value="Out of Stock"
                     name="stock"
-                    // checked={status === "Out of Stock"}
                     onClick={showQuantityHandler}
                   />
                   <label className="available__radio-text">Out of stock</label>

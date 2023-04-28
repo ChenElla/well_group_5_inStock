@@ -47,7 +47,6 @@ function ItemDetail({
                 name=""
                 defaultValue="default"
                 onChange={(e) => setCategory(e.target.value)}
-                // PLACEHOLDER NOT WORKING
                 required
               >
                 {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
