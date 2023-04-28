@@ -1,22 +1,21 @@
 @import "../../styling/global.scss";
 
 .pageContainer {
-	box-shadow: 0px 2px 5px 0px #13182c1a;
-	border-radius: 3px;
-
-	@include desktop {
-		@include desktopWidths;
-	}
-
-	@include side_margins;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(180deg, $Graphite 100px, $White 100px);
+	overflow: hidden;
 
 	&__inset {
-		width: 100%;
-		background-color: $Graphite;
-		height: 4.5rem;
-
+		box-shadow: 0px 2px 5px 0px #13182c1a;
+		border-radius: 3px;
+		overflow: hidden;
 		@include desktop {
-			height: 6rem;
+			@include desktopWidths;
+		}
+		@include side_margins;
+		@include desktop {
+			height: 100%;
 		}
 	}
 }

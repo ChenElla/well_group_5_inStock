@@ -23,7 +23,7 @@ function InventoryPage() {
 	if (inventory)
 		return (
 			<PageContainer>
-				<InventoryList inventory={inventory} />;
+				<InventoryList inventory={inventory} />
 			</PageContainer>
 		);
 	else return <Loading />;
