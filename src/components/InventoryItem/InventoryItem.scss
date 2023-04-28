@@ -8,39 +8,51 @@
 }
 .itemContainer {
 	padding: 24px;
-
 	@include flexDisp(row, space-between);
-	@include TiWeb;
-
 	@include tablet {
-		width: 80%;
-		@include flexDisp(row, flex-start);
-		gap: 2rem;
-	}
+		width:85%;
+		box-sizing: border-box;
+        padding:18px 0px 18px 32px;
+    }
+    @include desktop{
+        padding:18px 0px 18px 40px;
+    }
+
 	&__itemName {
+		margin-bottom:20px;
 		@include tablet {
-			width: 60%;
+			width: 51%;
+			margin-bottom:0;
 		}
-		&__title {
-			@include column_label;
-			padding-bottom: 4px;
+		@include desktop{
+			width:52%;
 		}
 		&__name {
-			@include label_link_button;
 			color: $Instock-Indigo;
-
+			@include label_link_button;
 			display: flex;
 			align-items: center;
 			&--text {
-				font-weight: 700;
-				font-size: large;
 				color: $Instock-Indigo;
+				&:hover{
+					cursor:pointer;
+					text-decoration: underline;
+				}
 			}
+			@include tablet{
+				width:100%;
+			}
+
 		}
 	}
 	&__itemStatus {
+		margin-bottom:18px;
 		@include tablet {
-			width: 30%;
+			width: 54%;
+			margin-bottom:0;
+		}
+		@include desktop{
+			width:62%;
 		}
 		&__status {
 			border-radius: 20px;
@@ -59,33 +71,69 @@
 			}
 		}
 	}
-	&__itemCategory {
-		&__title {
-			text-transform: uppercase;
+	&__itemCategory{
+		margin-bottom:20px;
+		@include tablet{
+			width:50%;
+			margin-bottom:0;
+		}
+		@include desktop{
+			width:52%;
+		}
+		&__category{
+			@include label_link_button;
+		}
+	}
+	&__itemQty {
+		margin-bottom:20px;
+		@include tablet {
+			width:50%;
+			margin-bottom:0;
+			@include flexDisp(row,flex-start);
+		}
+		@include desktop{
+			width:61%;
+			@include flexDisp(row,flex-start);
+		}
+		&__quantity {
+			@include label_link_button;
+			@include tablet{
+				width:45%;
+			}
+			@include desktop{
+				width:36%;
+			}
 		}
 	}
 	&__column {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
+		@include flexDisp(column,flex-start);
 		width: 50%;
-		gap: 2rem;
-
+		&:first-child{
+			@include tablet{
+				width:49%;
+				@include flexDisp(row,space-between);
+			}
+		}
+		&:nth-child(2){
+			@include tablet{
+				width:52%;
+				@include flexDisp(row,flex-start);
+			}
+			@include desktop{
+				width:52%;
+				@include flexDisp(row,flex-start);
+			}
+		}
 		@include tablet {
-			flex-direction: row;
-			width: 40%;
-			align-items: center;
-			flex-grow: 0;
+			@include flexDisp(row,space-between);
 		}
 	}
-	&__title {
-		text-transform: uppercase;
-		margin-bottom: 0.25rem;
-		font-size: 0.9rem;
-		color: $Slate;
-		@include TiWeb;
-		font-weight: 700;
 
+	&__title {
+		@include table_header;
+		text-transform: uppercase;
+		padding-bottom: 4px;
+		color:$Slate;
 		&--mobile {
 			@include tablet {
 				display: none;
@@ -94,21 +142,14 @@
 	}
 	&__outer {
 		@include tablet {
-			background-color: white;
-			display: flex;
-			align-items: baseline;
-			justify-content: space-between;
+			@include flexDisp(row,space-between);
 		}
 		border-bottom: 1px solid $Cloud;
 		&:hover {
 			background-color: transparentize($color: $Instock-Indigo, $amount: 0.93);
 		}
 	}
-	&__itemQty {
-		@include tablet {
-			width: 10%;
-		}
-	}
+
 	&__hidden {
 		display: none;
 	}
@@ -126,5 +167,13 @@
 		width: fit-content;
 		align-items: baseline;
 		gap: 1rem;
+		padding:18px 32px 18px 32px;
 	}
+	@include desktop{
+		padding:18px 40px 18px 40px;
+	}
+}
+
+#status_title{
+	padding-bottom:2px;
 }

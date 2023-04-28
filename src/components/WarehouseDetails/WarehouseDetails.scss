@@ -206,3 +206,15 @@
 		}
 	}
 }
+
+#mobile_divider{
+    @include tablet{
+        display:none;
+    }
+}
+
+#show_divider{
+    display:block;
+    border:0.8px solid $Cloud;
+    box-shadow: 1px 1px $Light-Grey;
+}

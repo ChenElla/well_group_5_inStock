@@ -11,13 +11,9 @@ import { useNavigate } from "react-router-dom";
 import InventoryList from "../InventoryList/InventoryList";
 export default function WarehouseDetails({
 	warehouseId,
-	singleWarehouse,
-	inventories,
-	setInventories,
+	singleWarehouse
 }) {
-	const [deleteItem, setDeleteItem] = useState(null);
-	const [modalHandler, setModalHandler] = useState(false);
-	const [inventory, setInventory] = useState([]);
+	const [inventory, setInventory] = useState(null);
 	const [deletedID, updateList] = useState(0);
 	const navigate = useNavigate();
 
@@ -33,6 +29,7 @@ export default function WarehouseDetails({
 			})
 			.catch((e) => {
 				console.error(e);
+        // navigate('/warehouses');
 			});
 	}, [deletedID]);
 
@@ -102,11 +99,13 @@ export default function WarehouseDetails({
 							</div>
 						</div>
 					</div>
-					<InventoryList
+          <hr className="mainContainer__listContainer__divider" id = "mobile_divider"/>
+					{inventory ? (<InventoryList
 						inventory={inventory}
 						updateList={updateList}
 						pageHeader={false}
-					/>
+					/>):(<hr id = "show_divider"/>
+					)}
 				</div>
 			</div>
 		</>
