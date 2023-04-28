@@ -1,9 +1,6 @@
 import React from "react";
 import back_icon from "../../assets/Icons/arrow_back-24px.svg";
 import edit_icon from "../../assets/Icons/edit-24px.svg";
-// import unfold_icon from "../../assets/Icons/unfold_more.svg";
-// import InventoryItem from "../InventoryItem/InventoryItem";
-import DeleteConfirm from "./InventoryItem/DeleteConfirm";
 
 import "./WarehouseDetails.scss";
 
@@ -11,7 +8,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import InventoryHeader from "../InventoryHeader/InventoryHeader";
 import InventoryList from "../InventoryList/InventoryList";
 export default function WarehouseDetails({
 	warehouseId,
@@ -42,16 +38,6 @@ export default function WarehouseDetails({
 
 	return (
 		<>
-			{modalHandler ? (
-				<DeleteConfirm
-					inventories={deleteItem}
-					modalHandler={setModalHandler}
-					setInventories={setInventories}
-					originalInventories={inventories}
-				/>
-			) : (
-				<></>
-			)}
 			<div className="mainContainer">
 				<div className="mainContainer__backgroundContainer">
 					<div className="mainContainer__backgroundContainer__titleContainer">
