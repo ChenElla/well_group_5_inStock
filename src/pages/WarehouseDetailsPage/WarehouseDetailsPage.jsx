@@ -37,6 +37,7 @@ export default function WarehouseDetailsPage() {
                 warehouseId = {warehouseId}
                 singleWarehouse = {singleWarehouse}
                 inventories = {singleWarehouseInventories}
+                setInventories = {setSingleWarehouseInventories}
             />
         )
     else{

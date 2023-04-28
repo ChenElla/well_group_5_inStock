@@ -3,12 +3,20 @@ import back_icon from '../../assets/icons/arrow_back-24px.svg';
 import edit_icon from '../../assets/icons/edit-24px.svg';
 import unfold_icon from '../../assets/icons/unfold_more.svg';
 import InventoryItem from './InventoryItem/InventoryItem';
+import DeleteConfirm from './InventoryItem/DeleteConfirm';
 
 import "./WarehouseDetails.scss";
+
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function WarehouseDetails({warehouseId,singleWarehouse,inventories}) {
+export default function WarehouseDetails({warehouseId,singleWarehouse,inventories, setInventories}) {
+  const [deleteItem, setDeleteItem] = useState(null);
+  const [modalHandler, setModalHandler] = useState(false);
   return (
+    <>
+    { modalHandler? <DeleteConfirm inventories = {deleteItem} modalHandler={setModalHandler} setInventories = {setInventories} originalInventories = {inventories}
+      />:<></>}
     <div className = "mainContainer">
       <div className = "mainContainer__backgroundContainer">
         <div className = "mainContainer__backgroundContainer__titleContainer">
@@ -96,15 +104,19 @@ export default function WarehouseDetails({warehouseId,singleWarehouse,inventorie
               index = {index}
               item = {item}
               last = "false"
+              setDeleteItem = {setDeleteItem}
+              setModalHandler  = {setModalHandler}
             />:<InventoryItem 
               key = {index} 
               index = {index}
               item = {item}
               last = "true"
+              setModalHandler  = {setModalHandler}
             />
           )
         }
       </div>
     </div>
+    </>
   )
 }
