@@ -1,5 +1,5 @@
 // @import "../../../partials/_colors";
-// @import "../../../partials/_fonts";
+@import "../../styling/partials/_colors"; // @import "../../../partials/_fonts";
 // @import "../../../partials/_media";
 // @import "../../Global.scss";
 @import "../../styling/global.scss";
@@ -11,7 +11,12 @@
   @include desktop {
     @include desktopWidths;
   }
+  // &__form {
+  //   background-color: $Light-Grey;
+  // }
+
   &__column {
+    background-color: $White;
     @include tablet {
       padding: 24px 0;
       display: flex;
@@ -24,3 +29,7 @@
     }
   }
 }
+
+// #invItemBody__form {
+//   background-color: red;
+// }

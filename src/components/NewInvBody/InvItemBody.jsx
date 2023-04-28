@@ -22,15 +22,14 @@ function NewInvBody() {
     const joinedState = {
       warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
       item_name,
-      // item_name: "bat",
       description,
       category,
       status,
       quantity,
-      // warehouse, tried hardcoding for testing
     };
 
     console.log(joinedState);
+    console.log("warehouse_id", warehouse_id);
 
     axios
       .post(`http://localhost:5050/inventories`, joinedState)
@@ -49,7 +48,11 @@ function NewInvBody() {
   return (
     <div className="invItemBody">
       <PageHeader pageHeader={"Add New Inventory Item"} />
-      <form id="invItemBody__form" onSubmit={handleSubmit}>
+      <form
+        id="invItemBody__form"
+        // className="invItemBody__form"
+        onSubmit={handleSubmit}
+      >
         <div className="invItemBody__column">
           <div className="invItemBody__width">
             <ItemDetails

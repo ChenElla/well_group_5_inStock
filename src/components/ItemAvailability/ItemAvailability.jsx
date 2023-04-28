@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./ItemAvailability.scss";
 import dropArrow from "../../assets/Icons/arrow_drop_down-24px.svg";
+import DropdownWarehouses from "../DropdownWarehouses/DropdownWarehouses";
+import Loading from "../Loading/Loading";
 
 function ItemAvailability({
   status,
@@ -38,7 +40,13 @@ function ItemAvailability({
           warehouse_name,
         }));
 
-        setWarehouseList(cityAndID);
+        // const uniqueWarehouseNames = [
+        //   ...new Set(cityAndID.map((cityAndID) => cityAndID.warehouse_name)),
+        // ];
+
+        // console.log("here is uniqueWarehouseNames", uniqueWarehouseNames);
+
+        setWarehouseList(cityAndID); //I like having key value since selecting the city will require the appropriate id to be entered in the post request
       })
       .catch((err) => {
         console.log(err);
@@ -47,31 +55,14 @@ function ItemAvailability({
   }, []);
 
   console.log("here is warehouse list", warehouseList);
-  // const cityAndID = warehouseList.map(({ id, warehouse_name }) => ({
-  //   id,
-  //   warehouse_name,
-  // }));
 
-  //will need to remove ';' to test .filter
-  // .filter(
-  //   (warehouseList, index, self) =>
-  //     index ===
-  //     self.findIndex(
-  //       ({ id, warehouse_name }) =>
-  //         id === warehouseList.id && warehouse_name === warehouseList.city
-  //     )
-  // );
-
-  // console.log(cityAndID);
-
+  // if (warehouse && warehouseList && setWarehouse)
   return (
     <section className="available">
       <div className="available__outer">
         <h2 className="available__header">Item Availability</h2>
         <div className="available__body">
-          {/* may need to alter and remove form tag */}
           <div className="available__status-package">
-            {/* might be able to make name single class as syling looks similar for all packages */}
             <p className="available__label">Status</p>
             <div className="available__radio-ctn">
               <div className="available__rad-package">
@@ -110,20 +101,23 @@ function ItemAvailability({
           <div className="available__warehouse-package">
             <p className="available__label">Warehouse</p>
             <div className="available__arrow-container">
-              <select
+              {/* <DropdownWarehouses
+                warehouse={warehouse}
+                warehouseList={warehouseList}
+                setWarehouse={setWarehouse}
+              /> */}
+
+              {/* <select
                 className="available__input available__input--warehouse"
                 name=""
                 value={warehouse}
                 onChange={(e) => setWarehouse(e.target.value)}
-                placeholder="Please select"
-                // PLACEHOLDER NOT WORKING
                 required
               >
-                {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
                 <option selected>Please select</option>
                 <option>New York</option>
                 <option>more needed</option>
-              </select>
+              </select> */}
               <img
                 className="available__drop-Arrow"
                 src={dropArrow}
@@ -135,6 +129,9 @@ function ItemAvailability({
       </div>
     </section>
   );
+  // else {
+  //   return <Loading />;
+  // }
 }
 
 export default ItemAvailability;
