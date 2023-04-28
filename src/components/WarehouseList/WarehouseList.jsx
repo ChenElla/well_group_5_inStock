@@ -3,10 +3,12 @@ import SearchBar from "../SearchBar/SearchBar";
 import AddButton from "../AddButton/AddButton";
 import Warehouse from "./Warehouse/Warehouse";
 import WarehouseHeader from "./WarehouseHeader/WarehouseHeader";
+import { useNavigate } from "react-router-dom";
 
 import "./WarehouseList.scss";
 
 export default function WarehouseList({ warehouses, updateList }) {
+	const navigate = useNavigate();
 	const warehouseComps = warehouses.map((warehouse) => {
 		return <Warehouse warehouse={warehouse} updateList={updateList} />;
 	});
@@ -16,7 +18,9 @@ export default function WarehouseList({ warehouses, updateList }) {
 				<SearchBar />
 				<AddButton
 					name="New Warehouse"
-					addCallback={() => {}}
+					addCallback={() => {
+						navigate("/warehouses/add");
+					}}
 					cancelCallback={() => {}}
 				/>
 			</PageHeader>
