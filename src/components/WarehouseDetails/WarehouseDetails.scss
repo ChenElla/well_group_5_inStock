@@ -68,6 +68,9 @@
                 &__backIcon{
                     @include flexDisp(row,center);
                     align-items:center;
+                    &:hover{
+                        cursor:pointer;
+                    }
                 }
             }
         }

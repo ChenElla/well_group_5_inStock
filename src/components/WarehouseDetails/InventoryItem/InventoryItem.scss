@@ -45,6 +45,9 @@
             color:$Instock-Indigo;
             @include flexDisp(row,flex-start);
             align-items:center;
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
     &__itemStatus{

@@ -19,7 +19,7 @@ export default function WarehouseEditPage() {
             ).catch(err => {
                 console.log(err)
                 if (err.response.status === 404)
-                    navigate('/error');
+                    navigate('/error/2');
                 }
             );
     },[warehouseId]);

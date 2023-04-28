@@ -9,10 +9,16 @@ import "./WarehouseDetails.scss";
 
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 export default function WarehouseDetails({warehouseId,singleWarehouse,inventories, setInventories}) {
   const [deleteItem, setDeleteItem] = useState(null);
   const [modalHandler, setModalHandler] = useState(false);
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+  
   return (
     <>
     { modalHandler? <DeleteConfirm inventories = {deleteItem} modalHandler={setModalHandler} setInventories = {setInventories} originalInventories = {inventories}
@@ -21,9 +27,9 @@ export default function WarehouseDetails({warehouseId,singleWarehouse,inventorie
       <div className = "mainContainer__backgroundContainer">
         <div className = "mainContainer__backgroundContainer__titleContainer">
           <div className = "mainContainer__backgroundContainer__titleContainer__nameContainer">
-            <NavLink className = "mainContainer__backgroundContainer__titleContainer__nameContainer__backIcon" to = {`/warehouses`}>
+            <div className = "mainContainer__backgroundContainer__titleContainer__nameContainer__backIcon" onClick = {goBack}>
                 <img className = "mainContainer__backgroundContainer__titleContainer__nameContainer__backIcon__icon" src = {back_icon} alt = "back_icon"/>
-            </NavLink>
+            </div>
             <div className = "mainContainer__backgroundContainer__titleContainer__nameContainer__title">
               {singleWarehouse.warehouse_name}
             </div>

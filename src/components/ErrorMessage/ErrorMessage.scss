@@ -3,14 +3,18 @@
     @include flexDisp(row,center);
     padding-left:24px;
     padding-right:24px;
+    align-items: center;
     vertical-align: center;
     @include tablet{
         padding:40px;
     }
-    
+    &__goBackIcon{
+        padding-right:20px;
+        &:hover{
+            cursor:pointer;
+        }
+    }
     &__errorColumn{
         @include page_header;
-        padding-top:32px;
-
     }
 }
