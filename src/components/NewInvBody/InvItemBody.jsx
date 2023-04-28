@@ -11,9 +11,12 @@ function NewInvBody() {
   const [item_name, setItem_name] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [status, setStatus] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [status, setStatus] = useState("In Stock");
+  const [quantity, setQuantity] = useState(0);
   const [warehouse_id, setWarehouse_id] = useState("");
+  // ---------
+  const [showQuantity, setShowQuantity] = useState(true);
+  //--------
 
   let navigate = useNavigate();
 
@@ -23,24 +26,21 @@ function NewInvBody() {
       .get(`http://localhost:5050/warehouses/name_to_id/${warehouse_id}`)
       .then((data) => {
         const joinedState = {
-          data,
-          // warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
+          warehouse_name: data.data,
           item_name,
           description,
           category,
           status,
           quantity,
         };
-        console.log(joinedState);
-        console.log("warehouse_id", data);
         axios
           .post(`http://localhost:5050/inventories`, joinedState)
           .then((res) => {
             setItem_name("");
             setDescription("");
             setCategory("");
-            setStatus("");
-            setQuantity("");
+            setStatus("In Stock");
+            setQuantity(0);
             setWarehouse_id("");
             alert(`${item_name} was added to the warehouse`);
             navigate("/warehouse");
@@ -76,6 +76,8 @@ function NewInvBody() {
               setQuantity={setQuantity}
               warehouse={warehouse_id}
               setWarehouse={setWarehouse_id}
+              showQuantity={showQuantity}
+              setShowQuantity={setShowQuantity}
             />
           </div>
         </div>

@@ -13,9 +13,10 @@ function ItemAvailability({
   setQuantity,
   warehouse,
   setWarehouse,
+  showQuantity,
+  setShowQuantity,
 }) {
   const [warehouseList, setWarehouseList] = useState("");
-  const [displayQuantity, setDisplayQuantity] = useState("");
 
   useEffect(() => {
     axios
@@ -39,13 +40,18 @@ function ItemAvailability({
       });
   }, []);
 
-  const radioHandler = (e) => {
-    setStatus("Out of Stock");
-    setQuantity("0");
-    setShowQuantity(false);
+  // const radioHandler = (e) => {
+  //   setStatus;
+  //   setQuantity(0);
+  //   setShowQuantity(!showQuantity);
+  // };
+  const showQuantityHandler = (e) => {
+    setStatus(e.target.value);
+    setQuantity(0);
+    setShowQuantity(!showQuantity);
   };
 
-  console.log("here is warehouse list", warehouseList);
+  // console.log("here is warehouse list", warehouseList);
   if (warehouseList)
     // if (warehouse && warehouseList && setWarehouse)
     return (
@@ -55,47 +61,49 @@ function ItemAvailability({
           <div className="available__body">
             <div className="available__status-package">
               <p className="available__label">Status</p>
-              <div className="available__radio-ctn">
+              <div
+                className="available__radio-ctn"
+                onChange={showQuantityHandler}
+              >
                 <div className="available__rad-package">
                   <input
                     type="radio"
-                    value={status}
                     className="available__radio-btn"
-                    onChange={(e) => setStatus("Out of Stock")}
+                    value="In Stock"
                     name="stock" // name must match the other radio button to make sure only one can be selected
-                  ></input>
+                    // checked={status === "In Stock"}
+                    onClick={showQuantityHandler}
+                  />
                   <label className="available__radio-text">In stock</label>
                 </div>
                 <div className="available__rad-package">
                   <input
                     type="radio"
                     className="available__radio-btn"
-                    value={status}
-                    onChange={(e) => radioHandler}
-                    // onChange={(e) => {
-                    //   setStatus("Out of Stock");
-                    //   setQuantity("0");
-                    // }}
+                    value="Out of Stock"
                     name="stock"
-                  ></input>
+                    // checked={status === "Out of Stock"}
+                    onClick={showQuantityHandler}
+                  />
                   <label className="available__radio-text">Out of stock</label>
                 </div>
               </div>
             </div>
             {/* <input type="text" onChange={radioHandler} /> */}
-            {displayQuantity && (
+            {showQuantity && (
               <div className="available__quantity-package">
                 <p className="available__label">Quantity</p>
                 <input
                   className="available__input item available__input--quantity"
                   type="number"
                   placeholder="0"
-                  value={quantity}
+                  value="quantity"
                   onChange={(e) => setQuantity(e.target.value)}
                   required
                 />
               </div>
             )}
+
             <div className="available__warehouse-package">
               <p className="available__label">Warehouse</p>
               <div className="available__arrow-container">

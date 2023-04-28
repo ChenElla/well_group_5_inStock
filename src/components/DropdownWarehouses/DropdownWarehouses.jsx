@@ -9,8 +9,8 @@ function DropdownWarehouses({ warehouse, warehouseList, setWarehouse }) {
       warehouseList.map((warehouseList) => warehouseList.warehouse_name)
     ),
   ];
-  console.log("warehouseList = ", warehouseList);
-  console.log("uniqueWarehouseNames", uniqueWarehouseNames);
+  // console.log("warehouseList = ", warehouseList);
+  // console.log("uniqueWarehouseNames", uniqueWarehouseNames);
 
   // Create an array of <option> elements from the unique warehouse names
 

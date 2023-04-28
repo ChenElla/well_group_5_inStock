@@ -45,14 +45,13 @@ function ItemDetail({
               <select
                 className="itemDetails__input itemDetails__input--category"
                 name=""
-                value={category}
+                defaultValue="default"
                 onChange={(e) => setCategory(e.target.value)}
-                placeholder="Please select"
                 // PLACEHOLDER NOT WORKING
                 required
               >
                 {/* The top option is proxy for the placeholder which is not registering. WANT TO CHANGE */}
-                <option selected>Please select</option>
+                <option value="default">Please select</option>
                 <option>Accessories</option>
                 <option>Apparel</option>
                 <option>Electronics</option>
