@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 import InventoryItem from "../InventoryItem/InventoryItem";
 
 import "./InventoryList.scss";
@@ -8,9 +6,11 @@ import SearchBar from "../SearchBar/SearchBar";
 import AddButton from "../AddButton/AddButton";
 import InventoryHeader from "../InventoryHeader/InventoryHeader";
 
-function InventoryList({ inventory }) {
+function InventoryList({ inventory, updateList }) {
 	const inventoryItems = inventory.map((item) => {
-		return <InventoryItem item={item} showWarehouse={true} />;
+		return (
+			<InventoryItem item={item} showWarehouse={true} updateList={updateList} />
+		);
 	});
 	return (
 		<div className="inventoryList">
@@ -29,5 +29,4 @@ function InventoryList({ inventory }) {
 		</div>
 	);
 }
-
 export default InventoryList;

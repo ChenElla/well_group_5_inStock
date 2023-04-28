@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import InventoryDeleteModal from "../Modals/InventoryDeleteModal";
 
 import proceed_icon from "../../assets/Icons/chevron_right-24px.svg";
 import delete_icon from "../../assets/Icons/delete_outline-24px.svg";
@@ -7,7 +10,9 @@ import edit_icon from "../../assets/Icons/edit-24px.svg";
 
 import "./InventoryItem.scss";
 
-export default function InventoryItem({ item, showWarehouse }) {
+export default function InventoryItem({ item, showWarehouse, updateList }) {
+	console.log(updateList);
+	const [deleteVisible, setDeleteVisible] = useState(false);
 	return (
 		<div className="itemContainer__outer">
 			<div className="itemContainer">
@@ -78,13 +83,20 @@ export default function InventoryItem({ item, showWarehouse }) {
 					className="iconRow__deleteIcon"
 					src={delete_icon}
 					alt="delete_icon"
-					onClick={() => {
-						alert("Delete item code goes here");
-					}}
+					onClick={() => setDeleteVisible(true)}
 				/>
 				<Link to={`/inventories/${item.id}/edit`}>
 					<img className="iconRow__editIcon" src={edit_icon} alt="edit_icon" />
 				</Link>
+			</div>
+			<div className={deleteVisible ? "" : "itemContainer__hidden"}>
+				<InventoryDeleteModal
+					inventories={item}
+					modalHandler={() => {
+						setDeleteVisible(false);
+						updateList(item.id);
+					}}
+				/>
 			</div>
 		</div>
 	);

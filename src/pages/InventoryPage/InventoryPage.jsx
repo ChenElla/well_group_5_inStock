@@ -7,6 +7,7 @@ import PageContainer from "../../components/PageContainer/PageContainer";
 
 function InventoryPage() {
 	const [inventory, setInventory] = useState(null);
+	const [deletedID, updateList] = useState(null);
 
 	useEffect(() => {
 		axios
@@ -18,12 +19,12 @@ function InventoryPage() {
 			.catch((e) => {
 				console.error(e);
 			});
-	}, []);
+	}, deletedID);
 
 	if (inventory)
 		return (
 			<PageContainer>
-				<InventoryList inventory={inventory} />
+				<InventoryList inventory={inventory} updateList={updateList} />
 			</PageContainer>
 		);
 	else return <Loading />;
