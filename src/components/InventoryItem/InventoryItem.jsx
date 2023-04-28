@@ -44,7 +44,7 @@ export default function InventoryItem({ item, showWarehouse, updateList }) {
 				</div>
 				<div className="itemContainer__column">
 					<div className="itemContainer__itemStatus">
-						<div className="itemContainer__title itemContainer__title--mobile">
+						<div id = "mobile_status" className="itemContainer__title itemContainer__title--mobile">
 							status
 						</div>
 						{item.status.toLowerCase() === "in stock" ? (
@@ -64,8 +64,7 @@ export default function InventoryItem({ item, showWarehouse, updateList }) {
 						<div className="itemContainer__itemQty__quantity">
 							{item.quantity}
 						</div>
-					</div>
-					{showWarehouse && (
+						{showWarehouse && (
 						<div className="itemContainer__itemWarehouse">
 							<div className="itemContainer__title itemContainer__title--mobile">
 								warehouse
@@ -74,7 +73,8 @@ export default function InventoryItem({ item, showWarehouse, updateList }) {
 								{item.warehouse_name}
 							</div>
 						</div>
-					)}
+						)}
+					</div>
 				</div>
 			</div>
 			<div className="iconRow">
