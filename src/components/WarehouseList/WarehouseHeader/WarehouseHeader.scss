@@ -6,21 +6,19 @@
 	color: $Cloud;
 	background-color: $White;
 }
-.warehouseContainer {
+.warehouseHeader {
+	display: none;
 	padding: 24px;
-
-	@include flexDisp(row, space-between);
-	@include TiWeb;
+	background-color: $White;
+	// @include flexDisp(row, space-between);
 
 	@include tablet {
 		width: 80%;
 		@include flexDisp(row, flex-start);
 		gap: 2rem;
 	}
-	&__warehouseName {
-		@include tablet {
-			width: 40%;
-		}
+	&__itemName {
+		width: 40%;
 		&__title {
 			@include column_label;
 			padding-bottom: 4px;
@@ -36,6 +34,11 @@
 				font-size: large;
 				color: $Instock-Indigo;
 			}
+		}
+	}
+	&__itemStatus {
+		@include tablet {
+			width: 40%;
 		}
 	}
 	&__column {
@@ -59,12 +62,6 @@
 		color: $Slate;
 		@include TiWeb;
 		font-weight: 700;
-
-		&--mobile {
-			@include tablet {
-				display: none;
-			}
-		}
 	}
 	&__outer {
 		@include tablet {
@@ -73,38 +70,12 @@
 			align-items: baseline;
 			justify-content: space-between;
 		}
-		border-bottom: 1px solid $Cloud;
-		&:hover {
-			background-color: transparentize($color: $Instock-Indigo, $amount: 0.93);
-		}
 	}
-	&__warehouseContact {
-		@include tablet {
-			width: 40%;
-		}
-	}
-	&__hidden {
-		display: none;
-	}
-	&__nextLine {
-		display: none;
-		@include tablet {
-			display: block;
-		}
-	}
-}
-.iconRow {
-	padding: 0 24px 24px 24px;
-	width: 100%;
-	@include flexDisp(row, space-between);
-	& > * {
+	&__flex {
+		display: flex;
 		cursor: pointer;
 	}
-
-	@include tablet {
-		@include flexDisp(row, flex-end);
-		width: fit-content;
-		align-items: baseline;
-		gap: 1rem;
+	&__actions {
+		margin: 0 24px;
 	}
 }
