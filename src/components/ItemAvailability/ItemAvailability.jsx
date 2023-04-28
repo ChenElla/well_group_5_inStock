@@ -55,83 +55,83 @@ function ItemAvailability({
   }, []);
 
   console.log("here is warehouse list", warehouseList);
-
-  // if (warehouse && warehouseList && setWarehouse)
-  return (
-    <section className="available">
-      <div className="available__outer">
-        <h2 className="available__header">Item Availability</h2>
-        <div className="available__body">
-          <div className="available__status-package">
-            <p className="available__label">Status</p>
-            <div className="available__radio-ctn">
-              <div className="available__rad-package">
-                <input
-                  type="radio"
-                  value={status}
-                  className="available__radio-btn"
-                  onChange={(e) => setStatus("Out of Stock")}
-                  name="stock" // name must match the other radio button to make sure only one can be selected
-                ></input>
-                <label className="available__radio-text">In stock</label>
-              </div>
-              <div className="available__rad-package">
-                <input
-                  type="radio"
-                  className="available__radio-btn"
-                  value={status}
-                  onChange={(e) => setStatus("In Stock")}
-                  name="stock"
-                ></input>
-                <label className="available__radio-text">Out of stock</label>
+  if (warehouseList)
+    // if (warehouse && warehouseList && setWarehouse)
+    return (
+      <section className="available">
+        <div className="available__outer">
+          <h2 className="available__header">Item Availability</h2>
+          <div className="available__body">
+            <div className="available__status-package">
+              <p className="available__label">Status</p>
+              <div className="available__radio-ctn">
+                <div className="available__rad-package">
+                  <input
+                    type="radio"
+                    value={status}
+                    className="available__radio-btn"
+                    onChange={(e) => setStatus("Out of Stock")}
+                    name="stock" // name must match the other radio button to make sure only one can be selected
+                  ></input>
+                  <label className="available__radio-text">In stock</label>
+                </div>
+                <div className="available__rad-package">
+                  <input
+                    type="radio"
+                    className="available__radio-btn"
+                    value={status}
+                    onChange={(e) => setStatus("In Stock")}
+                    name="stock"
+                  ></input>
+                  <label className="available__radio-text">Out of stock</label>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="available__quantity-package">
-            <p className="available__label">Quantity</p>
-            <input
-              className="available__input item available__input--quantity"
-              type="number"
-              placeholder="0"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              required
-            />
-          </div>
-          <div className="available__warehouse-package">
-            <p className="available__label">Warehouse</p>
-            <div className="available__arrow-container">
-              {/* <DropdownWarehouses
-                warehouse={warehouse}
-                warehouseList={warehouseList}
-                setWarehouse={setWarehouse}
-              /> */}
-
-              {/* <select
-                className="available__input available__input--warehouse"
-                name=""
-                value={warehouse}
-                onChange={(e) => setWarehouse(e.target.value)}
+            <div className="available__quantity-package">
+              <p className="available__label">Quantity</p>
+              <input
+                className="available__input item available__input--quantity"
+                type="number"
+                placeholder="0"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
                 required
-              >
-                <option selected>Please select</option>
-                <option>New York</option>
-                <option>more needed</option>
-              </select> */}
-              <img
-                className="available__drop-Arrow"
-                src={dropArrow}
-                alt="Drop Down Arrow"
               />
+            </div>
+            <div className="available__warehouse-package">
+              <p className="available__label">Warehouse</p>
+              <div className="available__arrow-container">
+                <DropdownWarehouses
+                  warehouse={warehouse}
+                  warehouseList={warehouseList}
+                  setWarehouse={setWarehouse}
+                />
+
+                {/* <select
+                  className="available__input available__input--warehouse"
+                  name=""
+                  value={warehouse}
+                  onChange={(e) => setWarehouse(e.target.value)}
+                  required
+                >
+                  <option selected>Please select</option>
+                  <option>New York</option>
+                  <option>more needed</option>
+                </select> */}
+                <img
+                  className="available__drop-Arrow"
+                  src={dropArrow}
+                  alt="Drop Down Arrow"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-  // else {
-  //   return <Loading />;
-  // }
+      </section>
+    );
+  else {
+    return <Loading />;
+  }
 }
 
 export default ItemAvailability;

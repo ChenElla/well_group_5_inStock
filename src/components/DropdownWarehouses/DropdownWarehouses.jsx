@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../Loading/Loading";
 
 function DropdownWarehouses({ warehouse, warehouseList, setWarehouse }) {
   // console.log("this is warehouselist in the new component", warehouseList);
@@ -8,13 +9,16 @@ function DropdownWarehouses({ warehouse, warehouseList, setWarehouse }) {
       warehouseList.map((warehouseList) => warehouseList.warehouse_name)
     ),
   ];
-
+  console.log("warehouseList = ", warehouseList);
   console.log("uniqueWarehouseNames", uniqueWarehouseNames);
 
   // Create an array of <option> elements from the unique warehouse names
 
-  const options = uniqueWarehouseNames.map((name) => <option>{name}</option>);
+  const dropdownOptions = uniqueWarehouseNames.map((name) => (
+    <option value={warehouseList.id}>{name}</option>
+  ));
 
+  // if (!warehouseList)
   return (
     // <div>test</div>
     <select
@@ -24,9 +28,12 @@ function DropdownWarehouses({ warehouse, warehouseList, setWarehouse }) {
       required
     >
       <option>Please select</option>
-      {options}
+      {dropdownOptions}
     </select>
   );
+  // else {
+  //   return <Loading />;
+  // }
 }
 
 export default DropdownWarehouses;

@@ -11,9 +11,6 @@
   @include desktop {
     @include desktopWidths;
   }
-  // &__form {
-  //   background-color: $Light-Grey;
-  // }
 
   &__column {
     background-color: $White;
@@ -29,7 +26,3 @@
     }
   }
 }
-
-// #invItemBody__form {
-//   background-color: red;
-// }

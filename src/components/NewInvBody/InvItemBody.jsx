@@ -20,7 +20,8 @@ function NewInvBody() {
   function handleSubmit(e) {
     e.preventDefault();
     const joinedState = {
-      warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
+      warehouse_id,
+      // warehouse_id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
       item_name,
       description,
       category,
