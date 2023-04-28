@@ -26,7 +26,7 @@ function NewInvBody() {
       .get(`http://localhost:5050/warehouses/name_to_id/${warehouse_id}`)
       .then((data) => {
         const joinedState = {
-          warehouse_name: data.data,
+          warehouse_id: data.data,
           item_name,
           description,
           category,
@@ -43,7 +43,7 @@ function NewInvBody() {
             setQuantity(0);
             setWarehouse_id("");
             alert(`${item_name} was added to the warehouse`);
-            navigate("/warehouse");
+            navigate("/warehouses");
           })
           .catch((err) => console.log(err));
       })
