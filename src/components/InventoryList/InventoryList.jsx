@@ -5,8 +5,9 @@ import PageHeader from "../PageHeader/PageHeader";
 import SearchBar from "../SearchBar/SearchBar";
 import AddButton from "../AddButton/AddButton";
 import InventoryHeader from "../InventoryHeader/InventoryHeader";
-
+import { useNavigate } from "react-router-dom";
 function InventoryList({ inventory, updateList }) {
+	const navigate = useNavigate();
 	const inventoryItems = inventory.map((item) => {
 		return (
 			<InventoryItem item={item} showWarehouse={true} updateList={updateList} />
@@ -18,7 +19,7 @@ function InventoryList({ inventory, updateList }) {
 				<SearchBar />
 				<AddButton
 					name="New Item"
-					addCallback={() => {}}
+					addCallback={() => {navigate('/inventories/add')}}
 					cancelCallback={() => {}}
 				/>
 			</PageHeader>
