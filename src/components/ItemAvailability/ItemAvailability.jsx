@@ -38,7 +38,7 @@ function ItemAvailability({
         console.log(err);
         // navigate("/");
       });
-  }, []);
+  }, [warehouseList]);
 
   // const radioHandler = (e) => {
   //   setStatus;
@@ -47,7 +47,7 @@ function ItemAvailability({
   // };
   const showQuantityHandler = (e) => {
     setStatus(e.target.value);
-    setQuantity(0);
+    setQuantity("0");
     setShowQuantity(!showQuantity);
   };
 
@@ -94,7 +94,7 @@ function ItemAvailability({
                   className="available__input item available__input--quantity"
                   type="number"
                   placeholder="0"
-                  value="quantity"
+                  value="0"
                   onChange={(e) => setQuantity(e.target.value)}
                   required
                 />

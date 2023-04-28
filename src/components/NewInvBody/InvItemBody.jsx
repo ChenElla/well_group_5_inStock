@@ -12,7 +12,7 @@ function NewInvBody() {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("In Stock");
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState("0");
   const [warehouse_id, setWarehouse_id] = useState("");
   // ---------
   const [showQuantity, setShowQuantity] = useState(true);
@@ -40,7 +40,7 @@ function NewInvBody() {
             setDescription("");
             setCategory("");
             setStatus("In Stock");
-            setQuantity(0);
+            setQuantity("0");
             setWarehouse_id("");
             alert(`${item_name} was added to the warehouse`);
             navigate("/warehouses");
