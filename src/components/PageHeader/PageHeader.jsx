@@ -5,7 +5,12 @@ import "./PageHeader.scss";
 
 //may want to rename this component to something more specific as may nbeed to make another 2 for the different styles. THOUGH those are more elaborate so they could be modified names i.e. PageHeaderSearch or PageHeaderEdit (which are 2 other styles)
 
-function PageHeader({ pageHeader, children, backButton = true }) {
+function PageHeader({
+	pageHeader,
+	children,
+	backButton = true,
+	border = true,
+}) {
 	// function to allow user to go back to last page they were on - untested as routes not set up yet, though works if change url via warehouse/inventory buttons
 	const navigate = useNavigate();
 	const goBack = () => {
@@ -13,7 +18,7 @@ function PageHeader({ pageHeader, children, backButton = true }) {
 	};
 
 	return (
-		<div className="pageHeader">
+		<div className={border ? "pageHeader pageHeader--border" : "pageHeader"}>
 			<div className="pageHeader__outer">
 				<div className="pageHeader__inner-container">
 					<div className="pageHeader__inner-static">
@@ -28,7 +33,7 @@ function PageHeader({ pageHeader, children, backButton = true }) {
 
 						<h1 className="pageHeader__title-text">{pageHeader}</h1>
 					</div>
-					{children}
+					<div className="pageHeader__children">{children}</div>
 				</div>
 			</div>
 		</div>

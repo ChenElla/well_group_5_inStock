@@ -6,6 +6,7 @@ import "./InventoryList.scss";
 import PageHeader from "../PageHeader/PageHeader";
 import SearchBar from "../SearchBar/SearchBar";
 import AddButton from "../AddButton/AddButton";
+import InventoryHeader from "../InventoryHeader/InventoryHeader";
 
 function InventoryList({ inventory }) {
 	const inventoryItems = inventory.map((item) => {
@@ -13,7 +14,7 @@ function InventoryList({ inventory }) {
 	});
 	return (
 		<div className="inventoryList">
-			<PageHeader pageHeader="Inventory">
+			<PageHeader pageHeader="Inventory" border={false}>
 				<SearchBar />
 				<AddButton
 					name="New Item"
@@ -21,9 +22,9 @@ function InventoryList({ inventory }) {
 					cancelCallback={() => {}}
 				/>
 			</PageHeader>
-			{/* <div className="tableHeaders">
-
-			</div> */}
+			<div className="inventoryList__header">
+				<InventoryHeader />
+			</div>
 			{inventoryItems}
 		</div>
 	);

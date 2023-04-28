@@ -5,8 +5,10 @@
 @import "../../styling/global.scss";
 
 .pageHeader {
+	&__return {
+		cursor: pointer;
+	}
 	background-color: $White;
-	border-bottom: 1px solid $Cloud;
 	&__outer {
 		padding: 32px 28px 24px;
 		@include tablet {
@@ -20,11 +22,13 @@
 		}
 	}
 	&__inner-container {
-		@include flexDisp(column, flex-start);
-		width: 100%;
-
+		// @include flexCtrAll;
+		// flex-direction: column;
+		// align-items: baseline;
+		gap: 1rem;
 		@include tablet {
-			@include flexDisp(row, flex-start);
+			display: flex;
+			justify-content: flex-start;
 		}
 	}
 	&__inner-static {
@@ -35,35 +39,33 @@
 	&__return {
 		cursor: pointer;
 	}
-	background-color: $White;
-	border-bottom: 1px solid $Cloud;
-	&__outer {
-		padding: 32px 28px 24px;
-		@include tablet {
-			padding: 32px 32px 21px;
-			//THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
-			@include desktop {
-				@include desktopWidths;
-				padding: 32px 32px 21px;
-				//this padding for the^ bottom may need to be changes. It is only 21 to reflect mockup, though the positioning seems to be reletive to the Header component behind it
-			}
-		}
-	}
-	&__inner-container {
-		@include flexCtrAll;
-		align-items: baseline;
-		gap: 1rem;
-		@include tablet {
-			justify-content: flex-start;
-		}
-	}
-
-	&__return {
-		cursor: pointer;
-	}
 
 	&__title-text {
 		@include page_header;
 		padding-left: 4px;
+	}
+	&--border {
+		border-bottom: 1px solid $Cloud;
+	}
+	&__children {
+		& > * {
+			margin-top: 1rem;
+		}
+		@include tablet {
+			display: flex;
+			width: 100%;
+			justify-content: right;
+			gap: 1rem;
+			align-items: start;
+			& > :nth-child(1) {
+				width: 60%;
+			}
+			& > :nth-child(2) {
+				width: 30%;
+			}
+			& > * {
+				margin-top: 0;
+			}
+		}
 	}
 }

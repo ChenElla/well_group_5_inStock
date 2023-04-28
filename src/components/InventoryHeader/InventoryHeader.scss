@@ -6,11 +6,10 @@
 	color: $Cloud;
 	background-color: $White;
 }
-.itemContainer {
+.inventoryHeader {
 	padding: 24px;
-
+	background-color: $White;
 	@include flexDisp(row, space-between);
-	@include TiWeb;
 
 	@include tablet {
 		width: 80%;
@@ -18,9 +17,7 @@
 		gap: 2rem;
 	}
 	&__itemName {
-		@include tablet {
-			width: 60%;
-		}
+		width: 60%;
 		&__title {
 			@include column_label;
 			padding-bottom: 4px;
@@ -41,27 +38,6 @@
 	&__itemStatus {
 		@include tablet {
 			width: 30%;
-		}
-		&__status {
-			border-radius: 20px;
-			padding: 4px 8px;
-			border: none;
-			text-align: center;
-			text-decoration: none;
-			@include column_label;
-			&--inStock {
-				color: $Green;
-				background-color: transparentize($color: $Green, $amount: 0.9);
-			}
-			&--outOfStock {
-				color: $Red;
-				background-color: transparentize($color: $Red, $amount: 0.9);
-			}
-		}
-	}
-	&__itemCategory {
-		&__title {
-			text-transform: uppercase;
 		}
 	}
 	&__column {
@@ -85,12 +61,6 @@
 		color: $Slate;
 		@include TiWeb;
 		font-weight: 700;
-
-		&--mobile {
-			@include tablet {
-				display: none;
-			}
-		}
 	}
 	&__outer {
 		@include tablet {
@@ -99,29 +69,14 @@
 			align-items: baseline;
 			justify-content: space-between;
 		}
-		border-bottom: 1px solid $Cloud;
-		&:hover {
-			background-color: transparentize($color: $Instock-Indigo, $amount: 0.93);
-		}
 	}
 	&__itemQty {
 		@include tablet {
 			width: 10%;
 		}
 	}
-}
-.iconRow {
-	padding: 0 24px 24px 24px;
-	width: 100%;
-	@include flexDisp(row, space-between);
-	& > * {
+	&__flex {
+		display: flex;
 		cursor: pointer;
-	}
-
-	@include tablet {
-		@include flexDisp(row, flex-end);
-		width: fit-content;
-		align-items: baseline;
-		gap: 1rem;
 	}
 }

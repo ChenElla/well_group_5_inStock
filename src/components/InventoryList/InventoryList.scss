@@ -1,3 +1,9 @@
 @import "../../styling/global.scss";
 .inventoryList {
+	&__header {
+		display: none;
+		@include tablet {
+			display: initial;
+		}
+	}
 }
