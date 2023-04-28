@@ -66,6 +66,9 @@ export default function WarehouseEdit({ warehouseId, singleWarehouse }) {
             }
         });
         if (empty) return;
+        const phone_number_array = phone_ref.current.value.split('');
+        //+1 (919) 797-2864
+        const phone_number = '+1 ('+phone_number_array[0]+''+phone_number_array[1]+''+phone_number_array[2]+') '+phone_number_array[3]+''+phone_number_array[4]+''+phone_number_array[5]+'-'+phone_number_array[6]+''+phone_number_array[7]+''+phone_number_array[8]+''+phone_number_array[9];
         const warehouseEdited = {
             id: warehouseId,
             warehouse_name: warehouse_name_ref.current.value,
@@ -74,7 +77,7 @@ export default function WarehouseEdit({ warehouseId, singleWarehouse }) {
             country: city_ref.current.value,
             contact_name: contact_name_ref.current.value,
             contact_position: position_ref.current.value,
-            contact_phone: phone_ref.current.value,
+            contact_phone: phone_number,
             contact_email: email_ref.current.value,
         };
         axios

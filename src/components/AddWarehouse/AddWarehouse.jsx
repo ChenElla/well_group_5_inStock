@@ -73,7 +73,6 @@ export default function AddWarehouse() {
         const phone_number_array = phone_ref.current.value.split('');
         //+1 (919) 797-2864
         const phone_number = '+1 ('+phone_number_array[0]+''+phone_number_array[1]+''+phone_number_array[2]+') '+phone_number_array[3]+''+phone_number_array[4]+''+phone_number_array[5]+'-'+phone_number_array[6]+''+phone_number_array[7]+''+phone_number_array[8]+''+phone_number_array[9];
-        console.log(phone_number);
         const newWarehouse = {
             warehouse_name: warehouse_name_ref.current.value,
             address: address_ref.current.value,
@@ -88,7 +87,6 @@ export default function AddWarehouse() {
             .post(`http://localhost:5050/warehouses`, newWarehouse)
             .then((response) => {
                 const warehouseId = response.data.id;
-                console.log(warehouseId);
                 alert("Added Successfully");
                 navigate(`/warehouses/${warehouseId}`);
             })
