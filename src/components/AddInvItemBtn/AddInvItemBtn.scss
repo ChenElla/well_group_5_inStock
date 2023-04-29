@@ -17,6 +17,7 @@
     }
   }
   &__button {
+    border: none;
     @include textBtn;
     flex-grow: 1;
     @include tablet {

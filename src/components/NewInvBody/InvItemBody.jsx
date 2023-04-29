@@ -51,7 +51,6 @@ function NewInvBody() {
     <>
     <PageHeader2 pageHeader={"Add New Inventory Item"} backButton={true}/>
 		<div className="invItemBody">
-
 			<form id="invItemBody__form" onSubmit={handleSubmit}>
 				<div className="invItemBody__column">
 					<div className="invItemBody__width">
@@ -77,7 +76,7 @@ function NewInvBody() {
 						/>
 					</div>
 				</div>
-				<AddInvItemBtn />
+				<AddInvItemBtn text="Save"/>
 			</form>
 		</div>
     </>
