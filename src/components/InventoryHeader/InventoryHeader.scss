@@ -1,0 +1,67 @@
+@import "../../styling/global.scss";
+
+.divider {
+	margin-top: -1px;
+	margin-bottom: 0;
+	color: $Cloud;
+	background-color: $White;
+}
+.inventoryHeader {
+	width:100%;
+	background-color: $Light-Grey;
+	@include flexDisp(row, space-between);
+	align-items:center;
+	@include tablet {
+		padding-bottom:0;
+        padding:18px 32px;
+    }
+    @include desktop{
+        padding:11px 40px;
+    }
+	&__title {
+		@include column_label;
+		text-transform: uppercase;
+		color:$Slate;
+	}
+	&__sortIcon{
+		height:15px;
+	}
+	&__itemName {
+		width: 21%;
+		@include flexDisp(row,flex-start);
+		align-items:center;
+	}
+	&__itemStatus {
+		width:22%;
+		@include flexDisp(row,flex-start);
+		align-items:center;
+	}
+	&__itemQty {
+		width:25%;
+		@include flexDisp(row,flex-start);
+		align-items:center;
+		&__itemWarehouse{
+			@include flexDisp(row,flex-start);
+			align-items: center;
+			margin-left:16%;
+		}
+	}
+	&__itemCategory {
+		width:22%;
+		@include flexDisp(row,flex-start);
+		align-items:center;
+	}
+	&__itemActions{
+		width:10%;
+		@include flexDisp(row,flex-end);
+	}
+	&__outer {
+		@include tablet {
+			background-color: white;
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+	}
+	
+}

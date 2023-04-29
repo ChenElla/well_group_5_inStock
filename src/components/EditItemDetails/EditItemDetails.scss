@@ -1,0 +1,102 @@
+@import "../../styling/global.scss";
+
+.EditItemDetails {
+  background-color: $White;
+  border-bottom: 1px solid $Cloud;
+  @include tablet {
+    border-bottom: none;
+    border-right: 1px solid $Cloud;
+  }
+  &__outer {
+    padding: 16px 24px 24px;
+    @include tablet {
+      padding: 0 32px;
+      //THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
+      // @include desktop {
+      //   @include desktopWidths;
+      //   padding: 32px 32px 21px;
+      //   THIS WILL LIKELY NEED TO CHANGE OR BE DELETED. THESE COMPONENTS WILL BE NESTED IN A PARENT DIV THAT MAY NEED THESE STYLES. ***ACTUALLY LOOKS LIKE THE PADDING REMAINS THE SAME FROM TABLET, SO WILL DELETE THIS MEDIA QUERY AND APPLY DESKTOPWIDTHS TO THE OUTER CONTAINER***
+      // }
+    }
+  }
+  &__header {
+    @include sub_header;
+    padding-bottom: 24px;
+    @include tablet {
+      padding-bottom: 32px;
+    }
+  }
+  &__body {
+    @include flexColumn;
+    gap: 16px;
+    @include tablet {
+      gap: 24px;
+    }
+  }
+  //all 'package's may just be made one class
+  &__name-package {
+  }
+  &__label {
+    @include body_medium;
+    font-weight: 600;
+    padding-bottom: 4px;
+  }
+  &__input {
+    // ------create mixin-----
+
+    height: 36px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid $Cloud;
+    @include body_medium;
+    color: $Instock-Black;
+    padding: 0 16px 0; //need to adjust to {padding: 8px 16px;} if input is larger than one line (i.e. textArea)
+
+    // ------create mixin-----
+    &:focus {
+      @include activeBorder;
+      // &:invalid {
+      //   @include invalidBorder;
+      // }
+    }
+    @include tablet {
+      height: 38px;
+    }
+    &--name {
+    }
+    &--description {
+      height: 120px;
+      padding: 8px 16px;
+      resize: none;
+      overflow: hidden;
+    }
+    &--category {
+      &::-ms-expand {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+      }
+    }
+  }
+  &__description-package {
+  }
+  &__category-package {
+  }
+  &__arrow-container {
+    position: relative;
+  }
+  &__drop-Arrow {
+    position: absolute;
+    right: 16px;
+    top: 6px;
+    pointer-events: none;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+}

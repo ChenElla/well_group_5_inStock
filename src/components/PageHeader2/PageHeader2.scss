@@ -1,0 +1,83 @@
+@import "../../styling/global.scss";
+
+.pageHeader2 {
+    background-color: $Graphite;
+    padding:0 16px;
+    @include tablet{
+        padding:0 24px;
+    }
+    @include desktop{
+        padding:0;
+        align-items: center;
+    }
+	&__divider {
+		border: 0.7px solid $Cloud;
+		padding: 0;
+		margin: 0;
+		@include tablet {
+			display: none;
+		}
+	}
+	&__return {
+		cursor: pointer;
+	}
+	&__outer {
+        background-color: $White;
+		padding: 32px 28px 24px;
+		@include tablet {
+			padding: 38px 32px 22px 32px;
+			@include desktop {
+                width:80%;
+				padding: 32px 40px 28px 40px;
+                margin:auto;
+			}
+		}
+	}
+	&__inner-container {
+		@include tablet {
+			@include flexDisp(row, space-between);
+		}
+	}
+	&__inner-static {
+		width: 100%;
+		@include flexDisp(row, flex-start);
+		@include tablet {
+			width: 100%;   
+		}
+	}
+
+	&__return {
+		cursor: pointer;
+	}
+
+	&__title-text {
+		@include page_header;
+		padding-left: 4px;
+        
+	}
+	&--border {
+		border-bottom: 1px solid $Cloud;
+	}
+	&__children {
+		& > * {
+			margin-top: 1rem;
+		}
+		@include tablet {
+			@include flexDisp(row, flex-end);
+			display: flex;
+			width: 70%;
+			justify-content: right;
+			gap: 1rem;
+			align-items: start;
+			& > :nth-child(1) {
+				width: 100%;
+			}
+			& > :nth-child(2) {
+				width: max-content;
+			}
+			& > * {
+				margin-top: 0;
+			}
+		}
+	}
+}

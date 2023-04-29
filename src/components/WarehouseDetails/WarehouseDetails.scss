@@ -1,0 +1,220 @@
+@import "../../styling/global.scss";
+
+.mainContainer {
+	background-color: $Light-Grey;
+	width: 100%;
+	&__backgroundContainer {
+		background-color: $Graphite;
+		width: 100%;
+		&__titleContainer {
+			@include side_margins;
+			box-sizing: border-box;
+			border-radius: 3px 3px 0 0;
+			padding: 24px 24px 0 24px;
+			background-color: $White;
+			@include tablet {
+				padding: 32px;
+			}
+			@include desktop {
+				width: 80%;
+				padding: 40px;
+			}
+			@include flexDisp(row, space-between);
+			&__iconContainer {
+				background-color: $Instock-Indigo;
+				border-radius: 100%;
+				width: 36px;
+				height: 36px;
+				@include flexDisp(row, center);
+				align-items: center;
+				@include tablet {
+					@include flexDisp(row, center);
+					height: auto;
+					width: auto;
+					border-radius: 20px;
+					padding: 8px 16px;
+				}
+				&:hover {
+					background-color: $Graphite;
+					cursor: pointer;
+				}
+				&__editIcon {
+					filter: brightness(0) invert(1);
+					@include tablet {
+						height: 14px;
+						margin-right: 3px;
+					}
+				}
+				&__text {
+					@include label_link_button;
+					display: none;
+					color: $White;
+					@include tablet {
+						display: block;
+					}
+				}
+			}
+
+			&__nameContainer {
+				@include flexDisp(row, flex-start);
+				align-items: center;
+				@include label_link_button;
+				&__title {
+					@include page_header;
+					@include tablet {
+						margin-left: 12px;
+					}
+				}
+				&__backIcon {
+					@include flexDisp(row, center);
+					align-items: center;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	&__listContainer {
+		background-color: $White;
+		@include side_margins;
+		padding-top: 24px;
+		box-sizing: border-box;
+		box-shadow: 1px 0px $Cloud, -1px 0px $Cloud;
+		@include tablet {
+			padding-top: 0;
+		}
+		@include desktop {
+			width: 80%;
+		}
+		&__divider {
+			border-top: 1px solid $Cloud;
+			margin: 0;
+			background-color: $White;
+		}
+		&__warehouseDetail {
+			padding: 16px 24px;
+			background-color: $White;
+			@include flexDisp(column, space-between);
+			@include tablet {
+				@include flexDisp(row, space-between);
+				padding: 18px 32px;
+			}
+			@include desktop {
+				padding: 24px 40px;
+			}
+			&__warehouseAddress {
+				@include label_link_button;
+				padding-bottom: 36px;
+				@include tablet {
+					width: 50%;
+					padding-bottom: 0;
+				}
+				@include desktop {
+					width: 35%;
+				}
+				&__nextLine {
+					display: none;
+					@include tablet {
+						display: block;
+					}
+				}
+				&__title {
+					@include column_label;
+					margin-bottom: 4px;
+				}
+			}
+			&__contact {
+				@include flexDisp(row, flex-start);
+				@include tablet {
+					width: 50%;
+					border-left: 1px solid $Cloud;
+					background-color: $White;
+					@include flexDisp(row, space-around);
+				}
+				@include desktop {
+					width: 65%;
+					@include flexDisp(row, space-around);
+				}
+				&__contactName {
+					width: 50%;
+					@include label_link_button;
+					@include tablet {
+						width: auto;
+					}
+					@include desktop {
+						width: 35%;
+						padding-left: 40px;
+					}
+					&__title {
+						@include column_label;
+						margin-bottom: 4px;
+					}
+				}
+				&__contactInfo {
+					width: 50%;
+					@include label_link_button;
+					@include tablet {
+						width: auto;
+					}
+					@include desktop {
+						width: 65%;
+						padding-left: 40px;
+					}
+					&__title {
+						@include column_label;
+						padding-bottom: 4px;
+					}
+				}
+			}
+		}
+		&__row {
+			display: none;
+			padding: 16px 24px;
+			background-color: $Light-Grey;
+			@include tablet {
+				padding: 18px 32px;
+				display: block;
+				@include flexDisp(row, space-between);
+			}
+			@include desktop {
+				padding: 18px 40px;
+			}
+			&__invContainer,
+			&__categoryContainer,
+			&__statusContainer,
+			&__quantityContainer,
+			&__actionsContainer {
+				@include flexDisp(row, flex-start);
+				align-items: center;
+				width: 20%;
+				&__name {
+					@include column_label;
+				}
+				&__icon {
+					height: 14px;
+				}
+			}
+			&__actionsContainer {
+				@include flexDisp(row, flex-end);
+			}
+			&__quantityContainer {
+				@include flexDisp(row, flex-start);
+				padding-left: 20px;
+			}
+		}
+	}
+}
+
+#mobile_divider{
+    @include tablet{
+        display:none;
+    }
+}
+
+#show_divider{
+    display:block;
+    border:0.8px solid $Cloud;
+    box-shadow: 1px 1px $Light-Grey;
+}
