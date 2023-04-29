@@ -5,34 +5,81 @@
 @import "../../styling/global.scss";
 
 .pageHeader {
-  background-color: $White;
-  border-bottom: 1px solid $Cloud;
-  &__outer {
-    padding: 32px 28px 24px;
-    @include tablet {
-      padding: 32px 32px 21px;
-      //THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
-      @include desktop {
-        @include desktopWidths;
-        padding: 32px 32px 21px;
-        //this padding for the^ bottom may need to be changes. It is only 21 to reflect mockup, though the positioning seems to be reletive to the Header component behind it
-      }
-    }
-  }
-  &__inner-container {
-    @include flexCtrAll;
-    align-items: baseline;
-    @include tablet {
-      justify-content: flex-start;
-    }
-  }
-  //making arrow 16px does not match mockup. Standard size looks appropriate
-  // &__return {
-  //   width: 16px;
-  // }
+	&__divider{
+		border:0.7px solid $Cloud;
+		height:0;
+		padding:0;
+		margin:0;
+		@include tablet{
+			display:none;
+		}
+	}
+	&__return {
+		cursor: pointer;
+	}
+	background-color: $White;
+	&__outer {
+		padding: 32px 28px 24px;
+		@include tablet {
+			padding: 38px 32px 22px 32px;
+			//THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
+			@include desktop {
+				padding: 32px 40px 28px 40px;
+				//this padding for the^ bottom may need to be changes. It is only 21 to reflect mockup, though the positioning seems to be reletive to the Header component behind it
+			}
+		}
+	}
+	&__inner-container {
+		// @include flexCtrAll;
+		// flex-direction: column;
+		// align-items: baseline;
+		gap: 1rem;
+		@include tablet {
+			@include flexDisp(row,space-between);
+		}
+	}
+	&__inner-static {
+		width: 100%;
+		@include flexDisp(row, flex-start);
+		@include tablet{
+			width: 41%;
+		}
+		@include desktop{
+			width:90%;
+		}
+	}
 
-  &__title-text {
-    @include page_header;
-    padding-left: 4px;
-  }
+	&__return {
+		cursor: pointer;
+	}
+
+	&__title-text {
+		@include page_header;
+		padding-left: 4px;
+	}
+	&--border {
+		border-bottom: 1px solid $Cloud;
+	}
+	&__children {
+		& > * {
+			margin-top: 1rem;
+		}
+		@include tablet {
+			@include flexDisp(row,flex-end);
+			display: flex;
+			width: 100%;
+			justify-content: right;
+			gap: 1rem;
+			align-items: start;
+			& > :nth-child(1) {
+				width:70%;
+			}
+			& > :nth-child(2) {
+				width: 30%;
+			}
+			& > * {
+				margin-top: 0;
+			}
+		}
+	}
 }

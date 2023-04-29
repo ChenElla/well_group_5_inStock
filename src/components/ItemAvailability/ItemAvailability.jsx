@@ -94,8 +94,7 @@ function ItemAvailability({
                 <input
                   className="available__input item available__input--quantity"
                   type="number"
-                  placeholder="0"
-                  value="0"
+                  defaultValue="0"
                   onChange={(e) => setQuantity(e.target.value)}
                   required
                 />

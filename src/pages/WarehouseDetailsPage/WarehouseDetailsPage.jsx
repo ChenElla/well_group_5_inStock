@@ -10,7 +10,7 @@ import Loading from '../../components/Loading/Loading';
 
 export default function WarehouseDetailsPage() {
     const [singleWarehouse, setSingleWarehouse] = useState(null);
-    const [singleWarehouseInventories, setSingleWarehouseInventories] = useState(null);
+    // const [singleWarehouseInventories, setSingleWarehouseInventories] = useState(null);
     const { warehouseId } = useParams();
     const navigate = useNavigate();
 
@@ -19,24 +19,26 @@ export default function WarehouseDetailsPage() {
             .then((response) => {
                 setSingleWarehouse(response.data);
                 // console.log(response.data)
-                axios.get(`http://localhost:5050/warehouses/${warehouseId}/inventories`)
-                    .then((response)=>{
-                        setSingleWarehouseInventories(response.data);
-                        // console.log(response.data)
-                    }).catch((err)=>{
-                        console.log(err);
-                    })
+                // axios.get(`http://localhost:5050/warehouses/${warehouseId}/inventories`)
+                //     .then((response)=>{
+                //         setSingleWarehouseInventories(response.data);
+                //         // console.log(response.data)
+                //     }).catch((err)=>{
+                //         console.log(err);
+                //     })
             }).catch((err)=>{
-                console.log(err);
-                // navigate("/");
+                console.log(err.response.status)
+                if(err.response.status === 404)
+                    navigate("/error/1");
             })
     },[warehouseId])
-    if(singleWarehouseInventories)
+    if(singleWarehouse)
         return (
             <WarehouseDetails 
                 warehouseId = {warehouseId}
                 singleWarehouse = {singleWarehouse}
-                inventories = {singleWarehouseInventories}
+                // inventories = {singleWarehouseInventories}
+                // setInventories = {setSingleWarehouseInventories}
             />
         )
     else{

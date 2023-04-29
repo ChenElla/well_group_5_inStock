@@ -18,7 +18,7 @@ function NewInvBody() {
   const [showQuantity, setShowQuantity] = useState(true);
   //--------
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -43,7 +43,8 @@ function NewInvBody() {
             setQuantity("0");
             setWarehouse_id("");
             alert(`${item_name} was added to the warehouse`);
-            navigate("/warehouses");
+            console.log(res.warehouse_id);
+            navigate(`/warehouses/${joinedState.warehouse_id}`);
           })
           .catch((err) => console.log(err));
       })
@@ -85,6 +86,27 @@ function NewInvBody() {
       </form>
     </div>
   );
+// =======
+// 	return (
+// 		<div className="invItemBody">
+// 			<PageHeader pageHeader={"Add New Inventory Item"} />
+// 			<div className="invItemBody__column">
+// 				<div className="invItemBody__width">
+// 					<ItemDetails />
+// 				</div>
+// 				<div className="invItemBody__width">
+// 					<ItemAvailability />
+// 				</div>
+// 			</div>
+// 			<AddButton
+// 				name="Item"
+// 				addCallback={() => {}}
+// 				cancelCallback={() => {}}
+// 				cancel={true}
+// 			/>
+// 		</div>
+// 	);
+// >>>>>>> develop
 }
 
 export default NewInvBody;

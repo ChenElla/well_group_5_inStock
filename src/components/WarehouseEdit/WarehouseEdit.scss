@@ -1,0 +1,192 @@
+@import '../../styling/global.scss';
+
+.errorMessage{
+    display:none;
+}
+
+.errorMessage--display{
+    @include flexDisp(row,flex-start);
+    align-items:center;
+    color:$Red;
+}
+.focus{
+    outline:1px solid $Red;
+}
+.divider{
+    border-top: 1px solid $Cloud;
+    margin:0;
+    background-color:$White;
+    display:none;
+    @include tablet{
+        display:block;
+    }
+}
+.mainContainer{
+    background-color: $Light-Grey;
+    width:100%;
+    &__backgroundContainer{
+        background-color:$Graphite;
+        width:100%;
+        &__titleContainer{
+            @include side_margins;
+            box-sizing: border-box;
+            border-radius:3px 3px 0 0;
+            padding:24px 24px 0 24px;
+            background-color:$White;
+            @include tablet{
+                padding:32px;
+            }
+            @include desktop{
+                width:80%;
+                padding:40px;
+            }
+            @include flexDisp(row,space-between);     
+            &__nameContainer{
+                @include flexDisp(row,flex-start);
+                align-items:center;
+                @include label_link_button;
+                &__title{
+                    @include page_header;
+                    @include tablet{
+                        margin-left:12px;
+                    }
+                }
+                &__backIcon{
+                    @include flexDisp(row,center);
+                    align-items:center;
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__warehouseForm{
+        background-color:$White;
+        @include side_margins;
+        padding-top:24px;
+        box-sizing: border-box;
+        box-shadow: 1px 0px $Cloud,-1px 0px $Cloud,0px 1px 1px 1px $Cloud;
+        @include tablet{
+            padding-top:0;
+            @include flexDisp(row,flex-start);
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+        @include desktop{
+            width:80%;
+        }
+        &__divider{
+            border-top: 1px solid $Cloud;
+            margin:0;
+            background-color:$White;
+            @include tablet{
+                display:none;
+            }
+        }
+        &__detailsForm,&__contactForm{
+            @include label_link_button;
+            font-weight:600;
+            padding:16px 24px;
+            background-color: $White;
+            @include flexDisp(column,space-between);
+            @include tablet{
+                padding:18px 32px;
+                box-sizing: border-box;
+                width:49%;
+            }
+            @include desktop{
+                padding:24px 40px;
+            }
+            &__column{
+                @include label_link_button;
+                padding-bottom:16px;
+                @include flexDisp(column, flex-start);
+                @include tablet{
+                    width:100%;
+                    padding-bottom:24px;
+                }
+                &__title{
+                    @include sub_header;
+                    margin-bottom:24px;
+                }
+                &__label{
+                    margin-bottom:4px;
+                }
+                &__input{
+                    border-radius:20px;
+                    border:solid $Cloud 1px;
+                    padding:8px 16px;
+                    &:focus{
+                        border:solid $Red 1px;
+                    }
+                }
+                &--error{
+                    padding-bottom:0;
+                }
+            }
+        }
+        &__contactForm{
+            @include tablet{
+                width:50%;
+                padding-left:0;
+            }
+            &__column{
+                @include tablet{
+                    border-left:1px solid $Cloud;
+                    padding-left:32px;
+                }
+            }
+        }
+        
+        &__buttonRow{
+            background-color:$Light-Grey;
+            padding:16px 24px;
+            
+            @include flexDisp(row,space-between);
+            @include tablet{
+                width:100%;
+                padding:18px 32px;
+                @include flexDisp(row,flex-end);
+            }
+            @include desktop{
+                padding:24px 40px;
+            }
+            &__button{
+                padding:8px 16px;
+                width:48%;
+                border:1px solid $Cloud;
+                border-radius:20px;
+                text-align:center;
+                @include label_link_button;
+                @include tablet{
+                    width:14%;
+                    margin-left:16px;
+                }
+                @include desktop{
+                    width:10%;
+                    margin-left:24px;
+                }
+                &--cancel{
+                    color:$Slate;
+                    background-color:$White;
+                    &:hover{
+                        border-color:$Instock-Indigo;
+                        color:$Instock-Indigo;
+                        cursor:pointer;
+                    }
+                }
+                &--save{
+                    background-color:$Instock-Indigo;
+                    color:$White;
+                    &:hover{
+                        background-color:$Graphite;
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+        border-radius:0 0 3px 3px;
+    }
+}

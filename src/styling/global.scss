@@ -3,14 +3,14 @@
 @import "./partials/_grids";
 @import "./partials/_media";
 body {
-  margin: 0;
-  padding: 0;
-  background-color: $Light-Grey;
+	margin: 0;
+	padding: 0;
+	background-color: $Light-Grey;
 }
 
 a {
-  text-decoration: none;
-  color: $Instock-Black;
+	text-decoration: none;
+	color: $Instock-Black;
 }
 
 h1,
@@ -23,18 +23,18 @@ th,
 td,
 caption,
 p {
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
 }
 
 img {
-  border: 0;
+	border: 0;
 }
 
 * {
-  box-sizing: border-box;
-  text-decoration: none;
+	box-sizing: border-box;
+	text-decoration: none;
 }
 
 // MIXINS
@@ -42,87 +42,122 @@ img {
 //Flex
 
 @mixin flexDisp($flex-direction, $justify-content) {
-  display: flex;
-  flex-direction: $flex-direction;
-  justify-content: $justify-content;
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $justify-content;
 }
 
 @mixin flexCtrAll {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 @mixin flexCtrX {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 @mixin flexSpBtwn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 @mixin flexSpArd {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 @mixin flexColumn {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 @mixin flexRow {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 @mixin flexCtrY {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 // Button
 //change buton name to reflect that it is a text button
 @mixin textBtn {
-  @include label_link_button;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 20px;
-  height: 36px;
-  font-weight: 600;
+	@include label_link_button;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 20px;
+	height: 36px;
+	font-weight: 600;
 
-  @include tablet {
-    height: 38px;
-    padding: 0 16px 0;
-  }
+	@include tablet {
+		height: 38px;
+		padding: 0 16px 0;
+	}
 }
 
 //Page Width
 @mixin desktopWidths {
-  width: 63.75rem;
-  margin: 0 auto;
-  padding: 0;
+	width: 63.75rem;
+	margin: 0 auto;
+	padding: 0;
 }
 
 // Borders
 @mixin activeBorder {
-  outline: none;
-  border: 1px solid $Instock-Indigo;
+	outline: none;
+	border: 1px solid $Instock-Indigo;
 }
 
 @mixin invalidBorder {
-  outline: none;
-  border: 1px solid $Red;
+	outline: none;
+	border: 1px solid $Red;
 }
 //column_name
 @mixin column_label {
-  @include table_header;
-  text-transform: uppercase;
-  color: $Slate;
+	@include table_header;
+	text-transform: uppercase;
+	color: $Slate;
+}
+
+@mixin input {
+	// ------create mixin-----
+
+	height: 36px;
+	width: 100%;
+	border-radius: 20px;
+	border: 1px solid $Cloud;
+	@include body_medium;
+	color: $Instock-Black;
+	padding: 0 16px 0; //need to adjust to {padding: 8px 16px;} if input is larger than one line (i.e. textArea)
+
+	// ------create mixin-----
+	&:focus {
+		@include activeBorder;
+		// &:invalid {
+		//   @include invalidBorder;
+		// }
+	}
+	@include tablet {
+		height: 38px;
+	}
+	&--description {
+		height: 120px;
+		padding: 8px 16px;
+	}
+	&--category {
+		&::-ms-expand {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: transparent;
+		}
+	}
 }
