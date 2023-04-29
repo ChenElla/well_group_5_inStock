@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import PageHeader from "../PageHeader/PageHeader";
+import PageHeader2 from "../PageHeader2/PageHeader2";
 import ItemDetails from "../ItemDetails/ItemDetails";
 import ItemAvailability from "../ItemAvailability/ItemAvailability";
 import "./InvItemBody.scss";
@@ -48,8 +48,10 @@ function NewInvBody() {
 			.catch((error) => console.log(error));
 	}
 	return (
+    <>
+    <PageHeader2 pageHeader={"Add New Inventory Item"} backButton={true}/>
 		<div className="invItemBody">
-			<PageHeader pageHeader={"Add New Inventory Item"} />
+
 			<form id="invItemBody__form" onSubmit={handleSubmit}>
 				<div className="invItemBody__column">
 					<div className="invItemBody__width">
@@ -78,6 +80,7 @@ function NewInvBody() {
 				<AddInvItemBtn />
 			</form>
 		</div>
+    </>
 	);
 }
 
