@@ -130,7 +130,7 @@ export default function AddWarehouse() {
 							/>
 						</div>
 						<div className="mainContainer__backgroundContainer__titleContainer__nameContainer__title">
-							Edit Warehouse
+							Add Warehouse
 						</div>
 					</div>
 				</div>
