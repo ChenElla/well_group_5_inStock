@@ -41,7 +41,6 @@ function NewInvBody() {
 						setQuantity("0");
 						setWarehouse_id("");
 						alert(`${item_name} was added to the warehouse`);
-						console.log(res.warehouse_id);
 						navigate(`/warehouses/${joinedState.warehouse_id}`);
 					})
 					.catch((err) => console.log(err));

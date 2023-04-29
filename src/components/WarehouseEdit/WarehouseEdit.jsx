@@ -11,7 +11,6 @@ import axios from "axios";
 import "./WarehouseEdit.scss";
 
 export default function WarehouseEdit({ warehouseId, singleWarehouse }) {
-	console.log(warehouseId);
 	const form_ref = useRef();
 	const address_ref = useRef();
 	const city_ref = useRef();
