@@ -9,10 +9,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import InventoryList from "../InventoryList/InventoryList";
-export default function WarehouseDetails({
-	warehouseId,
-	singleWarehouse
-}) {
+export default function WarehouseDetails({ warehouseId, singleWarehouse }) {
 	const [inventory, setInventory] = useState(null);
 	const [deletedID, updateList] = useState(0);
 	const navigate = useNavigate();
@@ -29,7 +26,6 @@ export default function WarehouseDetails({
 			})
 			.catch((e) => {
 				console.error(e);
-        // navigate('/warehouses');
 			});
 	}, [deletedID]);
 
@@ -99,12 +95,18 @@ export default function WarehouseDetails({
 							</div>
 						</div>
 					</div>
-          <hr className="mainContainer__listContainer__divider" id = "mobile_divider"/>
-					{inventory ? (<InventoryList
-						inventory={inventory}
-						updateList={updateList}
-						pageHeader={false}
-					/>):(<hr id = "show_divider"/>
+					<hr
+						className="mainContainer__listContainer__divider"
+						id="mobile_divider"
+					/>
+					{inventory ? (
+						<InventoryList
+							inventory={inventory}
+							updateList={updateList}
+							pageHeader={false}
+						/>
+					) : (
+						<hr id="show_divider" />
 					)}
 				</div>
 			</div>

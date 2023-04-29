@@ -1,13 +1,17 @@
-// @import "../../../partials/_colors";
-// @import "../../../partials/_fonts";
-// @import "../../../partials/_media";
-// @import "../../Global.scss";
 @import "../../styling/global.scss";
 
-.pageHeader {
+.pageHeader2 {
+    background-color: $Graphite;
+    padding:0 16px;
+    @include tablet{
+        padding:0 24px;
+    }
+    @include desktop{
+        padding:0;
+        align-items: center;
+    }
 	&__divider {
 		border: 0.7px solid $Cloud;
-		height: 0;
 		padding: 0;
 		margin: 0;
 		@include tablet {
@@ -17,18 +21,19 @@
 	&__return {
 		cursor: pointer;
 	}
-	background-color: $White;
 	&__outer {
+        background-color: $White;
 		padding: 32px 28px 24px;
 		@include tablet {
 			padding: 38px 32px 22px 32px;
 			@include desktop {
+                width:80%;
 				padding: 32px 40px 28px 40px;
+                margin:auto;
 			}
 		}
 	}
 	&__inner-container {
-		gap: 1rem;
 		@include tablet {
 			@include flexDisp(row, space-between);
 		}
@@ -37,10 +42,7 @@
 		width: 100%;
 		@include flexDisp(row, flex-start);
 		@include tablet {
-			width: 41%;
-		}
-		@include desktop {
-			width: 90%;
+			width: 100%;   
 		}
 	}
 
@@ -51,6 +53,7 @@
 	&__title-text {
 		@include page_header;
 		padding-left: 4px;
+        
 	}
 	&--border {
 		border-bottom: 1px solid $Cloud;
@@ -62,12 +65,12 @@
 		@include tablet {
 			@include flexDisp(row, flex-end);
 			display: flex;
-			width: 100%;
+			width: 70%;
 			justify-content: right;
 			gap: 1rem;
 			align-items: start;
 			& > :nth-child(1) {
-				width: 60%;
+				width: 100%;
 			}
 			& > :nth-child(2) {
 				width: max-content;

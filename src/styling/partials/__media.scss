@@ -1,19 +1,17 @@
-/*To use Chakra for this purpose, please refer to https://www.youtube.com/watch?v=SCUSo6tOiZk */
-
-@mixin desktop{
-    @media screen and (min-width:1280px){
-        @content;
-    }
+@mixin desktop {
+	@media screen and (min-width: 1280px) {
+		@content;
+	}
 }
 
-@mixin tablet{
-    @media screen and (min-width:767px){
-        @content;
-    }
+@mixin tablet {
+	@media screen and (min-width: 767px) {
+		@content;
+	}
 }
 
-@mixin larger_mobile{
-    @media screen and (min-width:500px){
-        @content;
-    }
+@mixin larger_mobile {
+	@media screen and (min-width: 500px) {
+		@content;
+	}
 }

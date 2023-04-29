@@ -1,0 +1,121 @@
+@import "../../../styling/global.scss";
+
+.divider {
+	margin-top: -1px;
+	margin-bottom: 0;
+	color: $Cloud;
+	background-color: $White;
+}
+.warehouseContainer {
+	padding: 24px;
+
+	@include flexDisp(row, space-between);
+	@include TiWeb;
+
+	@include tablet {
+		width: 80%;
+		@include flexDisp(row, flex-start);
+		gap: 2rem;
+		padding: 16px 32px;
+	}
+	@include desktop {
+		width: 80%;
+		padding: 18px 40px;
+	}
+	&__warehouseName {
+		@include tablet {
+			width: 40%;
+		}
+		&__title {
+			@include column_label;
+			padding-bottom: 4px;
+		}
+		&__name {
+			@include label_link_button;
+			color: $Instock-Indigo;
+			display: flex;
+			align-items: center;
+			&--text {
+				font-weight: 700;
+				font-size: large;
+				color: $Instock-Indigo;
+				&:hover {
+					cursor: pointer;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		width: 50%;
+		gap: 2rem;
+
+		@include tablet {
+			flex-direction: row;
+			width: 50%;
+			align-items: center;
+			flex-grow: 0;
+		}
+	}
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: 0.25rem;
+		color: $Slate;
+		@include table_header;
+		&--mobile {
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+	&__outer {
+		@include tablet {
+			background-color: white;
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+		border-bottom: 1px solid $Cloud;
+		&:hover {
+			background-color: transparentize($color: $Instock-Indigo, $amount: 0.93);
+		}
+	}
+	&__warehouseContact {
+		@include tablet {
+			width: 40%;
+		}
+	}
+	&__hidden {
+		display: none;
+	}
+	&__nextLine {
+		display: none;
+		@include tablet {
+			display: block;
+		}
+	}
+}
+.iconRow {
+	padding: 0 24px 24px 24px;
+	width: 100%;
+	background-color: transparent;
+	@include flexDisp(row, space-between);
+	& > * {
+		cursor: pointer;
+	}
+
+	@include tablet {
+		@include flexDisp(row, flex-end);
+		width: fit-content;
+		align-items: baseline;
+		gap: 1rem;
+		padding: 16px 32px;
+	}
+}
+
+.name {
+	@include label_link_button;
+}

@@ -11,7 +11,6 @@ import axios from "axios";
 import "./WarehouseEdit.scss";
 
 export default function WarehouseEdit({ warehouseId, singleWarehouse }) {
-	console.log(warehouseId);
 	const form_ref = useRef();
 	const address_ref = useRef();
 	const city_ref = useRef();
@@ -66,15 +65,33 @@ export default function WarehouseEdit({ warehouseId, singleWarehouse }) {
 			}
 		});
 		if (empty) return;
-        if (phone_ref.current.value.length!==10)
-            {
-                phone_ref.current.focus();
-                alert("Please insert a 10-digit valid phone number (i.e., 1234567890).");
-                return;
-            }
-        const phone_number_array = phone_ref.current.value.split('');
-        //+1 (919) 797-2864
-        const phone_number = '+1 ('+phone_number_array[0]+''+phone_number_array[1]+''+phone_number_array[2]+') '+phone_number_array[3]+''+phone_number_array[4]+''+phone_number_array[5]+'-'+phone_number_array[6]+''+phone_number_array[7]+''+phone_number_array[8]+''+phone_number_array[9];
+		if (phone_ref.current.value.length !== 10) {
+			phone_ref.current.focus();
+			alert("Please insert a 10-digit valid phone number (i.e., 1234567890).");
+			return;
+		}
+		const phone_number_array = phone_ref.current.value.split("");
+		const phone_number =
+			"+1 (" +
+			phone_number_array[0] +
+			"" +
+			phone_number_array[1] +
+			"" +
+			phone_number_array[2] +
+			") " +
+			phone_number_array[3] +
+			"" +
+			phone_number_array[4] +
+			"" +
+			phone_number_array[5] +
+			"-" +
+			phone_number_array[6] +
+			"" +
+			phone_number_array[7] +
+			"" +
+			phone_number_array[8] +
+			"" +
+			phone_number_array[9];
 		const warehouseEdited = {
 			id: warehouseId,
 			warehouse_name: warehouse_name_ref.current.value,

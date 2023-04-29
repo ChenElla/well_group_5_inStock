@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import PageHeader from "../PageHeader/PageHeader";
+import PageHeader2 from "../PageHeader2/PageHeader2";
 import EditItemDetails from "../ItemDetails/ItemDetails";
 import EditItemAvailability from "../ItemAvailability/ItemAvailability";
 import "./EditItemsBody.scss";
@@ -72,8 +72,9 @@ function EditItemsBody() {
       .catch((error) => console.log(error));
   }
   return (
+    <>
+    <PageHeader2 pageHeader={"Edit Inventory Item"} backButton={true}/>
     <div className="EditItemBody">
-      <PageHeader pageHeader={"Edit Inventory Item"} />
       <form id="EditItemBody__form" onSubmit={handleSubmit}>
         <div className="EditItemBody__column">
           <div className="EditItemBody__width">
@@ -99,9 +100,10 @@ function EditItemsBody() {
             />
           </div>
         </div>
-        <AddInvItemBtn text={"Save"} />
+        <AddInvItemBtn text="+ Add Item" />
       </form>
     </div>
+    </>
   );
 }
 

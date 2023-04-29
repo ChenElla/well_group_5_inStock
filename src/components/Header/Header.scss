@@ -1,65 +1,60 @@
-
 @import "../../styling/global.scss";
 
 .header {
-  background-color: $Graphite;
-  min-width: 100%;
-  @include tablet {
-  }
-  &__outer {
-    padding: 24px 16px 0;
-    padding-bottom:24px;
-    @include tablet {
-      padding: 32px 32px 0;
-      padding-bottom:32px;
-    }
-    @include desktop {
-      // @include desktopWidths;
-      padding:24px 0;
-      width:80%;
-      margin:0 auto;
-    }
-    @include flexColumn;
-    gap: 24px;
-    @include tablet {
-      @include flexSpBtwn;
-      flex-direction: row;
-    }
-  }
-  &__logo-contain {
-    @include flexCtrX;
-  }
+	background-color: $Graphite;
+	min-width: 100%;
+	@include tablet {
+	}
+	&__outer {
+		padding: 24px 16px 0;
+		padding-bottom: 24px;
+		@include tablet {
+			padding: 32px 32px 0;
+			padding-bottom: 32px;
+		}
+		@include desktop {
+			padding: 24px 0;
+			width: 80%;
+			margin: 0 auto;
+		}
+		@include flexColumn;
+		gap: 24px;
+		@include tablet {
+			@include flexSpBtwn;
+			flex-direction: row;
+		}
+	}
+	&__logo-contain {
+		@include flexCtrX;
+	}
 
-  &__btn-contain {
-    @include flexCtrX;
-    gap: 16px;
-  }
+	&__btn-contain {
+		@include flexCtrX;
+		gap: 16px;
+	}
 
-  &__flexset {
-    display: flex;
-    flex-grow: 1;
-  }
+	&__flexset {
+		display: flex;
+		flex-grow: 1;
+	}
 
-  &__btn {
-    @include textBtn;
-    &:hover {
-      text-decoration-line: underline;
-    }
-    &--warehouse {
-      background-color: $Instock-Black;
-      border: none;
-      color: $White;
-      flex-grow: 1;
-    }
-
-    &--inventory {
-      background-color: $Graphite;
-      border: none;
-      color: $Cloud;
-      flex-grow: 1;
-      &:hover {
-        color: $White;
-      }
-    }
-  }
+	&__btn {
+		@include textBtn;
+		&:hover {
+			text-decoration-line: underline;
+		}
+		&--selected {
+			background-color: $Instock-Black;
+			border: none;
+			color: $White;
+			flex-grow: 1;
+		}
+		background-color: $Graphite;
+		border: none;
+		color: $Cloud;
+		flex-grow: 1;
+		&:hover {
+			color: $White;
+		}
+	}
 }

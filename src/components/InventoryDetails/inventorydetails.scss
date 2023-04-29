@@ -3,358 +3,354 @@
 @import "../../styling/partials/_media";
 @import "../../styling/partials/_fonts";
 
-.detailTitle{
-    background-color: $Graphite;
-    width:100%;
-    padding:0px 16px 0px 16px;
-    @include tablet{
-        padding:0px 24px 0px 24px;
-    }
-    @include desktop{
-        padding:0px;
-    }
-    &__container{
-        background-color:$White;
-        border-radius: 3px 3px 0px 0px;
-        @include desktop {
-            width:80%;
-            margin:auto;
-        }
-        &__header {
-            background-color: $White;
-            border-bottom: 0.063rem solid $Cloud;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 3px 3px 0px 0;
+.detailTitle {
+	background-color: $Graphite;
+	width: 100%;
+	padding: 0px 16px 0px 16px;
+	@include tablet {
+		padding: 0px 24px 0px 24px;
+	}
+	@include desktop {
+		padding: 0px;
+	}
+	&__container {
+		background-color: $White;
+		border-radius: 3px 3px 0px 0px;
+		@include desktop {
+			width: 80%;
+			margin: auto;
+		}
+		&__header {
+			background-color: $White;
+			border-bottom: 0.063rem solid $Cloud;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 3px 3px 0px 0;
 			padding: 32px 24px 0 24px;
 			background-color: $White;
-            padding-bottom:4px;
-            @include tablet{
-                padding-bottom:0;
+			padding-bottom: 4px;
+			@include tablet {
+				padding-bottom: 0;
 				padding: 32px;
 			}
 			@include desktop {
 				width: 100%;
 				padding: 40px;
 			}
-        }
-    
-        &__title-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-    
-        &__back-arrow {
-            margin-top: 0.4rem;
-            cursor: pointer;
-        }
-    
-        &__title {
-            @include page_header;
-            height: 2.25rem;
-            line-height: 2.25rem;
-            color: $Instock-Black;
-    
-            @include tablet {
-                font-size: 2rem;
-                line-height: 2.5rem;
-            }
-        }
-        &__edit-wrapper {
-            background-color: $Instock-Indigo;
-            border-radius: 50px;
-            width:36px;
-            height:36px;
-            text-decoration: none;
-            @include flexDisp(column,center);
-            align-items: center;
-            @include textBtn;
-            @include tablet{
-                @include flexDisp(row,center);
-                align-items: center;
-                padding:8px 16px;
-                height:auto;
-                width:auto;
-            }
-            &:hover{
-                cursor: pointer;
-                background-color: $Instock-Indigo;
-            }
-          }
-        
-          &__edit {
-            display:none;
-            @include tablet {
-              @include label_link_button;
-              color: $White;
-              display:block;
-            }
-          }
-          
-          &__edit-icon {
-            height:15px;
-            filter: brightness(0) invert(1);
-            margin-top:10px;
-            @include tablet {
-                height:15px;
-                margin:0;
-                margin-right:3px;
-                filter: brightness(0) invert(1);
-            }
-        }
-    }
-    
-        &__description-container {
-            padding-bottom: 1rem;
-    
-            @include tablet {
-                width: 50%;
-                padding-right: 1.5rem;
-                border-right: 0.063rem solid $Cloud;
-            }
-        }
-    
-        &__label {
-            margin-bottom: 0.25rem;
-            font-weight: 600;
-            font-size: 0.688rem;
-            @include table_header;
-            line-height: 1rem;
-            color: $Slate;
-    
-            @include tablet {
-                font-size: 0.75rem;
-                line-height: 1.125 rem;
-            }
-    
-            &--gap {
-                margin-top: 1rem;
-            }
-        }
-    
-        &__text {
-            @include body_small;
-            font-size: 0.813rem;
-            line-height: 1.25rem;
-            color: $Instock-Black;
-    
-            @include tablet {
-                font-size: 0.875rem;
-                line-height: 1.375rem;
-            }
-    
-            &--in-stock {
-                width: fit-content;
-                padding: 0.25rem 0.5rem;
-                border-radius: 1.25rem;
-                background-color: rgba(21, 132, 99, 0.07);
-                font-weight: 600;
-                color: $Green;
-            }
-    
-            &--off-stock {
-                width: fit-content;
-                padding: 0.25rem 0.5rem;
-                border-radius: 1.25rem;
-                background-color: rgba($Red, 0.07);
-                font-weight: 600;
-                color: $Red;
-            }
-        }
-    
-        &__status-container {
-            gap: 5.938rem;
-            display: flex;
-    
-            @include tablet {
-                padding-left: 2.5rem;
-            }
-        }
+		}
+
+		&__title-wrapper {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+		}
+
+		&__back-arrow {
+			margin-top: 0.4rem;
+			cursor: pointer;
+		}
+
+		&__title {
+			@include page_header;
+			height: 2.25rem;
+			line-height: 2.25rem;
+			color: $Instock-Black;
+
+			@include tablet {
+				font-size: 2rem;
+				line-height: 2.5rem;
+			}
+		}
+		&__edit-wrapper {
+			background-color: $Instock-Indigo;
+			border-radius: 50px;
+			width: 36px;
+			height: 36px;
+			text-decoration: none;
+			@include flexDisp(column, center);
+			align-items: center;
+			@include textBtn;
+			@include tablet {
+				@include flexDisp(row, center);
+				align-items: center;
+				padding: 8px 16px;
+				height: auto;
+				width: auto;
+			}
+			&:hover {
+				cursor: pointer;
+				background-color: $Instock-Indigo;
+			}
+		}
+
+		&__edit {
+			display: none;
+			@include tablet {
+				@include label_link_button;
+				color: $White;
+				display: block;
+			}
+		}
+
+		&__edit-icon {
+			height: 15px;
+			filter: brightness(0) invert(1);
+			margin-top: 10px;
+			@include tablet {
+				height: 15px;
+				margin: 0;
+				margin-right: 3px;
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+
+	&__description-container {
+		padding-bottom: 1rem;
+
+		@include tablet {
+			width: 50%;
+			padding-right: 1.5rem;
+			border-right: 0.063rem solid $Cloud;
+		}
+	}
+
+	&__label {
+		margin-bottom: 0.25rem;
+		font-weight: 600;
+		font-size: 0.688rem;
+		@include table_header;
+		line-height: 1rem;
+		color: $Slate;
+
+		@include tablet {
+			font-size: 0.75rem;
+			line-height: 1.125 rem;
+		}
+
+		&--gap {
+			margin-top: 1rem;
+		}
+	}
+
+	&__text {
+		@include body_small;
+		font-size: 0.813rem;
+		line-height: 1.25rem;
+		color: $Instock-Black;
+
+		@include tablet {
+			font-size: 0.875rem;
+			line-height: 1.375rem;
+		}
+
+		&--in-stock {
+			width: fit-content;
+			padding: 0.25rem 0.5rem;
+			border-radius: 1.25rem;
+			background-color: rgba(21, 132, 99, 0.07);
+			font-weight: 600;
+			color: $Green;
+		}
+
+		&--off-stock {
+			width: fit-content;
+			padding: 0.25rem 0.5rem;
+			border-radius: 1.25rem;
+			background-color: rgba($Red, 0.07);
+			font-weight: 600;
+			color: $Red;
+		}
+	}
+
+	&__status-container {
+		gap: 5.938rem;
+		display: flex;
+
+		@include tablet {
+			padding-left: 2.5rem;
+		}
+	}
 }
 .detail {
-    bottom: 1.5rem;
-    margin:0px 16px;
-    height: fit-content;
-    background-color: $White;
-    box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
-    border-radius: 0.188rem;
-    @include tablet{
-        margin:0px 24px;
-    }
-    @include desktop{
-        margin:0px auto;
-        width:80%;
-    }
-    &__container{
-        background-color:$Graphite;
-        width:100%;
-        border-radius: 0.188rem;
-        @include tablet {
-        bottom: 5rem;
-    }
+	bottom: 1.5rem;
+	margin: 0px 16px;
+	height: fit-content;
+	background-color: $White;
+	box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
+	border-radius: 0.188rem;
+	@include tablet {
+		margin: 0px 24px;
+	}
+	@include desktop {
+		margin: 0px auto;
+		width: 80%;
+	}
+	&__container {
+		background-color: $Graphite;
+		width: 100%;
+		border-radius: 0.188rem;
+		@include tablet {
+			bottom: 5rem;
+		}
 
-    @include desktop {
-        // margin: 0 5.625rem;
-    }
+		&__header {
+			background-color: $White;
+			padding: 2rem 1.5rem 1.5rem;
+			border-bottom: 0.063rem solid $Cloud;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 0.188rem;
 
-    &__header {
-        background-color: $White;
-        padding: 2rem 1.5rem 1.5rem;
-        border-bottom: 0.063rem solid $Cloud;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 0.188rem;
+			@include tablet {
+				padding: 2rem 2rem 1.5rem;
+			}
+		}
 
-        @include tablet {
-            padding: 2rem 2rem 1.5rem;
-        }
-    }
+		&__title-wrapper {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+		}
 
-    &__title-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
+		&__back-arrow {
+			margin-top: 0.4rem;
+			cursor: pointer;
+		}
 
-    &__back-arrow {
-        margin-top: 0.4rem;
-        cursor: pointer;
-    }
+		&__title {
+			@include page_header;
+			height: 2.25rem;
+			line-height: 2.25rem;
+			color: $Instock-Black;
 
-    &__title {
-        @include page_header;
-        height: 2.25rem;
-        line-height: 2.25rem;
-        color: $Instock-Black;
+			@include tablet {
+				font-size: 2rem;
+				line-height: 2.5rem;
+			}
+		}
+		&__edit-wrapper {
+			display: inline-block;
+			background-color: $Instock-Indigo;
+			width: 15%;
+			border-radius: 50px;
+			justify-content: center;
+			cursor: pointer;
+			text-decoration: none;
+			align-items: center;
+			@include textBtn;
+			@include tablet {
+				display: inline-block;
+			}
 
-        @include tablet {
-            font-size: 2rem;
-            line-height: 2.5rem;
-        }
-    }
-    &__edit-wrapper {
-        display: inline-block;
-        background-color: $Instock-Indigo;
-        width: 15%;
-        border-radius: 50px;
-        justify-content: center;
-        cursor: pointer;
-        text-decoration: none;
-        align-items: center;
-        @include textBtn;
-        @include tablet{
-            display: inline-block;
-        }
-    
-        @include desktop {
-          width: 7%;
-        }
-      }
-    
-      &__edit {
-        margin-left: 0.5rem;
-        margin-bottom: 0.7rem;
-        color: $White;
-        display: inline-block;
-        
-        @include tablet {
-          display: inline-flex;
-          font-size: 1rem;
-          font-weight: 600;
-          margin: 0.12rem 0.15rem 0 0.15rem;
-        }
-      }
-      
-      &__edit-icon {
-        width: 1.5rem;
-        filter: brightness(0) invert(1);
-        margin-top: 0.35rem;
-        @include tablet {
-          width: 1.2em;
-          display: inline-block;
-        }
-      }
-    }
+			@include desktop {
+				width: 7%;
+			}
+		}
 
-    &__card {
-        padding:16px 24px;
-        @include tablet {
-            padding: 24px 32px;
-            display: flex;
-        }
-        @include desktop {
-            padding: 24px 40px;
-            display: flex;
-        }
-    }
+		&__edit {
+			margin-left: 0.5rem;
+			margin-bottom: 0.7rem;
+			color: $White;
+			display: inline-block;
 
-    &__description-container {
-        padding-bottom: 1rem;
+			@include tablet {
+				display: inline-flex;
+				font-size: 1rem;
+				font-weight: 600;
+				margin: 0.12rem 0.15rem 0 0.15rem;
+			}
+		}
 
-        @include tablet {
-            width: 50%;
-            padding-right: 1.5rem;
-            border-right: 0.063rem solid $Cloud;
-        }
-    }
+		&__edit-icon {
+			width: 1.5rem;
+			filter: brightness(0) invert(1);
+			margin-top: 0.35rem;
+			@include tablet {
+				width: 1.2em;
+				display: inline-block;
+			}
+		}
+	}
 
-    &__label {
-        margin-bottom: 0.25rem;
-        font-weight: 600;
-        font-size: 0.688rem;
-        @include table_header;
-        line-height: 1rem;
-        color: $Slate;
+	&__card {
+		padding: 16px 24px;
+		@include tablet {
+			padding: 24px 32px;
+			display: flex;
+		}
+		@include desktop {
+			padding: 24px 40px;
+			display: flex;
+		}
+	}
 
-        @include tablet {
-            font-size: 0.75rem;
-            line-height: 1.125 rem;
-        }
+	&__description-container {
+		padding-bottom: 1rem;
 
-        &--gap {
-            margin-top: 1rem;
-        }
-    }
+		@include tablet {
+			width: 50%;
+			padding-right: 1.5rem;
+			border-right: 0.063rem solid $Cloud;
+		}
+	}
 
-    &__text {
-        @include body_small;
-        font-size: 0.813rem;
-        line-height: 1.25rem;
-        color: $Instock-Black;
+	&__label {
+		margin-bottom: 0.25rem;
+		font-weight: 600;
+		font-size: 0.688rem;
+		@include table_header;
+		line-height: 1rem;
+		color: $Slate;
 
-        @include tablet {
-            font-size: 0.875rem;
-            line-height: 1.375rem;
-        }
+		@include tablet {
+			font-size: 0.75rem;
+			line-height: 1.125 rem;
+		}
 
-        &--in-stock {
-            width: fit-content;
-            padding: 0.25rem 0.5rem;
-            border-radius: 1.25rem;
-            background-color: rgba(21, 132, 99, 0.07);
-            font-weight: 600;
-            color: $Green;
-        }
+		&--gap {
+			margin-top: 1rem;
+		}
+	}
 
-        &--off-stock {
-            width: fit-content;
-            padding: 0.25rem 0.5rem;
-            border-radius: 1.25rem;
-            background-color: rgba($Red, 0.07);
-            font-weight: 600;
-            color: $Red;
-        }
-    }
+	&__text {
+		@include body_small;
+		font-size: 0.813rem;
+		line-height: 1.25rem;
+		color: $Instock-Black;
 
-    &__status-container {
-        gap: 5.938rem;
-        display: flex;
+		@include tablet {
+			font-size: 0.875rem;
+			line-height: 1.375rem;
+		}
 
-        @include tablet {
-            padding-left: 2.5rem;
-        }
-    }
+		&--in-stock {
+			width: fit-content;
+			padding: 0.25rem 0.5rem;
+			border-radius: 1.25rem;
+			background-color: rgba(21, 132, 99, 0.07);
+			font-weight: 600;
+			color: $Green;
+		}
+
+		&--off-stock {
+			width: fit-content;
+			padding: 0.25rem 0.5rem;
+			border-radius: 1.25rem;
+			background-color: rgba($Red, 0.07);
+			font-weight: 600;
+			color: $Red;
+		}
+	}
+
+	&__status-container {
+		gap: 5.938rem;
+		display: flex;
+
+		@include tablet {
+			padding-left: 2.5rem;
+		}
+	}
 }

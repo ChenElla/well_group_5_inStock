@@ -8,6 +8,7 @@ import AddNewInventoryItemPage from "./pages/WarehouseDetailsPage/AddNewInventor
 import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import EditItemsBody from "./components/EditItemsBody/EditItemsBody";
 import EditNewInventoryItemPage from "./pages/WarehouseDetailsPage/EditNewInventoryItemPage";
@@ -23,7 +24,8 @@ function App() {
           <Header />
           {/* <EditItemsBody /> */}
           <Routes>
-            <Route path="/" element={<Placeholder text="Warehouses" />} />
+            <Route path="/" element={<WarehousesPage />} />
+						<Route path="/warehouses" element={<WarehousesPage />} />
             <Route path="/inventories" element={<InventoryPage />} />
             <Route
               path="/warehouses/:warehouseId"
