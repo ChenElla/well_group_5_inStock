@@ -128,22 +128,16 @@ img {
 }
 
 @mixin input {
-	// ------create mixin-----
-
 	height: 36px;
 	width: 100%;
 	border-radius: 20px;
 	border: 1px solid $Cloud;
 	@include body_medium;
 	color: $Instock-Black;
-	padding: 0 16px 0; //need to adjust to {padding: 8px 16px;} if input is larger than one line (i.e. textArea)
+	padding: 0 16px 0;
 
-	// ------create mixin-----
 	&:focus {
 		@include activeBorder;
-		// &:invalid {
-		//   @include invalidBorder;
-		// }
 	}
 	@include tablet {
 		height: 38px;

@@ -16,11 +16,11 @@
 		width: 80%;
 		@include flexDisp(row, flex-start);
 		gap: 2rem;
-		padding:16px 32px;
+		padding: 16px 32px;
 	}
-	@include desktop{
-		width:80%;
-		padding:18px 40px;
+	@include desktop {
+		width: 80%;
+		padding: 18px 40px;
 	}
 	&__warehouseName {
 		@include tablet {
@@ -39,8 +39,8 @@
 				font-weight: 700;
 				font-size: large;
 				color: $Instock-Indigo;
-				&:hover{
-					cursor:pointer;
+				&:hover {
+					cursor: pointer;
 					text-decoration: underline;
 				}
 			}
@@ -63,7 +63,6 @@
 	&__title {
 		text-transform: uppercase;
 		margin-bottom: 0.25rem;
-		// font-size: 0.9rem;
 		color: $Slate;
 		@include table_header;
 		&--mobile {
@@ -117,6 +116,6 @@
 	}
 }
 
-.name{
+.name {
 	@include label_link_button;
 }
