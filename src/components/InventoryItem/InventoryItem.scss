@@ -8,6 +8,7 @@
 }
 .itemContainer {
 	padding: 24px;
+	background-color:transparent;
 	@include flexDisp(row, space-between);
 	@include tablet {
 		width:85%;
@@ -105,6 +106,12 @@
 			}
 		}
 	}
+	&__itemWarehouse{
+		margin-top:16px;
+		@include tablet{
+			margin-top:0;
+		}
+	}
 	&__column {
 		@include flexDisp(column,flex-start);
 		width: 50%;
@@ -145,6 +152,7 @@
 			@include flexDisp(row,space-between);
 		}
 		border-bottom: 1px solid $Cloud;
+		background-color:$White;
 		&:hover {
 			background-color: transparentize($color: $Instock-Indigo, $amount: 0.93);
 		}
@@ -155,6 +163,7 @@
 	}
 }
 .iconRow {
+	background-color:$White;
 	padding: 0 24px 24px 24px;
 	width: 100%;
 	@include flexDisp(row, space-between);

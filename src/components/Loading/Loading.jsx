@@ -1,5 +1,5 @@
 import React from "react";
-import loading_icon from "../../assets/Icons/Loading_icon.gif";
+import loading_icon from "../../assets/icons/Loading_icon.gif";
 import "./Loading.scss";
 
 export default function Loading() {
