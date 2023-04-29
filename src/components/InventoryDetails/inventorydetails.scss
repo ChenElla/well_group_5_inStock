@@ -15,7 +15,7 @@
     }
     &__container{
         background-color:$White;
-        border-radius: 0.188rem;
+        border-radius: 3px 3px 0px 0px;
         @include desktop {
             width:80%;
             margin:auto;
@@ -26,15 +26,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 0.188rem;
+            border-radius: 3px 3px 0px 0;
 			padding: 32px 24px 0 24px;
 			background-color: $White;
-			@include tablet {
+            padding-bottom:4px;
+            @include tablet{
+                padding-bottom:0;
 				padding: 32px;
 			}
 			@include desktop {
 				width: 100%;
-				padding: 32px 40px 22px 40px;
+				padding: 40px;
 			}
         }
     
@@ -101,17 +103,8 @@
                 margin-right:3px;
                 filter: brightness(0) invert(1);
             }
-          }
         }
-    
-        &__card {
-            padding: 1rem 1.5rem;
-    
-            @include tablet {
-                padding: 1.5rem 2rem;
-                display: flex;
-            }
-        }
+    }
     
         &__description-container {
             padding-bottom: 1rem;
@@ -287,10 +280,13 @@
     }
 
     &__card {
-        padding: 1rem 1.5rem;
-
+        padding:16px 24px;
         @include tablet {
-            padding: 1.5rem 2rem;
+            padding: 24px 32px;
+            display: flex;
+        }
+        @include desktop {
+            padding: 24px 40px;
             display: flex;
         }
     }

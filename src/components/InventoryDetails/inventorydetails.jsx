@@ -14,7 +14,8 @@ export default function InventoryDetails() {
 	const { id } = useParams();
 
 	const navigateBack = () => {
-		navigation(`${BASE_API_URL}/inventories/`);
+		// navigation(`${BASE_API_URL}/inventories/`);
+		navigation(-1);
 	};
 
 	useEffect(() => {
@@ -66,6 +67,7 @@ export default function InventoryDetails() {
 								to={`/inventory/${id}/edit`}
 							>
 								<img
+									onClick = {handleEditClick}
 									src={editIconImg}
 									alt="edit icon"
 									className="detailTitle__container__edit-icon"
