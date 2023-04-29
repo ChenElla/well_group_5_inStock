@@ -9,6 +9,7 @@ import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
+import EditItemsBody from "./components/EditItemsBody/EditItemsBody";
 
 function App() {
   const Placeholder = ({ text }) => (
@@ -19,19 +20,29 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Header />
+          <EditItemsBody />
           <Routes>
             <Route path="/" element={<Placeholder text="Warehouses" />} />
             <Route path="/inventories" element={<InventoryPage />} />
-            <Route path="/warehouses/:warehouseId" element={<WarehouseDetailsPage/>} />
-            <Route path="/inventories/:id" element={<InventoryDetails />} />
-            <Route path="/warehouses/:warehouseId/edit" element={<WarehouseEditPage/>} />
-            <Route path="/warehouses/add" element={<AddWarehousePage />} />
-            <Route path="/inventories/:id/edit" element={<Placeholder text="Edit Inventory" />} />
-            <Route path="/inventories/add" element={<AddNewInventoryItemPage />} />
             <Route
-              path = "/error/:id"
-              element = {<ErrorPage/>}
+              path="/warehouses/:warehouseId"
+              element={<WarehouseDetailsPage />}
             />
+            <Route path="/inventories/:id" element={<InventoryDetails />} />
+            <Route
+              path="/warehouses/:warehouseId/edit"
+              element={<WarehouseEditPage />}
+            />
+            <Route path="/warehouses/add" element={<AddWarehousePage />} />
+            <Route
+              path="/inventories/:id/edit"
+              element={<Placeholder text="Edit Inventory" />}
+            />
+            <Route
+              path="/inventories/add"
+              element={<AddNewInventoryItemPage />}
+            />
+            <Route path="/error/:id" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </div>

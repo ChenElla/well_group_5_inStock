@@ -1,17 +1,13 @@
 @import "../../styling/global.scss";
 
-.itemDetails {
+.editAvailable {
   background-color: $White;
-  border-bottom: 1px solid $Cloud;
-  @include tablet {
-    border-bottom: none;
-    border-right: 1px solid $Cloud;
-  }
   &__outer {
     padding: 16px 24px 24px;
     @include tablet {
-      padding: 0 32px;
+      padding: 0 32px 21px;
       //THE AUTO MARGIN SETTINGS BELOW WILL NOT WORK ONCE THIS COMPONENT IS NESTED INSIDE THE COLLECTION OF COMPONENTS THAT WILL MAKE UP THE BODY OF THE PAGE.THAT COLLECTIVE COMPONENT WILL REQUIRE THE desktopWidths SETTINGS
+
       // @include desktop {
       //   @include desktopWidths;
       //   padding: 32px 32px 21px;
@@ -34,12 +30,32 @@
     }
   }
   //all 'package's may just be made one class
-  &__name-package {
+  &__status-package {
   }
   &__label {
     @include body_medium;
     font-weight: 600;
     padding-bottom: 4px;
+  }
+  &__radio-ctn {
+    display: flex;
+  }
+  &__rad-package {
+    // flex-grow: 1;
+    width: 50%;
+    @include tablet {
+      width: 40%;
+    }
+  }
+  &__radio-btn {
+    cursor: pointer;
+  }
+  &__radio-text {
+    @include body_medium;
+    padding-left: 4px;
+  }
+
+  &__quantity-package {
   }
   &__input {
     // ------create mixin-----
@@ -62,15 +78,13 @@
     @include tablet {
       height: 38px;
     }
-    &--name {
+    &--status {
     }
-    &--description {
-      height: 120px;
-      padding: 8px 16px;
-      resize: none;
-      overflow: hidden;
+    &--quantity {
+      // height: 120px;
+      // padding: 8px 16px;
     }
-    &--category {
+    &--warehouse {
       &::-ms-expand {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -78,8 +92,6 @@
         background: transparent;
       }
     }
-  }
-  &__description-package {
   }
   &__category-package {
   }
