@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PageHeader from "../PageHeader/PageHeader";
 import EditItemDetails from "../ItemDetails/ItemDetails";
 import EditItemAvailability from "../ItemAvailability/ItemAvailability";
@@ -14,9 +14,22 @@ function EditItemsBody() {
   const [status, setStatus] = useState("In Stock");
   const [quantity, setQuantity] = useState("0");
   const [warehouse_id, setWarehouse_id] = useState("");
-  // ---------
   const [showQuantity, setShowQuantity] = useState(true);
-  //--------
+
+  // NEED INTIAL GET REQUEST TO SET VALUES
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5050/inventories/${id}`)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err.response.status);
+        if (err.response.status === 404) navigate("/error/1");
+      });
+  }, []); //forget what goes here?
 
   const navigate = useNavigate();
 
