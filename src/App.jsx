@@ -10,6 +10,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import EditItemsBody from "./components/EditItemsBody/EditItemsBody";
+import EditNewInventoryItemPage from "./pages/WarehouseDetailsPage/EditNewInventoryItemPage";
 
 function App() {
   const Placeholder = ({ text }) => (
@@ -20,7 +21,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <EditItemsBody />
+          {/* <EditItemsBody /> */}
           <Routes>
             <Route path="/" element={<Placeholder text="Warehouses" />} />
             <Route path="/inventories" element={<InventoryPage />} />
@@ -36,7 +37,7 @@ function App() {
             <Route path="/warehouses/add" element={<AddWarehousePage />} />
             <Route
               path="/inventories/:id/edit"
-              element={<Placeholder text="Edit Inventory" />}
+              element={<EditNewInventoryItemPage />}
             />
             <Route
               path="/inventories/add"
