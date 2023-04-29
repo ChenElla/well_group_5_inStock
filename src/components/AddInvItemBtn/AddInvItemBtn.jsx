@@ -1,7 +1,7 @@
 import React from "react";
 import "./AddInvItemBtn.scss";
 
-function AddInvItemBtn() {
+function AddInvItemBtn({ text }) {
   return (
     <div className="AddInvItemBtn">
       <div className="AddInvItemBtn__outer">
@@ -17,7 +17,7 @@ function AddInvItemBtn() {
             // value="PUBLISH"
             form="invItemBody__form"
           >
-            + Add Item
+            {text}
           </button>
         </div>
       </div>

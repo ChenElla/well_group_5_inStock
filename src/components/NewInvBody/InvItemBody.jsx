@@ -53,11 +53,7 @@ function NewInvBody() {
   return (
     <div className="invItemBody">
       <PageHeader pageHeader={"Add New Inventory Item"} />
-      <form
-        id="invItemBody__form"
-        // className="invItemBody__form"
-        onSubmit={handleSubmit}
-      >
+      <form id="invItemBody__form" onSubmit={handleSubmit}>
         <div className="invItemBody__column">
           <div className="invItemBody__width">
             <ItemDetails
@@ -82,31 +78,10 @@ function NewInvBody() {
             />
           </div>
         </div>
-        <AddInvItemBtn />
+        <AddInvItemBtn text={"+ Add Item"} />
       </form>
     </div>
   );
-// =======
-// 	return (
-// 		<div className="invItemBody">
-// 			<PageHeader pageHeader={"Add New Inventory Item"} />
-// 			<div className="invItemBody__column">
-// 				<div className="invItemBody__width">
-// 					<ItemDetails />
-// 				</div>
-// 				<div className="invItemBody__width">
-// 					<ItemAvailability />
-// 				</div>
-// 			</div>
-// 			<AddButton
-// 				name="Item"
-// 				addCallback={() => {}}
-// 				cancelCallback={() => {}}
-// 				cancel={true}
-// 			/>
-// 		</div>
-// 	);
-// >>>>>>> develop
 }
 
 export default NewInvBody;

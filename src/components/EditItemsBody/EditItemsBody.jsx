@@ -78,7 +78,7 @@ function EditItemsBody() {
             />
           </div>
         </div>
-        <AddInvItemBtn />
+        <AddInvItemBtn text={"Save"} />
       </form>
     </div>
   );
