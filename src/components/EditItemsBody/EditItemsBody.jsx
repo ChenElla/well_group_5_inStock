@@ -15,6 +15,7 @@ function EditItemsBody() {
   const [quantity, setQuantity] = useState("0");
   const [warehouse_id, setWarehouse_id] = useState("");
   const [showQuantity, setShowQuantity] = useState(true);
+  const [statusInitial, setStatusInitial] = useState("In Stock");
 
   // NEED INTIAL GET REQUEST TO SET VALUES
   const { id } = useParams();
@@ -24,12 +25,19 @@ function EditItemsBody() {
       .get(`http://localhost:5050/inventories/${id}`)
       .then((response) => {
         console.log(response.data);
+        setItem_name(response.data.item_name);
+        setDescription(response.data.description);
+        setCategory(response.data.category); //NOT WORKING
+        setStatus(response.data.status); //NOT WORKING
+        setQuantity(response.data.quantity); //NOT WORKING
+        setStatusInitial(response.data.status);
+        // set
       })
       .catch((err) => {
         console.log(err.response.status);
         if (err.response.status === 404) navigate("/error/1");
       });
-  }, []); //forget what goes here?
+  }, [id]);
 
   const navigate = useNavigate();
 
@@ -47,15 +55,15 @@ function EditItemsBody() {
           quantity,
         };
         axios
-          .post(`http://localhost:5050/inventories`, joinedState)
+          .put(`http://localhost:5050/inventories/${id}`, joinedState)
           .then((res) => {
-            setItem_name("");
-            setDescription("");
-            setCategory("");
-            setStatus("In Stock");
-            setQuantity("0");
-            setWarehouse_id("");
-            alert(`${item_name} was added to the warehouse`);
+            // setItem_name("");
+            // setDescription("");
+            // setCategory("");
+            // setStatus("In Stock");
+            // setQuantity("0");
+            // setWarehouse_id("");
+            alert(`${item_name} was changed`);
             console.log(res.warehouse_id);
             navigate(`/warehouses/${joinedState.warehouse_id}`);
           })

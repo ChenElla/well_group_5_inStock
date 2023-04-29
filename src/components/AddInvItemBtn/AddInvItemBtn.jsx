@@ -15,7 +15,7 @@ function AddInvItemBtn({ text }) {
             className="AddInvItemBtn__button AddInvItemBtn__button--add"
             type="submit"
             // value="PUBLISH"
-            form="invItemBody__form"
+            form="EditItemBody__form"
           >
             {text}
           </button>

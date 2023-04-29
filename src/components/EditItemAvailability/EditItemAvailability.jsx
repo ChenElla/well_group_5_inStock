@@ -8,6 +8,7 @@ import Loading from "../Loading/Loading";
 
 function ItemAvailability({
   status,
+  statusInitial,
   setStatus,
   quantity,
   setQuantity,
@@ -40,11 +41,6 @@ function ItemAvailability({
       });
   }, [warehouseList]);
 
-  // const radioHandler = (e) => {
-  //   setStatus;
-  //   setQuantity(0);
-  //   setShowQuantity(!showQuantity);
-  // };
   const showQuantityHandler = (e) => {
     setStatus(e.target.value);
     setQuantity("0");
@@ -64,24 +60,45 @@ function ItemAvailability({
                 onChange={showQuantityHandler}
               >
                 <div className="editAvailable__rad-package">
-                  <input
-                    type="radio"
-                    className="editAvailable__radio-btn"
-                    value="In Stock"
-                    name="stock" // name must match the other radio button to make sure only one can be selected
-                    onClick={showQuantityHandler}
-                    defaultChecked
-                  />
+                  {statusInitial === "In Stock" ? (
+                    <input
+                      type="radio"
+                      className="editAvailable__radio-btn"
+                      value="In Stock"
+                      name="stock"
+                      onClick={showQuantityHandler}
+                      defaultChecked
+                    />
+                  ) : (
+                    <input
+                      type="radio"
+                      className="editAvailable__radio-btn"
+                      value="In Stock"
+                      name="stock"
+                      onClick={showQuantityHandler}
+                    />
+                  )}
                   <label className="editAvailable__radio-text">In stock</label>
                 </div>
                 <div className="editAvailable__rad-package">
-                  <input
-                    type="radio"
-                    className="editAvailable__radio-btn"
-                    value="Out of Stock"
-                    name="stock"
-                    onClick={showQuantityHandler}
-                  />
+                  {statusInitial === "In Stock" ? (
+                    <input
+                      type="radio"
+                      className="editAvailable__radio-btn"
+                      value="Out of Stock"
+                      name="stock"
+                      onClick={showQuantityHandler}
+                      defaultChecked
+                    />
+                  ) : (
+                    <input
+                      type="radio"
+                      className="editAvailable__radio-btn"
+                      value="Out of Stock"
+                      name="stock"
+                      onClick={showQuantityHandler}
+                    />
+                  )}
                   <label className="editAvailable__radio-text">
                     Out of stock
                   </label>
@@ -94,7 +111,7 @@ function ItemAvailability({
                 <input
                   className="editAvailable__input item editAvailable__input--quantity"
                   type="number"
-                  defaultValue="0"
+                  value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                   required
                 />
