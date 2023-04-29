@@ -5,9 +5,11 @@ import PageHeader from "../PageHeader/PageHeader";
 import SearchBar from "../SearchBar/SearchBar";
 import AddButton from "../AddButton/AddButton";
 import InventoryHeader from "../InventoryHeader/InventoryHeader";
+import { useNavigate } from "react-router-dom";
 
-function InventoryList({ inventory, updateList, pageHeader = true }) {
+function InventoryList({ inventory, updateList, pageHeader }) {
 	if (inventory.length < 1) return <></>;
+	const navigate = useNavigate();
 	const inventoryItems = inventory.map((item) => {
 		return (
 			<InventoryItem
@@ -19,17 +21,16 @@ function InventoryList({ inventory, updateList, pageHeader = true }) {
 	});
 	return (
 		<div className="inventoryList">
-			{pageHeader && (
-				<PageHeader pageHeader="Inventory" border={false} backButton={false}>
+			{pageHeader?
+				(<PageHeader pageHeader="Inventory" border={false} backButton={false}>
 					<SearchBar />
 					<AddButton
 						name="New Item"
-						addCallback={() => {}}
+						addCallback={() => {navigate('/inventories/add')}}
 						cancelCallback={() => {}}
 					/>
-				</PageHeader>
-			)}
-
+				</PageHeader>):<></>
+			}
 			<div className="inventoryList__header">
 				<InventoryHeader
 					showWarehouse={inventory[0].warehouse_name !== undefined}

@@ -16,6 +16,12 @@
 		width: 80%;
 		@include flexDisp(row, flex-start);
 		gap: 2rem;
+		padding:16px 32px;
+		background-color: $Light-Grey;
+	}
+	@include desktop{
+		width:80%;
+		padding:18px 40px;
 	}
 	&__itemName {
 		width: 40%;
@@ -65,7 +71,7 @@
 	}
 	&__outer {
 		@include tablet {
-			background-color: white;
+			background-color: $Light-Grey;
 			display: flex;
 			align-items: baseline;
 			justify-content: space-between;
@@ -76,6 +82,13 @@
 		cursor: pointer;
 	}
 	&__actions {
-		margin: 0 24px;
+		display:none;
+		@include tablet{
+			display:block;
+			margin: 0 32px;
+		}
+		@include desktop{
+			margin:0 40px;
+		}
 	}
 }

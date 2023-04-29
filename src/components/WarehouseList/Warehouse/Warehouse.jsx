@@ -22,7 +22,7 @@ export default function Warehouse({ warehouse, updateList }) {
 						</div>
 						<Link to={"/warehouses/" + warehouse.id}>
 							<div className="warehouseContainer__warehouseName__name">
-								<div className="warehouseContainer__warehouseName__name--text">
+								<div className="warehouseContainer__warehouseName__name--text name">
 									{warehouse.warehouse_name}
 								</div>
 								<img
@@ -37,7 +37,7 @@ export default function Warehouse({ warehouse, updateList }) {
 						<div className="warehouseContainer__title warehouseContainer__title--mobile">
 							address
 						</div>
-						<div className="warehouseContainer__warehouseAddress__address">
+						<div className="warehouseContainer__warehouseAddress__address name">
 							{warehouse.address},
 							<br className="warehouseContainer__nextLine" />
 							{warehouse.city}, {warehouse.country}
@@ -49,7 +49,7 @@ export default function Warehouse({ warehouse, updateList }) {
 						<div className="warehouseContainer__title warehouseContainer__title--mobile">
 							contact name
 						</div>
-						<div className="warehouseContainer__warehouseContact__contact">
+						<div className="warehouseContainer__warehouseContact__contact name">
 							{warehouse.contact_name}
 						</div>
 					</div>
@@ -57,7 +57,7 @@ export default function Warehouse({ warehouse, updateList }) {
 						<div className="warehouseContainer__title warehouseContainer__title--mobile">
 							contact information
 						</div>
-						<div className="warehouseContainer__warehouseContactInfo__info">
+						<div className="warehouseContainer__warehouseContactInfo__info name">
 							{warehouse.contact_phone}
 							<br></br>
 							{warehouse.contact_email}

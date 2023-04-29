@@ -14,7 +14,8 @@ export default function InventoryDetails() {
 	const { id } = useParams();
 
 	const navigateBack = () => {
-		navigation(`${BASE_API_URL}/inventories/`);
+		// navigation(`${BASE_API_URL}/inventories/`);
+		navigation(-1);
 	};
 
 	useEffect(() => {
@@ -46,33 +47,37 @@ export default function InventoryDetails() {
 	return (
 		<>
 			{selectedItem && (
-				<div className="detail">
-					<div className="detail__container">
-						<div className="detail__container__header">
-							<div className="detail__container__title-wrapper">
+				<>
+				<div className = "detailTitle">
+					<div className="detailTitle__container">
+						<div className="detailTitle__container__header">
+							<div className="detailTitle__container__title-wrapper">
 								<img
 									onClick={navigateBack}
-									className="detail__container__back-arrow"
+									className="detailTitle__container__back-arrow"
 									src={backArrowImg}
 									alt="back arrow"
 								/>
-								<h1 className="detail__container__title">
+								<h1 className="detailTitle__container__title">
 									{selectedItem.item_name}
 								</h1>
 							</div>
 							<Link
-								className="detail__container__edit-wrapper"
+								className="detailTitle__container__edit-wrapper"
 								to={`/inventory/${id}/edit`}
 							>
 								<img
+									onClick = {handleEditClick}
 									src={editIconImg}
 									alt="edit icon"
-									className="detail__container__edit-icon"
+									className="detailTitle__container__edit-icon"
 								/>
-								<h2 className="detail__container__edit">Edit</h2>
+								<h2 className="detailTitle__container__edit">Edit</h2>
 							</Link>
 						</div>
 					</div>
+				</div>
+				<div className="detail">
 					<div className="detail__card">
 						<div className="detail__description-container">
 							<h4 className="detail__label">ITEM DESCRIPTION:</h4>
@@ -96,6 +101,7 @@ export default function InventoryDetails() {
 						</div>
 					</div>
 				</div>
+				</>
 			)}
 		</>
 	);

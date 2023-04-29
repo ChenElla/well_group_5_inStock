@@ -16,6 +16,11 @@
 		width: 80%;
 		@include flexDisp(row, flex-start);
 		gap: 2rem;
+		padding:16px 32px;
+	}
+	@include desktop{
+		width:80%;
+		padding:18px 40px;
 	}
 	&__warehouseName {
 		@include tablet {
@@ -28,13 +33,16 @@
 		&__name {
 			@include label_link_button;
 			color: $Instock-Indigo;
-
 			display: flex;
 			align-items: center;
 			&--text {
 				font-weight: 700;
 				font-size: large;
 				color: $Instock-Indigo;
+				&:hover{
+					cursor:pointer;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -55,11 +63,9 @@
 	&__title {
 		text-transform: uppercase;
 		margin-bottom: 0.25rem;
-		font-size: 0.9rem;
+		// font-size: 0.9rem;
 		color: $Slate;
-		@include TiWeb;
-		font-weight: 700;
-
+		@include table_header;
 		&--mobile {
 			@include tablet {
 				display: none;
@@ -96,6 +102,7 @@
 .iconRow {
 	padding: 0 24px 24px 24px;
 	width: 100%;
+	background-color: transparent;
 	@include flexDisp(row, space-between);
 	& > * {
 		cursor: pointer;
@@ -106,5 +113,10 @@
 		width: fit-content;
 		align-items: baseline;
 		gap: 1rem;
+		padding: 16px 32px;
 	}
+}
+
+.name{
+	@include label_link_button;
 }

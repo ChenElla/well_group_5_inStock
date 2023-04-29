@@ -8,7 +8,7 @@ import "./PageHeader.scss";
 function PageHeader({
 	pageHeader,
 	children,
-	backButton = true,
+	backButton,
 	border = true,
 }) {
 	// function to allow user to go back to last page they were on - untested as routes not set up yet, though works if change url via warehouse/inventory buttons
@@ -36,6 +36,7 @@ function PageHeader({
 					<div className="pageHeader__children">{children}</div>
 				</div>
 			</div>
+			<hr className = "pageHeader__divider"></hr>
 		</div>
 	);
 }

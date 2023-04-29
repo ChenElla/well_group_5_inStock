@@ -36,7 +36,9 @@
 		border: none;
 		flex-grow: 1;
 		@include tablet {
-			flex-grow: 0;
+			text-align:center;
+			align-items:center;
+			@include flexDisp(row,center);
 		}
 		&--cancel {
 			color: $Slate;

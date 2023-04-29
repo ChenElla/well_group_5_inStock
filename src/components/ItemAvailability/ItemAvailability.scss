@@ -52,6 +52,7 @@
     }
   }
   &__radio-btn {
+    cursor: pointer;
   }
   &__radio-text {
     @include body_medium;
