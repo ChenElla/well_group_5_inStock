@@ -6,12 +6,15 @@ function AddInvItemBtn({ text }) {
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
-  }
+  };
   return (
     <div className="AddInvItemBtn">
       <div className="AddInvItemBtn__outer">
         <div className="AddInvItemBtn__flex-ctn">
-          <button className="AddInvItemBtn__button AddInvItemBtn__button--cancel" onClick = {goBack}>
+          <button
+            className="AddInvItemBtn__button AddInvItemBtn__button--cancel"
+            onClick={goBack}
+          >
             Cancel
           </button>
         </div>
@@ -19,8 +22,6 @@ function AddInvItemBtn({ text }) {
           <button
             className="AddInvItemBtn__button AddInvItemBtn__button--add"
             type="submit"
-            // value="PUBLISH"
-            form="EditItemBody__form"
           >
             {text}
           </button>
